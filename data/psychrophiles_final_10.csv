@@ -1,0 +1,11 @@
+to_synthesize,genome.x,genus,OleA_patric,OleC_patric,OleD_patric,isolation_source,temperature_range,optimal_temperature
+1,Janthinobacterium sp. CG3,Janthinobacterium,fig|1075768.5.peg.2737,fig|1075768.5.peg.618,fig|1075768.5.peg.3518,the Cotton Glacier are excellent models to study carbon cycling due to the simplified polar environment,"NA","NA"
+1,Desulfobulbaceae bacterium BRH_c16a,Desulfobulbaceae,fig|1629713.5.peg.2518,fig|1629713.5.peg.4851,fig|1629713.5.peg.4852,Opalinus Clay rock porewater BRC-3 borehole,Psychrophilic,"NA"
+1,Desulfotalea psychrophila LSv54,Desulfotalea,fig|177439.6.peg.798,fig|177439.6.peg.2862,fig|177439.6.peg.2861,"marine sediments off of the coast of Svalbard, and can grow at temperatures as low as -1",Psychrophilic,7
+1,Moritella sp. JT01,Moritella,fig|756698.3.peg.3339,fig|756698.3.peg.3341,fig|756698.3.peg.3342,Sediment from Japan Trench,Psychrophilic,5-8 C
+1,Oleispira antarctica RB-8,Oleispira,fig|698738.7.peg.1803,fig|698738.7.peg.1807,fig|698738.7.peg.1805,surface seawater,Psychrophilic,"NA"
+1,Paeniglutamicibacter gangotriensis strain ANT_H27,Paeniglutamicibacter,fig|254787.3.peg.2962,fig|254787.3.peg.2963,fig|254787.3.peg.2964,petroleum-contaminated soil collected near the petroleum pumping and storage warehouse at the Henryk Arctowski Polish Antarctic Station,"NA","NA"
+1,Psychrobacter cibarius strain W1,Psychrobacter,fig|282669.3.peg.967,fig|282669.3.peg.967,fig|282669.3.peg.966,Wall Segment in a Danish Slaughterhouse,"NA","NA"
+1,Rhodonellum psychrophilum DSM 17998 strain GCM71,Rhodonellum,fig|1123057.7.peg.1800,fig|1123057.7.peg.707,fig|1123057.7.peg.1091,Ikaite tufa columns,Psychrophilic,5C
+1,Salinibacterium sp. UTAS2018,Salinibacterium,fig|2508880.3.peg.322,fig|2508880.3.peg.321,fig|2508880.3.peg.320,cold room contaminant,"NA","NA"
+1,Sedimentitalea sp. W43,Sedimentitalea,fig|2483033.3.peg.4057,fig|2483033.3.peg.4325,fig|2483033.3.peg.4056,deep seawater of the New Britain Trench,"NA","NA"

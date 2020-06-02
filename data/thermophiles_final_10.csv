@@ -1,0 +1,11 @@
+to_synthesize,genome.x,genus,OleA_locus,OleC_locus,OleD_locus,OleA_patric,OleC_patric,OleD_patric,isolation_source,temperature_range,optimal_temperature
+1,Vulcaniibacterium thermophilum strain KCTC 32020,Vulcaniibacterium,"NA","NA","NA",fig|1169913.3.peg.856,fig|1169913.3.peg.1563,fig|1169913.3.peg.1560,Geothermal soil,"NA","NA"
+1,Alicyclobacillus kakegawensis NBRC 103104,Alicyclobacillus,"NA","NA","NA",fig|1220571.3.peg.752,fig|1220571.3.peg.3115,fig|1220571.3.peg.2095,"NA",Thermophilic,50-55
+1,Candidatus Riflebacteria bacterium BY5,Candidatus,OZSIB_0384,OZSIB_0382,OZSIB_0381,fig|2268124.3.peg.401,fig|2268124.3.peg.399,fig|2268124.3.peg.398,2-km deep subsurface thermal aquifer,"NA","NA"
+1,Chloroflexus aggregans DSM 9485,Chloroflexus,Cagg_0548,Cagg_0550,Cagg_0549,fig|326427.4.peg.556,fig|326427.4.peg.558,fig|326427.4.peg.557,"NA",Thermophilic,-
+1,Deltaproteobacteria bacterium strain B30_G6,Deltaproteobacteria,DRH90_03805,DRH90_20590,DRH90_20585,fig|2026735.166.peg.848,fig|2026735.166.peg.4700,fig|2026735.166.peg.4699,deep-sea hydrothermal vent sediments from dive 4569_2 depth 0-3 cm,"NA","NA"
+1,Deltaproteobacteria bacterium strain B9_G4,Deltaproteobacteria,DRH30_08870,DRH30_08880,DRH30_08885,fig|2026735.148.peg.1837,fig|2026735.148.peg.1839,fig|2026735.148.peg.1840,deep-sea hydrothermal vent sediments from dive 4569_4 depth 0-3 cm,"NA","NA"
+1,Epsilonproteobacteria bacterium strain B11_G4,Epsilonproteobacteria,DRQ88_10755,DRQ88_10765,DRQ88_10770,fig|2026809.16.peg.2167,fig|2026809.16.peg.2169,fig|2026809.16.peg.2170,deep-sea hydrothermal vent sediments from dive 4569_4 depth 0-3 cm,"NA","NA"
+1,Fischerella thermalis CCMEE 5201,Fischerella,CEN39_01180,CEN39_11710,CEN39_17060,fig|2019672.3.peg.2803,fig|2019672.3.peg.3115,fig|2019672.3.peg.4567,hot spring,"NA","NA"
+1,Isosphaera pallida ATCC 43644,Isosphaera,Isop_2005,Isop_1050,Isop_1049,fig|575540.3.peg.2557,fig|575540.3.peg.1344,fig|575540.3.peg.1343,"NA",Thermophilic,-
+1,Verrucomicrobia bacterium strain B12_G4,Verrucomicrobia,DRP71_02100,DRP71_01465,DRP71_01460,fig|2026799.183.peg.457,fig|2026799.183.peg.320,fig|2026799.183.peg.319,deep-sea hydrothermal vent sediments from dive 4569_4 depth 0-3 cm,"NA","NA"
