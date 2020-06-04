@@ -1,8 +1,8 @@
 # Install packages
 # First time run:
-# if (!requireNamespace("BiocManager", quietly = TRUE))
-#   install.packages("BiocManager")
-# BiocManager::install("Biostrings")
+ if (!requireNamespace("BiocManager", quietly = TRUE))
+   install.packages("BiocManager")
+ BiocManager::install("Biostrings")
 
 # Load packages
 pacman::p_load("Biostrings", "tidyverse")
@@ -11,7 +11,7 @@ pacman::p_load("Biostrings", "tidyverse")
 # On a a Mac:
 # setwd("~/Documents/University_of_Minnesota/Wackett_Lab/github/TARA-thiolases/")
 # On a PC:
-# setwd("C:/Users/...")
+ setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases")
 
 # Read in the TARA sequences only
 tara <- readAAStringSet('data/TARA_marine_sequences_to_order.fasta') # these are the 30 sequences from TARA oceans
