@@ -33,6 +33,7 @@ dim(twenty_nine) # 29 rows and 55 columns
 ## The following command will help you:
  names(tara)[!names(tara) %in% annot_df$label]
 ## Why wasn't the missing row found?
+ #I'm not sure why but this seems to work
 ## Bonus: Can you make the data frame complete with thirty rows
 ## Hint: you can use the function bind_rows to bind a row to an existing data frame
 thirty <- bind_rows(twenty_nine, annot_df[218,])
@@ -72,10 +73,40 @@ dev.off()
 ggplot(dat) +
   geom_boxplot(aes(x = polar, y = temperature)) +
   geom_point(aes(x = polar, y = temperature)) +
-  theme_classic() 
+  theme_classic() + coord_cartesian(xlim=c(0,2), ylim=c(0, 30))
 
 
 # Challenge 4. Can you remove/fix the NA? 
-
+# kind of? :)
 
 # BONUS challenges: What other variables can you look at? What other types of plots  can you make? 
+
+# attempt 1
+ggplot(dat) +
+  geom_point(aes(x = phylum, y = gc_content)) +
+  theme_classic()
+# ^ bad
+
+# attempt 2
+ggplot(dat) +
+  geom_point(aes(x = genome_size, y = gc_content)) +
+  theme_classic()
+# ^ slightly more interesting
+
+# attempt 4
+ggplot(dat) +
+  geom_point(aes(x = genome_size, y = number_predicted_genes)) +
+  theme_classic()
+# ^ possibly the most useless graph ever, but it looks nice
+
+# attempt 5
+ggplot(dat) +
+  geom_point(aes(x = temperature, y = product_pufa)) +
+  theme_classic()
+# ^ kind of useful
+
+# attempt 6
+ggplot(dat) +
+  geom_point(aes(x = depth_m, y = temperature, col = polar)) +
+  theme_classic()
+# ^ probably the coolest one but also useless
