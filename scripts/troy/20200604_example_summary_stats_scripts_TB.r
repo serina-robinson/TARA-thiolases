@@ -114,7 +114,20 @@ ggplot(dat) +
 # ^ kind of useful
 
 # attempt 6
+pdf("output/depth_and_temperature_of_samples2.pdf")
 ggplot(dat2) +
   geom_point(aes(x = depth_m, y = temperature, col = polar)) +
-  theme_classic()
+  theme_classic() +
+  theme(legend.title = element_blank()) + 
+  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")"))) +
+  ggtitle("Temperature and Depth of OleA Isolates") +
+  scale_color_discrete(,labels = c("Non-Polar", "Polar"))
+dev.off()
+
 # ^ probably the coolest one but also useless
+
+# attempt 7: try to get dual histograms of full and sub datasets for phylum
+
+ggplot(dat2) +
+  geom_histogram(aes()) +
+  theme_classic()

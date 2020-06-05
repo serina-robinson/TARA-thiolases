@@ -26,7 +26,7 @@ dim(twenty_nine) # 29 rows and 55 columns
 dat <- annot_df # you can change this to thirty, or twenty_nine if you just want to look at some seqs
 
 # Subset the data frame only for variables you're interested in
-vars <- c("temperature", "oxygen", "no3", "po4", "iron_5m") # subsetting for variables of interest
+vars <- c("temperature", "oxygen", "no3", "layer", "polar") # subsetting for variables of interest
 sub_df <- dat[,colnames(dat) %in% vars]
 
 # Calculate the min, median, mean, max temperatures
@@ -45,6 +45,9 @@ ggpairs(sub_df) +
 ?ggpairs
 # Challenges..play around. Try categorical var
 # What does okubo_weiss mean? What about nitracline or brunt_vaisala?
+# okubo_weiss: local strain-votility balance
+# nitracline: layer in water where [nitrate] changes rapidly?
+# brunt_vaisala: stability of a fluid to vertical displacements
 # Hint: The literature reading for today is your friend. Also Google.
 # Choose some interesting looking correlations or plots 
 # Make some ggplots for lab meeting on Tuesday!
