@@ -48,4 +48,3 @@ ggpairs(sub_df) +
 # Hint: The literature reading for today is your friend. Also Google.
 # Choose some interesting looking correlations or plots 
 # Make some ggplots for lab meeting on Tuesday!
-# Look up what some of hte 
