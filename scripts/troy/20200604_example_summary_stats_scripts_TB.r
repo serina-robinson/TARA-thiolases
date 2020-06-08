@@ -87,6 +87,8 @@ table(dat[,"temperature"])
 is.na(dat[,"polar"])
 dat2 <- dat[!is.na(dat$polar),]
 dat2$polar
+dat3 <- annot_df[!is.na(annot_df$polar),]
+
 # BONUS challenges: What other variables can you look at? What other types of plots  can you make? 
 
 # attempt 1
@@ -124,21 +126,29 @@ ggplot(dat2) +
   scale_color_discrete(,labels = c("Non-Polar", "Polar"))
 dev.off()
 
+
 Plot1 <- ggplot(dat2) +
   geom_point(aes(x = depth_m, y = temperature, col = polar)) +
   theme_classic() +
   theme(legend.title = element_blank()) + 
-  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")"))) +
-  ggtitle("Temperature and Depth of OleA Isolates") +
+  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")")),
+       subtitle = "Sequences Ordered") +
   scale_color_discrete(,labels = c("Non-Polar", "Polar"))
-Plot2 <- ggplot(annot_df) +
+Plot2 <- ggplot(dat3) +
   geom_point(aes(x = depth_m, y = temperature, col = polar)) +
   theme_classic() +
   theme(legend.title = element_blank()) + 
-  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")"))) +
-  ggtitle("Temperature and Depth of OleA Isolates") +
+  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")")),
+       title = "Temperature and Depth of OleA-Containing TARA Samples",
+       subtitle = "Full Dataset") +
   scale_color_discrete(,labels = c("Non-Polar", "Polar"))
+Plot1
 Plot2
+install.packages("patchwork")
+library(patchwork)
+pdf("output/depth_and_temperature_of_samples8.pdf")
+Plot2/Plot1
+dev.off()
 # ^ probably the coolest one but also useless
 
 # attempt 7: try to get dual histograms of full and sub datasets for phylum
