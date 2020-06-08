@@ -32,11 +32,14 @@ dim(twenty_nine) # 29 rows and 55 columns
 ## There are only 29 rows but there are 30 TARA sequences...
 ## The following command will help you:
  names(tara)[!names(tara) %in% annot_df$label]
+ as.character(annot_df[218,1])
+ ?gsub
+annot_df[218,1] <- gsub("-", "_",annot_df[218,1])
 ## Why wasn't the missing row found?
  #I'm not sure why but this seems to work
 ## Bonus: Can you make the data frame complete with thirty rows
 ## Hint: you can use the function bind_rows to bind a row to an existing data frame
-thirty <- bind_rows(twenty_nine, annot_df[218,])
+thirty <- annot_df[annot_df$label %in% names(tara),]
 dim(thirty)
 # Now that we've got our data frame...let's make some plots
 dat <- twenty_nine # if you find the missing row you can change this to:
@@ -70,15 +73,20 @@ dev.off()
 # Challenge 3. Can you color the points by depth?
 
 # We can also look at categorical variables using boxplots
-ggplot(dat) +
+ggplot(dat2) +
   geom_boxplot(aes(x = polar, y = temperature)) +
   geom_point(aes(x = polar, y = temperature)) +
-  theme_classic() + coord_cartesian(xlim=c(0,2), ylim=c(0, 30))
-
+  theme_classic() 
+# ^ kind of? :)
 
 # Challenge 4. Can you remove/fix the NA? 
-# kind of? :)
 
+?table
+table(dat[,"polar"])
+table(dat[,"temperature"])
+is.na(dat[,"polar"])
+dat2 <- dat[!is.na(dat$polar),]
+dat2$polar
 # BONUS challenges: What other variables can you look at? What other types of plots  can you make? 
 
 # attempt 1
@@ -106,7 +114,39 @@ ggplot(dat) +
 # ^ kind of useful
 
 # attempt 6
-ggplot(dat) +
+pdf("output/depth_and_temperature_of_samples2.pdf")
+ggplot(dat2) +
   geom_point(aes(x = depth_m, y = temperature, col = polar)) +
-  theme_classic()
+  theme_classic() +
+  theme(legend.title = element_blank()) + 
+  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")"))) +
+  ggtitle("Temperature and Depth of OleA Isolates") +
+  scale_color_discrete(,labels = c("Non-Polar", "Polar"))
+dev.off()
+
+Plot1 <- ggplot(dat2) +
+  geom_point(aes(x = depth_m, y = temperature, col = polar)) +
+  theme_classic() +
+  theme(legend.title = element_blank()) + 
+  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")"))) +
+  ggtitle("Temperature and Depth of OleA Isolates") +
+  scale_color_discrete(,labels = c("Non-Polar", "Polar"))
+Plot2 <- ggplot(annot_df) +
+  geom_point(aes(x = depth_m, y = temperature, col = polar)) +
+  theme_classic() +
+  theme(legend.title = element_blank()) + 
+  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")"))) +
+  ggtitle("Temperature and Depth of OleA Isolates") +
+  scale_color_discrete(,labels = c("Non-Polar", "Polar"))
+Plot2
 # ^ probably the coolest one but also useless
+
+# attempt 7: try to get dual histograms of full and sub datasets for phylum
+
+ggplot(dat2) +
+  geom_bar(aes(phylum)) +
+  theme_classic()
+
+ggplot(annot_df) +
+  geom_bar(aes(phylum)) +
+  theme_classic()
