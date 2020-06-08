@@ -151,12 +151,29 @@ Plot2/Plot1
 dev.off()
 # ^ probably the coolest one but also useless
 
-# attempt 7: try to get dual histograms of full and sub datasets for phylum
+# attempt 7: try to get dual bar graphs of full and sub datasets for phylum
 
-ggplot(dat2) +
-  geom_bar(aes(phylum)) +
-  theme_classic()
+Plot3 <- ggplot(dat2) +
+  geom_bar(aes(phylum), col = "black") +
+  theme_classic() + 
+  theme(axis.text.x = element_text(angle = 30, size = 8,
+                                   vjust = 1, hjust = 1)) +
+  labs(x = "Phylum", y = "Count",
+       subtitle = "Samples Ordered")
 
-ggplot(annot_df) +
-  geom_bar(aes(phylum)) +
-  theme_classic()
+Plot3
+
+Plot4 <- ggplot(annot_df) +
+  geom_bar(aes(phylum), col = "black") +
+  theme_classic() + 
+  theme(axis.text.x = element_text(angle = 30, size = 8,
+                                   vjust = 1, hjust = 1)) +
+  labs(x = "Phylum", y = "Count",
+title = "Phylum Diversity of OleA-Containing TARA Samples",
+subtitle = "Full Dataset")
+  
+Plot4
+
+pdf("output/Phylum_Diversity1.pdf")
+Plot4/Plot3
+dev.off()
