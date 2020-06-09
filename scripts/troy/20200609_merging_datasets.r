@@ -77,8 +77,27 @@ fjsp
 
 # Challenge 1. Complete the rest of the tutorial after full_join here:
 # https://psu-psychology.github.io/r-bootcamp/tutorials/joins_tutorial.html
+## one to many join
+df1 <- tibble(x = c(1, 1, 2), y = 1:3)
+df2 <- tibble(x = c(1, 1, 2), z = c("a", "b", "a"))
 
+df1 %>% left_join(df2)
 
+## semi_join: keep things that are the same in y as x
+semi_join(x = publishers, y = superheroes)
+semi_join(x = superheroes, y = publishers)
+
+## anti_join: things that are not the same in y as x
+anti_join(x = publishers, y = superheroes)
+anti_join(x = superheroes, y = publishers)
+
+## Joining multiple datasets
+df1 <- data.frame(id=1:10, x=rnorm(10), y=runif(10))
+df2 <- data.frame(id=1:11, z=rnorm(11), a=runif(11))
+df3 <- data.frame(id=2:10, b=rnorm(9), c=runif(9))
+
+mergedf = df1 %>% full_join(df2) %>% full_join(df3)
+mergedf
 # Challenge 2. Joining is just part of the art of 'data wrangling.' How do you subset, filter, create new columns?
 # The packages dplyr and tidyr in the tidyverse are great for this.
 # I really love the tutorial here: https://datacarpentry.org/R-ecology-lesson/03-dplyr.html
