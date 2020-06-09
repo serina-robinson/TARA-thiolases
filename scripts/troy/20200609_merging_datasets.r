@@ -31,25 +31,31 @@ Image,       1992
 "
 publishers <- read_csv(publishers, trim_ws = TRUE, skip = 1)
 
+publishers$yr_founded <- as.integer(publishers$yr_founded)
+publishers
 ########
 # Try different types of 'joins'
 # Function: inner_join
-# Require smatch in both datasets (non-matching rows are dropped)
+# Requires match in both datasets (non-matching rows are dropped)
 ijsp <- inner_join(superheroes, publishers, by="publisher")
-
+superheroes
+ijsp
 ########
 # Function: left_join
-# Keep all rows in left-hand ‘x’ dataset (i.e., superheroes). 
+# Keep all rows in left-hand dataset (i.e., superheroes). 
 # Add columns from publishers where there is a match. Fill in NA for non-matching observations.
 ljsp <- left_join(superheroes, publishers)
-
+ljsp
 ########
+thing <- 10
 # Function: right_join
 # Keep all rows in right-hand ‘y’ dataset (i.e., publishers). 
 # Add columns from superheroes where there is a match. 
 rjsp <- superheroes %>%  # WHOA what is THIS '%>%' ??? see below
-  right_join(publishers)
-
+  right_join(., publishers) %>% 
+  mutate(thing = rep(c(10,11), 3))
+rjsp
+?rep
 # The '%>%' is called a 'pipe' 
 # "Pipes let you take the output of one function and send it directly to the next"
 # This is useful when you need to many things to the same data set
@@ -64,10 +70,10 @@ rjsp == rjsp2 # remember this '=='? You can check if the two objects match
 
 ########
 # Function: full_join
-# Keep all rows in left-hand ‘x’ (superheroes) and right-hand ‘y’ (publishers) datasets. 
+# Keep all rows in left-hand (superheroes) and right-hand ‘y’ (publishers) datasets. 
 # Resulting dataset will have all columns of both datasets, but filling in NA for any non-matches on either side.
 fjsp <- full_join(superheroes, publishers)
-
+fjsp
 
 # Challenge 1. Complete the rest of the tutorial after full_join here:
 # https://psu-psychology.github.io/r-bootcamp/tutorials/joins_tutorial.html
@@ -80,5 +86,6 @@ fjsp <- full_join(superheroes, publishers)
 # You'll be using the following dataset to complete the tutorial
 surveys <- read_csv("data/tutorials/surveys.csv")
 view(surveys)
+dim(surveys)
 # Go through the tutorial and complete the challenges
 # https://datacarpentry.org/R-ecology-lesson/03-dplyr.html

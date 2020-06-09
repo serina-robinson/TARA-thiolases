@@ -9,10 +9,21 @@ setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 
 # Read in environmental dataset for metagenome-assembled genomes with oleACD clusters in TARA
 dat <- read_csv("data/TARA_tree_annotation_df.csv")
+dat
+tara <- readAAStringSet('data/TARA_marine_sequences_to_order.fasta') # these are the 30 sequences from TARA oceans
+names(tara)
+view(dat)
+dat[218,1] <- gsub("-","_", dat[218,1])
+dat2 <- dat[dat$label %in% names(tara),]
+dim(dat2)
 
+# select(dat, -lat, -lon)
 # Add the 'content' for pop-up text
 content <- paste("Genus:", dat$genus, "<br>",
                  "Family:", dat$family, "<br>",
+                 "Order:", dat$order, "<br>",
+                 "Class:", dat$class, "<br>",
+                 "Phylum:", dat$phylum, "<br>",
                  "Temperature:", round(dat$temperature, 1), "<br>",
                  "Depth:", dat$depth_m, "meters")
 class(content)
@@ -26,19 +37,19 @@ pal <- colorNumeric(
   domain = dat$temperature)
 
 # Make an interactive map!
-leaflet(data = dat) %>%
-  addProviderTiles(providers$CartoDB.PositronNoLabels) %>% 
-  #  addProviderTiles(providers$Esri.WorldPhysical) %>% # example of changing the map style
+leaflet(data = dat2) %>%
+  addProviderTiles(providers$OpenStreetMap.Mapnik) %>% 
+  #  addProviderTiles(providers$OpenStreetMap.Mapnik) %>% # example of changing the map style
   # you can find the names of different map tiles here: 
   # http://leaflet-extras.github.io/leaflet-providers/preview/
-  addCircleMarkers(lng = ~lon, 
-                   lat = ~lat, 
+  addCircleMarkers(lng = ~lon_jitter, 
+                   lat = ~lat_jitter, 
                    popup = content,
-                   radius = 4,      
+                   radius = ~ log(depth_m),      
                    fillOpacity = 0.5, 
                    stroke = FALSE,
                    color = ~pal(temperature))
-
+?log
 # Challenge 1. Change the map style to a physical world map rather than just country outlines
 
 # Challenge 2. Change the point coloring to be a different variable than temperature 
