@@ -1,5 +1,5 @@
 # Load packages
-pacman::p_load("tidyverse", "leaflet")
+pacman::p_load("tidyverse", "leaflet", "Biostrings")
 
 # NOTE: Before you start it will be helpful to read the leaflet documentation
 # https://rstudio.github.io/leaflet/
@@ -19,13 +19,13 @@ dim(dat2)
 
 # select(dat, -lat, -lon)
 # Add the 'content' for pop-up text
-content <- paste("Genus:", dat$genus, "<br>",
-                 "Family:", dat$family, "<br>",
-                 "Order:", dat$order, "<br>",
-                 "Class:", dat$class, "<br>",
-                 "Phylum:", dat$phylum, "<br>",
-                 "Temperature:", round(dat$temperature, 1), "<br>",
-                 "Depth:", dat$depth_m, "meters")
+content <- paste("Genus:", dat2$genus, "<br>",
+                 "Family:", dat2$family, "<br>",
+                 "Order:", dat2$order, "<br>",
+                 "Class:", dat2$class, "<br>",
+                 "Phylum:", dat2$phylum, "<br>",
+                 "Temperature:", round(dat2$temperature, 1), "<br>",
+                 "Depth:", dat2$depth_m, "meters")
 class(content)
 # Set the custom color palette
 pal <- colorNumeric(
@@ -38,14 +38,14 @@ pal <- colorNumeric(
 
 # Make an interactive map!
 leaflet(data = dat2) %>%
-  addProviderTiles(providers$OpenStreetMap.Mapnik) %>% 
+  addProviderTiles(providers$Stamen.Terrain) %>% 
   #  addProviderTiles(providers$OpenStreetMap.Mapnik) %>% # example of changing the map style
   # you can find the names of different map tiles here: 
   # http://leaflet-extras.github.io/leaflet-providers/preview/
   addCircleMarkers(lng = ~lon_jitter, 
                    lat = ~lat_jitter, 
                    popup = content,
-                   radius = ~ log(depth_m),      
+                   radius = ~ log(as.numeric(depth_m)),      
                    fillOpacity = 0.5, 
                    stroke = FALSE,
                    color = ~pal(temperature))

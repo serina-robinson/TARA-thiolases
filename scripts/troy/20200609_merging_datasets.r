@@ -108,3 +108,13 @@ view(surveys)
 dim(surveys)
 # Go through the tutorial and complete the challenges
 # https://datacarpentry.org/R-ecology-lesson/03-dplyr.html
+
+str(surveys)
+
+select(surveys, taxa, weight)
+asdf <- select(surveys, -taxa, -weight, - year)
+asdf
+filter(surveys, year == 1995)
+surveys %>% 
+  filter(year < 1995) %>% 
+  select(year, sex, weight)

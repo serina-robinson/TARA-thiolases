@@ -1,0 +1,118 @@
+---
+title: "OleABCD hydrcarbons in the oceans"
+output:
+  flexdashboard::flex_dashboard:
+  theme: cosmo
+vertical_layout: fill
+runtime: shiny
+---
+  
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE, error = FALSE}
+# getOption("repos")
+# options(repos = BiocManager::repositories())
+library(flexdashboard)
+library(knitr)
+library(shiny)
+library(tidyverse)
+library(leaflet)
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE,
+                      message = FALSE, fig.align = 'center',
+                      fig.dim = c(4, 6))
+```
+
+
+```{r global, include = FALSE, echo = FALSE, warning = TRUE}
+# Read in the dataset for mapping
+dat <- read_csv("../../data/TARA_tree_annotation_df.csv")
+dat <- data.frame(dat) # This is a weird conversion required from a tibble to a data frame
+```
+
+Sampling Map
+=====================================
+Inputs {.sidebar data-width=350}
+----------------------------------------------------------------------
+
+```{r}
+selectInput(inputId = "color_env", 
+            label = "Color points by:", 
+            choices = c("temperature", "oxygen", "depth_m"),
+            selected = "temperature")
+
+
+```
+
+This world map shows the sampling locations of TARA Oceans MAGs that have OleA[B]CD genes colored by their features.
+
+Please note the geographic coordinates have been randomly 'jittered' within 50 kilometers of the sampling location to limit the overlap of data points and  visually display all MAGs obtained from each site.
+
+Output
+----------------------------------------------------------------------
+```{r }
+
+renderLeaflet({
+
+  # Logic gates to check if input variable is numeric or not  
+    
+  # If input variable is numeric...
+  if (is.numeric(dat[ ,colnames(dat) == input$color_env])) {
+      pal <- colorNumeric(
+        palette = "RdYlBu",
+        na.color = "gray70",
+        reverse = TRUE,
+        domain = dat[ ,colnames(dat) == input$color_env])
+    }
+
+
+  # If input variable is not numeric then...
+  if (!is.numeric(dat[ ,colnames(dat) == input$color_env])) {
+
+      # Convert to a factor
+      dat[,colnames(dat) == input$color_env] <- as.factor(dat[,colnames(dat) == input$color_env])
+
+      # Color by factor
+      pal <- colorFactor(
+        palette = "RdYlBu",
+        na.color = "gray70",
+        domain = dat[ ,colnames(dat) == input$color_env])
+  }
+   
+    
+  content <- paste("Genus:", dat$genus, "<br>",
+                    "Family:", dat$family, "<br>",
+                   input$color_env, ":", dat[,colnames(dat) == input$color_env])
+
+  leaflet(data = dat) %>%
+      addProviderTiles(providers$Esri.WorldPhysical) %>%
+      addCircleMarkers(lng = ~lon_jitter, lat = ~lat_jitter,
+        popup = content,
+        radius = 4,      
+        fillOpacity = 0.5, 
+        stroke = FALSE,
+        color = ~pal(dat[ ,colnames(dat) == input$color_env]))
+  
+  # Challenge 1. Change the color and title of the flexdashboard
+  
+  # Challenge 2. Try changing the layout of the flexdashboard
+  
+  # Challenge 3. Increase the number of variables available for plotting. 
+  # How would you do this without 'hardcoding' in the characters?
+  # Hint: you can feed 'choices' a character vector from colnames(dat). 
+  # Make sure to subset it for only the variables you want to be able to plot!
+  
+  # Super challenge 4. Can you also create a 'selectInput' option for circle radius size?
+  
+  # Super challenge 5. Subset for only the 30 genes you're getting
+  # Then add in data for the 20 psychrophiles and thermophiles!
+  # You might want to do this in a normal R script first
+  # Then later render it in flexdashboard.
+  # Change the sidebar text to describe the data accordingly 
+  
+})
+```
+
+New Tab
+=====================================
+Inputs {.sidebar data-width=350}
+----------------------------------------------------------------------
+blah
