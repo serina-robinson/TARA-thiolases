@@ -2,7 +2,7 @@
 title: "OleABCD hydrocarbons in the oceans"
 output:
   flexdashboard::flex_dashboard:
-  theme: cosmo
+  theme: sandstone
 vertical_layout: fill
 runtime: shiny
 ---
@@ -28,18 +28,23 @@ dat <- read_csv("../../data/TARA_tree_annotation_df.csv")
 dat <- data.frame(dat) # This is a weird conversion required from a tibble to a data frame
 ```
 
-Sampling Map
+Sampling Map {data-icon="fa-star"}
 =====================================
 Inputs {.sidebar data-width=350}
 ----------------------------------------------------------------------
 
 ```{r}
+choicesvec <- dat %>% 
+            select_if(is.numeric)
 selectInput(inputId = "color_env", 
             label = "Color points by:", 
-            choices = c("temperature", "oxygen", "depth_m"),
+            choices = colnames(choicesvec),
             selected = "temperature")
 
-
+selectInput(inputId = "depth_env", 
+            label = "Change radius of points by:", 
+            choices = colnames(choicesvec),
+            selected = "depth_m")
 ```
 
 This world map shows the sampling locations of TARA Oceans MAGs that have OleA[B]CD genes colored by their features.
@@ -111,8 +116,13 @@ renderLeaflet({
 })
 ```
 
-New Tab
-=====================================
-Inputs {.sidebar data-width=350}
-----------------------------------------------------------------------
+Blah {data-icon="fa-hashtag"}
+===============================================
 blah
+
+```{r}
+plot(2,5)
+
+```
+
+blah blah blah
