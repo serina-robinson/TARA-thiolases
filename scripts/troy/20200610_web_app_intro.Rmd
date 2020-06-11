@@ -1,5 +1,5 @@
 ---
-title: "OleABCD hydrcarbons in the oceans"
+title: "OleABCD hydrocarbons in the oceans"
 output:
   flexdashboard::flex_dashboard:
   theme: cosmo

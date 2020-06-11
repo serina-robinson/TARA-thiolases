@@ -19,13 +19,10 @@ dim(dat2)
 
 # select(dat, -lat, -lon)
 # Add the 'content' for pop-up text
-content <- paste("Genus:", dat2$genus, "<br>",
-                 "Family:", dat2$family, "<br>",
-                 "Order:", dat2$order, "<br>",
-                 "Class:", dat2$class, "<br>",
-                 "Phylum:", dat2$phylum, "<br>",
-                 "Temperature:", round(dat2$temperature, 1), "<br>",
-                 "Depth:", dat2$depth_m, "meters")
+content <- paste("Genus:", full50$genus, "<br>",
+                 "Strain:", full50$genome.x, "<br>",
+                 "Temperature:", round(full50$temperature, 1), "<br>",
+                 "Depth:", full50$depth_m, "meters")
 class(content)
 # Set the custom color palette
 pal <- colorNumeric(
@@ -37,15 +34,15 @@ pal <- colorNumeric(
   domain = dat$temperature)
 
 # Make an interactive map!
-leaflet(data = dat2) %>%
+leaflet(data = full50) %>%
   addProviderTiles(providers$Stamen.Terrain) %>% 
   #  addProviderTiles(providers$OpenStreetMap.Mapnik) %>% # example of changing the map style
   # you can find the names of different map tiles here: 
   # http://leaflet-extras.github.io/leaflet-providers/preview/
-  addCircleMarkers(lng = ~lon_jitter, 
-                   lat = ~lat_jitter, 
+  addCircleMarkers(lng = ~lon, 
+                   lat = ~lat, 
                    popup = content,
-                   radius = ~ log(as.numeric(depth_m)),      
+                   radius = 4,      
                    fillOpacity = 0.5, 
                    stroke = FALSE,
                    color = ~pal(temperature))
@@ -73,3 +70,11 @@ leaflet(data = dat2) %>%
 
 # Super challenge 8: Can you also plot the locations of your thermophiles and psychrophiles? 
 # (This is part of the long-term goal for the week so no need to accomplish today)
+PTM <- read_csv("data/Psychrophiles_Thermophiles_Mesophiles.csv")
+dim(PTM)
+view(PTM)
+full50 <- full_join(dat2, PTM)
+dim(full50)
+view(full50)
+jitter_latlong(coord, type = c("lat", "long"), latitude, km = 50)
+?jitter_latlong
