@@ -118,3 +118,86 @@ filter(surveys, year == 1995)
 surveys %>% 
   filter(year < 1995) %>% 
   select(year, sex, weight)
+surveys %>% 
+  filter(!is.na(weight)) %>% 
+  mutate(weight_kg = weight/1000,
+                   weight_lb = weight_kg*2.2) %>% head()
+newdf <- surveys %>% 
+  filter(!is.na(hindfoot_length)) %>% 
+  mutate(hindfoot_half = hindfoot_length/2) %>% 
+  filter(hindfoot_half < 30) %>% 
+  select(species_id, hindfoot_half)
+newdf
+
+surveys %>% 
+  filter(!is.na(weight)) %>% 
+  group_by(sex, species_id) %>% 
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight)) %>% 
+  arrange(desc(mean_weight))
+
+surveys %>% 
+  count(sex) ==
+  surveys %>% 
+  group_by(sex) %>% 
+  summarise(count = n())
+surveys %>% 
+  count(sex, species) %>% 
+  arrange(species, n)
+surveys %>% 
+  count(plot_type)
+?n
+surveys %>% 
+  filter(!is.na(hindfoot_length)) %>% 
+  group_by(species_id) %>% 
+  summarize(min = min(hindfoot_length),
+            max = max(hindfoot_length),
+            mean = mean(hindfoot_length),
+            n = n())
+surveys %>% 
+  filter(!is.na(weight)) %>% 
+  group_by(year) %>%
+  filter(weight == max(weight)) %>% 
+  select(year, genus, species_id, weight) %>% 
+  arrange(year)
+  
+surveys_gw <- surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(genus, plot_id) %>%
+  summarize(mean_weight = mean(weight))
+
+str(surveys_gw)  
+  
+surveys_spread <- surveys_gw %>%
+  spread(key = genus, value = mean_weight, fill = 0) %>% 
+  head()
+str(surveys_spread)
+
+abc <- surveys %>% 
+  group_by(plot_id, year) %>% 
+  summarize(n_genera = n_distinct(genus)) %>% 
+  spread(year, n_genera) %>% 
+  head()
+
+abc %>% 
+  gather(key = year, value = n_genera, -plot_id)
+
+def <- surveys %>% 
+  gather(measurement, value, hindfoot_length, weight)
+def  
+?gather
+def %>%
+  group_by(year, measurement, plot_type) %>%
+  summarize(mean_value = mean(value, na.rm=TRUE)) %>%
+  spread(measurement, mean_value)
+surveys_complete <- surveys %>% 
+  filter(!is.na(weight), 
+         !is.na(hindfoot_length), 
+         !is.na(sex))
+species_counts <- surveys_complete %>% 
+  count(species_id) %>% 
+  filter(n >= 50)
+surveys_complete <- surveys_complete %>% 
+  filter(species_id %in% species_counts$species_id)
+dim(surveys_complete)
+write_csv(surveys_complete, "data/tutorials/surveys_complete.csv")
