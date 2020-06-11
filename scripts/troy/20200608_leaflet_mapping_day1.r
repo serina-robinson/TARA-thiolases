@@ -17,6 +17,15 @@ dat[218,1] <- gsub("-","_", dat[218,1])
 dat2 <- dat[dat$label %in% names(tara),]
 dim(dat2)
 
+PTM <- read_csv("data/Psychrophiles_Thermophiles_Mesophiles.csv")
+dim(PTM)
+view(PTM)
+full50 <- full_join(dat2, PTM)
+dim(full50)
+view(full50)
+
+write_csv(full50, "data/full50_raw")
+
 # select(dat, -lat, -lon)
 # Add the 'content' for pop-up text
 content <- paste("Genus:", full50$genus, "<br>",
@@ -32,9 +41,18 @@ pal <- colorNumeric(
   na.color = "gray70",
   reverse = TRUE,
   domain = dat$temperature)
-
+ # rad <- ifelse(is.na(full50[,"depth_m"]), 2, log(full50$depth_m))
+rad
+new <- full50 %>% 
+  mutate(rad = case_when((log(depth_m) < 3) ~ 3,
+                         !is.na(depth_m) ~ log(depth_m),
+                         TRUE ~ 3))
+new$rad
+view(new)
+?ifelse
+?case_when
 # Make an interactive map!
-leaflet(data = full50) %>%
+leaflet(data = new) %>%
   addProviderTiles(providers$Stamen.Terrain) %>% 
   #  addProviderTiles(providers$OpenStreetMap.Mapnik) %>% # example of changing the map style
   # you can find the names of different map tiles here: 
@@ -42,11 +60,11 @@ leaflet(data = full50) %>%
   addCircleMarkers(lng = ~lon, 
                    lat = ~lat, 
                    popup = content,
-                   radius = 4,      
+                   radius = new$rad,      
                    fillOpacity = 0.5, 
                    stroke = FALSE,
                    color = ~pal(temperature))
-?log
+
 # Challenge 1. Change the map style to a physical world map rather than just country outlines
 
 # Challenge 2. Change the point coloring to be a different variable than temperature 
@@ -70,11 +88,6 @@ leaflet(data = full50) %>%
 
 # Super challenge 8: Can you also plot the locations of your thermophiles and psychrophiles? 
 # (This is part of the long-term goal for the week so no need to accomplish today)
-PTM <- read_csv("data/Psychrophiles_Thermophiles_Mesophiles.csv")
-dim(PTM)
-view(PTM)
-full50 <- full_join(dat2, PTM)
-dim(full50)
-view(full50)
+
 jitter_latlong(coord, type = c("lat", "long"), latitude, km = 50)
 ?jitter_latlong

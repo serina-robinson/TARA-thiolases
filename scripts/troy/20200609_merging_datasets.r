@@ -183,9 +183,11 @@ abc %>%
   gather(key = year, value = n_genera, -plot_id)
 
 def <- surveys %>% 
-  gather(measurement, value, hindfoot_length, weight)
-def  
+  gather(measurement, value, hindfoot_length, weight, year) %>% 
+  filter(measurement == "year")
+view(def)  
 ?gather
+
 def %>%
   group_by(year, measurement, plot_type) %>%
   summarize(mean_value = mean(value, na.rm=TRUE)) %>%
