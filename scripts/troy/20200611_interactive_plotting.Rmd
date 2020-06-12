@@ -46,10 +46,11 @@ Inputs {.sidebar data-width=350}
 ```{r}
 choicesvec <- dat %>% 
             select_if(is.numeric)
-# selectInput(inputId = "I0", 
-#            label = "Dataset:", 
-#            choices = c("dat", "full50"),
-#           selected = "dat")
+ # selectInput(inputId = "I0", 
+ #            label = "Dataset:", 
+ #           choices = #c("50 sequences")
+ #           c("Full Dataset" = "../../data/TARA_tree_annotation_df.csv") 
+ # )
 selectInput(inputId = "I1", 
             label = "Plot x-axis by:", 
             choices = colnames(choicesvec),
@@ -69,9 +70,10 @@ Column {.tabset}
 ```{r }
 
 renderPlotly({
-
+ # dat2 <- read_csv(input$I0)
 fig1 <- plot_ly(dat, x = ~dat[,input$I1], y = ~dat[,input$I2], color = ~dat[,input$I3], type = "scatter") %>%
   layout(yaxis = list(title = " "), xaxis = list(title = " "))
+  # add_trace()
 
   # This is a great resource for all things R and plotly 
   # https://plotly.com/r/
@@ -188,13 +190,13 @@ renderLeaflet({
         domain = dat[ ,colnames(dat) == input$I10])
   }
   
-  new <- dat %>% 
-    # make new column from the input so we can use that column from here on instead
-    
-    mutate(rad = case_when((log(depth_m) < 3) ~ 3,
-                           (log(depth_m) > 7) ~ 7,
-                         !is.na(depth_m) ~ log(depth_m),
-                         TRUE ~ 3)) 
+# #  new <- dat %>% 
+#     # make new column from the input so we can use that column from here on instead
+#     
+#  #   mutate(rad = case_when((log(depth_m) < 3) ~ 3,
+#                            (log(depth_m) > 7) ~ 7,
+#                          !is.na(depth_m) ~ log(depth_m),
+#                          TRUE ~ 3)) 
     
   content <- paste("Genus:", dat$genus, "<br>",
                     "Family:", dat$family, "<br>",
@@ -205,7 +207,7 @@ renderLeaflet({
       addProviderTiles(providers$Esri.WorldPhysical) %>%
       addCircleMarkers(lng = ~lon, lat = ~lat,
         popup = content,
-        radius = new$rad,      
+        radius = log(dat[,colnames(dat) == input$I11]),      
         fillOpacity = 0.5, 
         stroke = FALSE,
         color = ~pal(dat[ ,colnames(dat) == input$I10]))
