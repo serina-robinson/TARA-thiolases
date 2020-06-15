@@ -75,35 +75,6 @@ fig1 <- plot_ly(dat, x = ~dat[,input$I1], y = ~dat[,input$I2], color = ~dat[,inp
   layout(yaxis = list(title = " "), xaxis = list(title = " "))
   # add_trace()
 
-  # This is a great resource for all things R and plotly 
-  # https://plotly.com/r/
-
-  # Challenge 1. Repeat from yesterday: 
-  # increase the number of variables available for plotting. 
-  # beyond just oxygen, temperature, and depth_m
-
-  # Challenge 2. Can you also create a 'selectInput' option for the boxplot y-axis 
-  # (currently polar/nonpolar)?
-
-  # Challenge 3. Add either another tab or panel to your flexdashboard with another 
-  # plotly plot with a different type e.g. "scatter" or "bar"
-
-  ###### Challenge 4. Change the hover text formatting to only display numbers to 1 decimal place
-  # Hint: the function 'round' will be helpful
-  # https://plotly.com/r/hover-text-and-formatting/
-
-  ######### Challenge 5. Remove NAs so they don't mess-up your plots...
-  # any thoughts on how to do this dynamically for each different input variable?
- 
-  # Challenge 6. Add a new tab/page with your leaflet map from yesterday
-
-  # Challenge 7. Include psychrophile and thermophile data! 
-  # Plot them both on the map and with plotly. 
-
-  # Challenge 8.
-  # Make an interactive boxplot to look at the differences in 
-  # temperature distribution for psychrophiles, thermophiles, and mesophiles
-  
 })
 ```
 

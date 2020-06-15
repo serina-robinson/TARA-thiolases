@@ -54,12 +54,12 @@ jitter_latlong <- Vectorize(jitter_latlong,
 #'
 #' @export
 # Helper function
-length_of_degree <- function(degree, type = c("lat", "long")) {
-  type <- match.arg(type)
-  length_at_equator <- 110.5742727 # in kilometers
-  if (type == "long") {
-    cos(degree * (2 * pi) / 360) * length_at_equator
-  } else if (type == "lat") {
+length_of_degree <- function(degree, type = c("lat", "long")) { # making a function that depends on degree and type 
+  type <- match.arg(type) #making sure your input gets correctly sorted at lat or long again?
+  length_at_equator <- 110.5742727 # in kilometers /// specifying how long 1 degree at the equator is
+  if (type == "long") { # if degree is a longitude then we need to convert it
+    cos(degree * (2 * pi) / 360) * length_at_equator # convert the degrees to radians and take the cos to do something
+  } else if (type == "lat") { # if degree is a latitude then leave it be
     length_at_equator
   }
 }
@@ -92,19 +92,22 @@ length_of_degree <- function(degree, type = c("lat", "long")) {
 # This documentation will be helpful:
 # https://rdrr.io/github/lmullen/mullenMisc/man/jitter_latlong.html
 
-full50 %>% 
+full50_1 <- full50 %>% 
   mutate(lon_jitter = jitter_latlong(full50$lon, type = "long", latitude = full50$lat, km = 50),
          lat_jitter = jitter_latlong(full50$lat, type = "lat", km = 50))
-# Why doesn't this work?
-view(full50)
-select(full50, lon_jitter, lat_jitter)
-?mutate
+# Why does it jitter them all the same?
+
+select(full50_1, lon_jitter, lat_jitter) %>% 
+  view()
+
+write_csv(full50_1, "data/full50_1.csv")
 
 ### to do:
 # challenges 4 and 5
 # fix the mutate thing ^
 # read article and take notes on figures
 # finish comments on rows for helper function
+# remove NAs dynamically
 
 # Challenge 4. Now plot your jittered lat and long coordinates in leaflet! 
 # Add it your flexdashboard
