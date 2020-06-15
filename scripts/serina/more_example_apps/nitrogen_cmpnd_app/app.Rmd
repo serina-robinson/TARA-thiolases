@@ -1,0 +1,270 @@
+---
+title: "Urea Fate & Degradation Database"
+output:
+  flexdashboard::flex_dashboard:
+    theme: cosmo
+    vertical_layout: fill
+    logo: www/tractor_resized.png
+    favicon: www/tractor_resized.png
+    social: menu
+    css: styles.css
+runtime: shiny
+---
+```{r setup, include=FALSE}
+library("xtable")
+library("data.table")
+library("shiny")
+library("readxl")
+```
+
+
+```{r global}
+## Read in the datasets
+## This is the chemical compound dataset
+tab <- read_excel("data/Compounds_complete.xlsx", sheet = 1)
+colnames(tab)[1:8] <- c("Compound", "Formula", "MW", "SMILES", "Synonyms", "CAS", "imgurl", "rxnurl")
+```
+
+Home
+=====================================
+Column {.sidebar}
+-----------------------------------------------------------------------
+***
+***
+***
+**Welcome to the Urea Fate & Degradation Database**
+<br>
+<br>
+**Our Mission:**
+<br>
+*Understanding the fate and effects of urea compounds on plants and microbes in soil*
+<br>
+<br>
+Urea and substituted urea compounds are now the major nitrogen-based fertilizers applied in agricultural systems.  The global demand for urea is predicted to reach 1.87 x 10e11 kg by 2021 (International Fertilizer Association, 2017) and recent findings suggest substituted urea formulations can increase productivity and decrease environmental impacts. 
+<br>
+<br>
+The Urea Fate & Degradation Database is a web app to explore pathways for the biodegradation urea-type compounds in soil. This site is maintained by [Dr. Larry Wackett’s lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota. We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradataion Database was designed in collaboration with Hamline University.
+<br>
+<br>
+Last updated: July 8, 2018
+
+Column
+-----------------------------------------------------------------------
+```{r, out.width = "100%"}
+knitr::include_graphics("www/nitrogen-fertilizer-global.jpg")
+```
+
+Resources
+===================================== 
+Column {.sidebar}
+-----------------------------------------------------------------------
+***
+***
+***
+**Welcome to the Urea Fate & Degradation Database**
+<br>
+<br>
+***
+***
+Urea and substituted urea compounds are now the major nitrogen-based fertilizers applied in agricultural systems.  The global demand for urea is predicted to reach 1.87 x 10e11 kg by 2021 (International Fertilizer Association, 2017) and recent findings suggest substituted urea formulations can increase productivity and decrease environmental impacts. 
+<br>
+<br>
+The Urea Fate & Degradation Database is a web app to explore pathways for the biodegradation urea-type compounds in soil. This site is maintained by [Dr. Larry Wackett’s lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota. We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradataion Database was designed in collaboration with Hamline University.
+<br>
+<br>
+Last updated: July 8, 2018
+
+Inputs
+-----------------------------------------------------------------------
+<br>
+<br>
+**Web Resources**
+
+* [International Fertilizer Association](https://www.fertilizer.org/statistics)
+
+* [Urea Fertilizer – University of Minnesota Extension](https://extension.umn.edu/nitrogen/fertilizer-urea)
+
+* [Nutrient Loss Database for Agricultural Fields and Forests in the United States](https://www.ars.usda.gov/plains-area/temple-tx/grassland-soil-and-water-research-laboratory/docs/manage-nutrient-loss-database/)
+
+* [USDA – Fertilizer Use in the United States](https://www.ers.usda.gov/data-products/fertilizer-use-and-price.aspx)
+
+**Scientific Publications**
+
+1. Robinson SL, Badalamenti JP, Dodge AG, Tassoulas LJ, Wackett LP. [**Microbial biodegradation of biuret: defining biuret hydrolases within the isochorismatase superfamily.**](https://onlinelibrary.wiley.com/doi/abs/10.1111/1462-2920.14094) *Environmental microbiology.* 2018 Mar 12.
+
+Database
+===================================== 
+***
+***
+
+Inputs {.sidebar}
+-----------------------------------------------------------------------
+<br>
+<br>
+
+```{r}
+
+      selectizeInput("compound", "Search by compound name:",
+                    choices = c(sort(tab$Compound)),
+                     selected = NULL, multiple = TRUE
+      )
+      
+      textInput("search", label = "Search by keyword:",
+                value = 'e.g. Biuret'
+      )
+ 
+```
+
+Outputs
+-----------------------------------------------------------------------
+```{r}   
+ renderTable({
+      srch <- tab[grep(input$search, tab$Compound),]
+      cmpd <- tab[tab$Compound %in% input$compound,]
+      out <- data.frame(rbind(cmpd, srch))
+      dedup <- out[!duplicated(out),]
+      return(xtable(dedup[,1:5]))
+
+    })
+```   
+
+Pathways
+=====================================
+<br>
+<br>
+<br>
+<br>
+    
+Column {.sidebar}
+-----------------------------------------------------------------------
+<br>
+<br>
+    
+
+Click on a compound to see its reaction(s):
+
+Urea
+```{r, out.width = "250px"} 
+    tags$button(
+        id = "Urea",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Urea"],
+                 height = "50px")
+      )
+```
+<br>
+
+Allophanate
+```{r} 
+  tags$button(
+        id = "Allophanate",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Allophanate"],
+                 height = "50px")
+      )
+```
+
+<br>
+Cyanamide   
+```{r}
+    tags$button(
+        id = "Cyanamide",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Cyanamide"],
+                 height = "20px")
+      )  
+```
+<br>
+Biuret
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Biuret",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Biuret"],
+                 height = "50px")
+      )   
+```
+<br>
+Cyanuric acid
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Cyanuric_acid",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Cyanuric acid"],
+                 height = "50px")
+      )
+
+```
+
+Column {.bgwhite}
+-----------------------------------------------------------------------
+```{r, out.width = "250px"}   
+
+rv <- reactiveValues(img = 'www/np_dwnloads/white.png') # If nothing is activated, then just a white box
+
+  observeEvent(input$Urea, {
+    rv$img <- paste0("www/Urea.gif")
+  })
+  
+  observeEvent(input$Cyanuric_acid, {
+    # Table
+    rv$img <- paste0("www/Cyanuric acid.gif")
+  })
+
+  observeEvent(input$Cyanamide, {
+    # Table
+    rv$img <- paste0("www/Cyanamide.gif")
+  })
+  
+    observeEvent(input$Biuret, {
+    # Table
+    rv$img <- paste0("www/Biuret.gif")
+  })
+  
+    observeEvent(input$Allophanate, {
+    # Table
+    rv$img <- paste0("www/Allophanate.gif")
+  })
+    
+  output$img <- renderImage({
+   list(src = rv$img)
+}, deleteFile = FALSE)
+  
+  
+imageOutput("img")
+```  
+
+Acknowledgements
+=====================================
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+<br>
+<br>
+<br>
+This site is maintained by [Dr. Larry Wackett's lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota. 
+<br>
+<br>
+We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradation Database was designed in collaboration with Hamline University. 
+
+Column {.bgwhite}
+-----------------------------------------------------------------------
+<br>
+<br>
+<br>
+```{r, out.width = "25%"}
+knitr::include_graphics("www/umlogo.png")
+```
+<br>
+```{r, out.width = "25%"}
+knitr::include_graphics("www/bti.gif")
+```
+<br>
+<br>
+```{r, out.width = "25%"}
+knitr::include_graphics("www/ione.png")
+```
+<br>
+```{r, out.width = "25%"}
+knitr::include_graphics("www/hamline.png")
+```

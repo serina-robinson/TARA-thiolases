@@ -1,0 +1,29 @@
+Natural_product,Synonyms,Year_discovered,Bioactivity,Medicinal_properties,GenBank_accession,MiBIG_accession,Biosynthesis,Organism,Reference,Url
+Anisatin,NA,1952,Neurotoxin,GABA inhibitor,NA,NA,Unknown,Illicium anisatum,Lane et al. 1952,NA
+Belactin,NA,1995,Anticancer,Serine carboxypeptidase inhibitor,NA,NA,Unknown,Saccharopolyspora sp. MK19-42F6,Zhao et al. 2013,NA
+Belactosin,NA,2000,Anticancer,Binds covalently to 26S proteasome beta-subunit,KY249118,NA,Amide ligase ,Streptomyces sp. UCK 14,Asai et al. 2000,NA
+Cinnabaramide,NA,2007,Anticancer,"Binds to the 20S proteasome core particle, induces cell cycle arrest and programmed cell death ",FR687018,BGC0000971,hybrid PK-NRPS,Streptomyces sp. JS360,Stadler et al. 2007,NA
+Cystargolide,NA,2015,Anticancer,Binds covalently to 26S proteasome beta-subunit,KY249117,NA,Amide ligase ,Kitasatospora cystarginea NRRL B16505,Gill et al. 2015,NA
+Ebelactone,NA,1980,"Antibiotic",Esterase inhibitor,KC894072,BGC0000051,PKS,Kitasatospora aburaviensis,Umezawa et al. 1980,NA
+Esterastin,NA,1978,Antiobesity,Pancreatic lipase inhibitor,NA,NA,Unknown,Streptomyces lavendulae MD4-C1,Umezawa et al. 1978,NA
+Grazieololide,NA,1981,NA,NA,NA,NA,NA,Grazielia,Bohlmann et al. 1981,https://www.sciencedirect.com/science/article/abs/pii/0031942281830294
+Guaiagrazielolide,NA,1983,NA,NA,NA,NA,NA,Campovassouria,Bohlmann et al. 1983,https://www.sciencedirect.com/science/article/abs/pii/S0031942200977173
+Hymeglusin,NA,1970,Antibiotic,inhibitor of eukaryotic hydroxymethylglutaryl-CoA synthase (HMGCS),NA,NA,Unknown,Scopulariopsis sp. Fusarium sp.,Aldridge et al. 1970,NA
+Lajollamycin B,NA,2004,"Anticancer, Antibiotic",Inhibited growth of Gram-positive bacteria and B16-F10 tumor cells in vitro,NA,NA,Unknown,Streptomyces nodosus,Manam et al. 2005,NA
+(-)-Lipstatin,Xenical; Alli,1986,"Antiobesity, Anticancer",Pancreatic lipase inhibitor,KJ872771,BGC0000382,Fatty-acid/NRPS,"Streptomyces toxytricini, Streptomyces virginiae",Bai et al. 2014,NA
+Lupeolactone,NA,1983,NA,NA,NA,NA,Terpenoid,Antidesma pentandrum Merr.,Kikuchi et al. 1983,http://www.journal.csj.jp/doi/pdf/10.1246/cl.1983.603
+Nocardiolactone,NA,1999,Antibiotic,Narrow-spectrum antibiotic against gram-positive bacteria,NA,NA,Unkonwn,Nocardia brasiliensis,Mikami et al. 1999,NA
+Obafluorin,NA,1984,Antibiotic,Broad-spectrum antibacterial and antifungal agent,KX134682-KX134695,NA,NRPS,Pseudomonas fluorescens ATCC 39502,Wells et al. 1984; Schaffer et al. 2017,zs
+Omuralide,clasto-lactacystin,1991,Anticancer,Proteosome inhibitor,NA,NA,hybrid PK-NRPS,Streptomyces lactacystinaeus OM-6519.,Omura et al. 1991,NA
+Ostalactone,NA,2016,Antiobesity,Pancreatic lipase inhibitor,NA,NA,Unknown,Stereum ostrea,Kang et al. 2016,NA
+Oxazolomycin,NA,1985,"Antibiotic, Antitumor, Antivirus, Ionophore",Cytotoxic to leukemia cell line (P-388) and gram-positive bacteria,EF552687,BGC0001106,hybrid PK-NRPS,Streptomyces albus,Mori et al. 1985; Ogura et al. 1985; Otani et al. 2000,NA
+Percyquinnin,NA,2001,Antiobesity,Pancreatic lipase inhibitor,NA,NA,Unknown ,Stereum complicatum ,Hoppman et al. 2001,NA
+Papulinone,NA,1990,NA,Phytotoxin,NA,NA,Unknown,Pseudomonas syringae pv. papulans,Evidente et al. 1990,NA
+Papyriogenin,NA,1978,NA,NA,NA,NA,Terpenoid,Tetrapanax,Ogihara et al. 1978,NA
+Salinosporamide,Marizomib,2003,"Anticancer, Antibiotic","Binds to the 20S proteasome core particle, induces cell cycle arrest and programmed cell death ",EF397502,BGC0001041,hybrid PK-NRPS,"Salinispora tropica CNB-440, Salinospora pacifica CNT-113",Feling et al. 2003,NA
+Spongiolactone,NA,1987,Anticancer,Cytotoxic to leukemia (K562) cell line,NA,NA,Unknown,Spongionella,Mayol et al. 1987,NA
+SQ-26517,NA,1982,NA,Poor antibacterial activity,NA,NA,Unknown,Bacillus licheniformis,Parker et al. 1982,NA
+Valilactone,NA,1987,Antiobesity,Esterase inhibitor,NA,NA,Unknown,"Streptomyces sp. MG147- CF2, closely related to Streptomyces albolongus",Itaka et al. 1987,NA
+Vibralactone,NA,2006,Antiobesity,Pancreatic lipase inhibitor,NA,NA,Shikimate,Boreostereum vibrans ,Liu et al. 2006,NA
+Vittatalactone,NA,2005,Pheromone,Male beetle sex pheromone,NA,NA,Unknown,Acalymma vittatum (striped cucumber beetle),Morris et al. 2005,NA
+3'-norspongiolactone,NA,2009,Anticancer,Cytotoxic to leukemia (K562) cell line,NA,NA,Unknown,Spongionella,Rateb et al. 2009,NA

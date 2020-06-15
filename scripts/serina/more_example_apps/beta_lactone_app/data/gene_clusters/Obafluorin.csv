@@ -1,0 +1,15 @@
+name,start,end,strand,col,fill,lty,lwd,pch,cex,gene_type,x,y
+isochorismate synthase  ,10,472,1,#A6CEE3,#A6CEE3,1,1,8,1,headless_arrows,0.038412496,0.4
+ DAHP synthase  ,482,840,1,#3385BB,#3385BB,1,1,8,1,headless_arrows,0.105355435,0.4
+2-3-dihydroxybenzoic acid-2-3-dehydrogenase  ,850,1107,1,#84BF96,#84BF96,1,1,8,1,headless_arrows,0.155961109,0.4
+ aryl carrier protein  ,1117,1206,1,#6DBD57,#6DBD57,1,1,8,1,headless_arrows,0.185129104,0.4
+ isochorismatase  ,1216,1431,1,#7F9D55,#7F9D55,1,1,8,1,headless_arrows,0.210949952,0.4
+ non-ribosomal peptide synthetase  ,1441,3352,1,#F57C7C,#F57C7C,1,1,8,1,headless_arrows,0.381973223,0.4
+ pyruvate decarboxylase  ,3362,3930,1,#E42622,#E42622,1,1,8,1,headless_arrows,0.581128467,0.4
+ threonine aldolase  ,3940,4381,1,#FBB268,#FBB268,1,1,8,1,headless_arrows,0.663133567,0.4
+ chorismate mutase/dehydratase  ,4391,4812,1,#FE8D19,#FE8D19,1,1,8,1,headless_arrows,0.733423653,0.4
+ p-aminobenzoate synthase  ,4822,5309,1,#DE9E83,#DE9E83,1,1,8,1,headless_arrows,0.807379662,0.4
+ 4-amino-4-deoxychorismate  ,5319,5519,1,#9D7BBA,#9D7BBA,1,1,8,1,headless_arrows,0.863723303,0.4
+ p-aminobenzoate N-oxygenase  ,5529,5846,1,#977899,#977899,1,1,8,1,headless_arrows,0.906518967,0.4
+ autoinducer synthesis protein  ,5856,6026,1,#F3E587,#F3E587,1,1,8,1,headless_arrows,0.946923813,0.4
+ quorum-sensing control repressor  ,6036,6274,1,#B15928,#B15928,1,1,8,1,headless_arrows,0.981032834,0.4

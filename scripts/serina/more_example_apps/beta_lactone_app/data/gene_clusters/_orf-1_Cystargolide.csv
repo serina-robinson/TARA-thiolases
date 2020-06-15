@@ -1,0 +1,11 @@
+name,start,end,strand,col,fill,lty,lwd,pch,cex,gene_type,x,y
+_orf-1_Cystargolide,10,286,1,#A6CEE3,#A6CEE3,1,1,8,1,headless_arrows,0.0391534391534392,0.4
+_cysA_Cystargolide,296,847,1,#3F8EAA,#3F8EAA,1,1,8,1,headless_arrows,0.151190476190476,0.4
+_cysB_Cystargolide,857,1337,1,#79C360,#79C360,1,1,8,1,headless_arrows,0.29021164021164,0.4
+_cysC_Cystargolide,1347,1740,1,#B89B74,#B89B74,1,1,8,1,headless_arrows,0.408333333333333,0.4
+_cysD_Cystargolide,1750,2084,1,#E52829,#E52829,1,1,8,1,headless_arrows,0.507142857142857,0.4
+_cysE_Cystargolide,2094,2366,1,#FDB762,#FDB762,1,1,8,1,headless_arrows,0.58994708994709,0.4
+_cysF_Cystargolide,2376,2868,1,#ED8F47,#ED8F47,1,1,8,1,headless_arrows,0.693650793650794,0.4
+_cysG_Cystargolide,2878,3107,1,#9471B4,#9471B4,1,1,8,1,headless_arrows,0.791666666666667,0.4
+_cysH_Cystargolide,3117,3427,1,#DDD399,#DDD399,1,1,8,1,headless_arrows,0.865608465608466,0.4
+_orf+1_Cystargolide,3437,3780,1,#B15928,#B15928,1,1,8,1,headless_arrows,0.95462962962963,0.4

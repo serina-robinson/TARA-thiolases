@@ -1,0 +1,11 @@
+name,start,end,strand,col,fill,lty,lwd,pch,cex,gene_type,x,y
+PKS_EbeA,10,1006,1,#A6CEE3,#A6CEE3,1,1,8,1,headless_arrows,0.042011247,0.4
+PKS_EbeB,1016,3221,1,#3F8EAA,#3F8EAA,1,1,8,1,headless_arrows,0.175198478,0.4
+PKS_EbeC,3231,4818,1,#79C360,#79C360,1,1,8,1,headless_arrows,0.332823354,0.4
+PKS_EbeD,4828,5546,1,#B89B74,#B89B74,1,1,8,1,headless_arrows,0.428961297,0.4
+PKS_EbeE,5556,6266,1,#E52829,#E52829,1,1,8,1,headless_arrows,0.488835594,0.4
+PKS_EbeF,6276,8746,1,#FDB762,#FDB762,1,1,8,1,headless_arrows,0.621154482,0.4
+PKS_EbeG,8756,10935,1,#ED8F47,#ED8F47,1,1,8,1,headless_arrows,0.814216011,0.4
+Adenylation_domain_Orf1,10945,11511,1,#9471B4,#9471B4,1,1,8,1,headless_arrows,0.9285478,0.4
+Reductase_Orf2,11521,11813,1,#DDD399,#DDD399,1,1,8,1,headless_arrows,0.964852795,0.4
+Hypothetical_protein_Orf3,11823,12092,1,#B15928,#B15928,1,1,8,1,headless_arrows,0.988876943,0.4

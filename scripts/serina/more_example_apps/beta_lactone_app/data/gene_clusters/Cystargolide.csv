@@ -1,0 +1,11 @@
+name,start,end,strand,col,fill,lty,lwd,pch,cex,gene_type,x,y
+alpha/beta hydrolase,10,286,1,#A6CEE3,#A6CEE3,1,1,8,1,headless_arrows,0.039153439,0.4
+2-IPM synthase,296,847,1,#3F8EAA,#3F8EAA,1,1,8,1,headless_arrows,0.151190476,0.4
+MFS transporter,857,1337,1,#79C360,#79C360,1,1,8,1,headless_arrows,0.29021164,0.4
+AMP-dependent synthetase,1347,1740,1,#B89B74,#B89B74,1,1,8,1,headless_arrows,0.408333333,0.4
+ATP-dependent carboxylate-methylesterase,1750,2084,1,#E52829,#E52829,1,1,8,1,headless_arrows,0.507142857,0.4
+AMP-dependent synthetase,2094,2366,1,#FDB762,#FDB762,1,1,8,1,headless_arrows,0.58994709,0.4
+SAM-dependent,2376,2868,1,#ED8F47,#ED8F47,1,1,8,1,headless_arrows,0.693650794,0.4
+LysR family TR,2878,3107,1,#9471B4,#9471B4,1,1,8,1,headless_arrows,0.791666667,0.4
+unknown function,3117,3427,1,#DDD399,#DDD399,1,1,8,1,headless_arrows,0.865608466,0.4
+unknown function,3437,3780,1,#B15928,#B15928,1,1,8,1,headless_arrows,0.95462963,0.4

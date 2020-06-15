@@ -1,0 +1,32 @@
+name,start,end,strand,col,fill,lty,lwd,pch,cex,gene type,x,y
+ Methyltransferase type 11 ,10,429,1,#A6CEE3,#A6CEE3,1,1,8,1,headless arrows,0.017513764,0.4
+ hypothetical protein ,439,891,1,#74AED1,#74AED1,1,1,8,1,headless arrows,0.053059922,0.4
+ hypothetical protein ,901,1012,1,#438EC0,#438EC0,1,1,8,1,headless arrows,0.076318519,0.4
+ 20S proteasome  A and B subunits ,1022,1305,1,#2D82AF,#2D82AF,1,1,8,1,headless arrows,0.092834916,0.4
+ dihydroxyacid dehydratase ,1315,1908,1,#63A8A0,#63A8A0,1,1,8,1,headless arrows,0.128580547,0.4
+ crotonyl-CoA reductase ,1918,2379,1,#99CD91,#99CD91,1,1,8,1,headless arrows,0.171427432,0.4
+ alpha/beta hydrolase fold ,2389,2676,1,#98D277,#98D277,1,1,8,1,headless arrows,0.202066544,0.4
+ MbtH domain protein ,2686,2761,1,#6ABB54,#6ABB54,1,1,8,1,headless arrows,0.217306311,0.4
+ cytochrome P450 ,2771,3197,1,#3BA432,#3BA432,1,1,8,1,headless arrows,0.238091439,0.4
+ Erythronolide synthase ,3207,3805,1,#6E9E4C,#6E9E4C,1,1,8,1,headless arrows,0.279741482,0.4
+ amino acid adenylation domain ,3815,4448,1,#B89B74,#B89B74,1,1,8,1,headless arrows,0.329649725,0.4
+ beta-ketoacyl synthase ,4458,6512,1,#FA9594,#FA9594,1,1,8,1,headless arrows,0.437644618,0.4
+ hypothetical protein ,6522,6804,1,#F16667,#F16667,1,1,8,1,headless arrows,0.53163648,0.4
+ protein of unknown function DUF62 ,6814,7098,1,#E83739,#E83739,1,1,8,1,headless arrows,0.555014761,0.4
+ short-chain dehydrogenase/reductase SDR ,7108,7364,1,#E62F27,#E62F27,1,1,8,1,headless arrows,0.577355781,0.4
+ hypothetical protein ,7374,7634,1,#F06C45,#F06C45,1,1,8,1,headless arrows,0.598739328,0.4
+ cyclase family protein ,7644,7922,1,#F9A963,#F9A963,1,1,8,1,headless arrows,0.621000559,0.4
+ regulatory protein LuxR,7932,8158,1,#FDB055,#FDB055,1,1,8,1,headless arrows,0.64190537,0.4
+ pyruvate ferredoxin/flavodoxin oxidoreductase ,8168,9318,1,#FE982C,#FE982C,1,1,8,1,headless arrows,0.69759834,0.4
+ regulatory protein LysR,9328,9669,1,#FE8103,#FE8103,1,1,8,1,headless arrows,0.757879199,0.4
+ hypothetical protein ,9679,9731,1,#ED8F47,#ED8F47,1,1,8,1,headless arrows,0.774355701,0.4
+ MaoC domain protein dehydratase ,9741,9893,1,#D9A295,#D9A295,1,1,8,1,headless arrows,0.783292109,0.4
+ methylthioadenosine phosphorylase ,9903,10171,1,#C3AAD2,#C3AAD2,1,1,8,1,headless arrows,0.800845767,0.4
+ 3-deoxy-D-arabinoheptulosonate-7-phosphate synthase ,10181,10645,1,#A07FBC,#A07FBC,1,1,8,1,headless arrows,0.830846565,0.4
+ Stress responsive alpha-beta barrel domain protein ,10655,10755,1,#7D54A5,#7D54A5,1,1,8,1,headless arrows,0.854145057,0.4
+ hypothetical protein ,10765,11237,1,#825D99,#825D99,1,1,8,1,headless arrows,0.877762706,0.4
+ branched-chain amino acid aminotransferase ,11247,11568,1,#B9A499,#B9A499,1,1,8,1,headless arrows,0.91019708,0.4
+ hypothetical protein ,11578,11796,1,#F0EB99,#F0EB99,1,1,8,1,headless arrows,0.932498205,0.4
+ ornithine cyclodeaminase ,11806,12136,1,#EAD27A,#EAD27A,1,1,8,1,headless arrows,0.955158382,0.4
+ protein of unknown function DUF1330 ,12146,12244,1,#CD9551,#CD9551,1,1,8,1,headless arrows,0.973031198,0.4
+ phenazine biosynthesis protein PhzF family ,12254,12533,1,#B15928,#B15928,1,1,8,1,headless arrows,0.988869385,0.4

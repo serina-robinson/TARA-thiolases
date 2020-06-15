@@ -1,0 +1,13 @@
+Gene,Size,Homolog,Organism,Accession,ID/Sim,Function
+orf-1,287,"IO33_RS0125090, ",Streptomyces durhamensis DSM 40539,WP_063765782.1,67/94,alpha/beta hydrolase
+cysA,551,TCUR_RS15940,Thermomonospora curvata DSM 43183,WP_012853558.1,67/90,2-IPM synthase
+cysB,480,"IO33_RS0125100,",S. durhamensis DSM 40539,WP_051926938.1,83/94,MFS transporter
+cysC,393,"IO33_RS0125110,",S. durhamensis DSM 40539,WP_031168828.1,80/99,AMP-dependent synthetase
+cysD,334,"IO33_RS46035,",S. durhamensis DSM 40539,WP_031168830.1,80/97,ATP-dependent carboxylate-
+cysE,272,"IO33_RS0125120,",S. durhamensis DSM 40539,WP_031168831.1,66/99,methylesterase
+cysF,492,"IO33_RS0125115,",S. durhamensis DSM 40540,WP_031168833.1,78/97,AMP-dependent synthetase
+cysG,229,"IO33_RS0125125,",S. durhamensis DSM 40541,WP_037685904.1,81/96,SAM-dependent
+cysH,310,"IO33_RS0125130,",S. durhamensis DSM 40542,WP_063765783.1,62/75,LysR family TR
+orf+1,218,"IH42_RS0103770,",S. sp. NRRL S-384,WP_030906597.1,77/83,unknown function
+orf+2,207,"AOK09_RS18800,",S. durhamensis DSM 40542,WP_055588379.1,85/94,unknown function
+orf+3,343,"HY68_RS33305, S. sp. AcH 505",S. griseoplanus DSM 40009,WP_041998928.1,67/96,3-oxoacyl-ACP synthase

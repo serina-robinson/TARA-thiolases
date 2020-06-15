@@ -1,0 +1,34 @@
+name,start,end,strand,col,fill,lty,lwd,pch,cex,gene type,x,y
+ lipase  ,10,341,1,#A6CEE3,#A6CEE3,1,1,8,1,headless arrows,0.005583304,0.4
+ transcriptional regulator  ,351,687,1,#77B0D2,#77B0D2,1,1,8,1,headless arrows,0.01651131,0.4
+ integral membrane protein  ,697,1473,1,#4992C2,#4992C2,1,1,8,1,headless arrows,0.034517863,0.4
+ bacterioferritin comigratory protein,1483,1642,1,#237BB2,#237BB2,1,1,8,1,headless arrows,0.049708905,0.4
+ transcriptional regulator  ,1652,1992,1,#569EA4,#569EA4,1,1,8,1,headless arrows,0.05796456,0.4
+ nucleoside hydrolase,2002,2318,1,#88C295,#88C295,1,1,8,1,headless arrows,0.06871759,0.4
+ transmembrane efflux protein  ,2328,2811,1,#AADB84,#AADB84,1,1,8,1,headless arrows,0.0817453,0.4
+ glyceryltransferase/phosphatase,2821,3188,1,#7EC563,#7EC563,1,1,8,1,headless arrows,0.095584259,0.4
+ acyltransferase,3198,3524,1,#52AF43,#52AF43,1,1,8,1,headless arrows,0.106925842,0.4
+ acyl-dehydrogenase,3534,3901,1,#459F36,#459F36,1,1,8,1,headless arrows,0.118267426,0.4
+ acyl carrier protein  ,3911,4005,1,#8A9D5B,#8A9D5B,1,1,8,1,headless arrows,0.125918621,0.4
+ o-methyltransferase  ,4015,4237,1,#CF9B81,#CF9B81,1,1,8,1,headless arrows,0.131263322,0.4
+ glyceroyl ACP dehydrogenase  ,4247,4535,1,#F88A89,#F88A89,1,1,8,1,headless arrows,0.139693952,0.4
+ NRPS/PKS  ,4545,12283,1,#EF5E5E,#EF5E5E,1,1,8,1,headless arrows,0.267680463,0.4
+ PKS type I  ,12293,15220,1,#E73233,#E73233,1,1,8,1,headless arrows,0.43764515,0.4
+ PKS  ,15230,16433,1,#E73328,#E73328,1,1,8,1,headless arrows,0.503658575,0.4
+ NRPS  ,16443,18437,1,#F06C45,#F06C45,1,1,8,1,headless arrows,0.55483091,0.4
+ malonyl CoA-ACP transferase  ,18447,19487,1,#F8A562,#F8A562,1,1,8,1,headless arrows,0.603410429,0.4
+ PKS  ,19497,24469,1,#FDB35A,#FDB35A,1,1,8,1,headless arrows,0.699360545,0.4
+ NRPS  ,24479,25676,1,#FE9C34,#FE9C34,1,1,8,1,headless arrows,0.797808036,0.4
+ OzmP unknown,25686,26069,1,#FE870D,#FE870D,1,1,8,1,headless arrows,0.823258995,0.4
+ PKS  ,26079,26922,1,#F38A2E,#F38A2E,1,1,8,1,headless arrows,0.84307893,0.4
+ transcriptional regulator  ,26932,27241,1,#E19B78,#E19B78,1,1,8,1,headless arrows,0.861721757,0.4
+ membrane protein  ,27251,27466,1,#CEADC1,#CEADC1,1,1,8,1,headless arrows,0.870375084,0.4
+ threonyl-tRNA synthetase  ,27476,27916,1,#B294C7,#B294C7,1,1,8,1,headless arrows,0.881112207,0.4
+ transcriptional activator  ,27926,28856,1,#916CB2,#916CB2,1,1,8,1,headless arrows,0.903222728,0.4
+ cytochrome P450  ,28866,29312,1,#70449D,#70449D,1,1,8,1,headless arrows,0.92542869,0.4
+ putative hydroxylase  ,29322,29544,1,#937399,#937399,1,1,8,1,headless arrows,0.936372602,0.4
+ RNA polymerase sigma factor  ,29554,29837,1,#C7B699,#C7B699,1,1,8,1,headless arrows,0.944723698,0.4
+ putative DNA polymerase beta chain  ,29847,30192,1,#FAF899,#FAF899,1,1,8,1,headless arrows,0.955031336,0.4
+ putative oxidoreductase  ,30202,30903,1,#E6CB75,#E6CB75,1,1,8,1,headless arrows,0.971988038,0.4
+ oxidoreductase  ,30913,31245,1,#CB924E,#CB924E,1,1,8,1,headless arrows,0.988737951,0.4
+ oxidoreductase  ,31255,31433,1,#B15928,#B15928,1,1,8,1,headless arrows,0.997168581,0.4

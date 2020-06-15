@@ -1,0 +1,25 @@
+name,start,end,strand,col,fill,lty,lwd,pch,cex,gene_type,x,y
+glyoxalase,10,115,1,#A6CEE3,#A6CEE3,1,1,8,1,headless_arrows,0.007295436,0.4
+acetyltransferase,125,320,1,#65A4CC,#65A4CC,1,1,8,1,headless_arrows,0.025971752,0.4
+peptidase U61,330,638,1,#247BB6,#247BB6,1,1,8,1,headless_arrows,0.056495856,0.4
+acyl-peptide hydrolase,648,1298,1,#5EA4A1,#5EA4A1,1,1,8,1,headless_arrows,0.113575347,0.4
+acetyl-ornithine deacetylase,1308,1743,1,#A5D68D,#A5D68D,1,1,8,1,headless_arrows,0.178067001,0.4
+ABC transporter substrate-binding protein,1753,2031,1,#80C665,#80C665,1,1,8,1,headless_arrows,0.220847438,0.4
+3-isopropylmalate dehydratase,2041,2240,1,#43A838,#43A838,1,1,8,1,headless_arrows,0.249854091,0.4
+3-isopropylmalate dehydratase,2250,2714,1,#789D51,#789D51,1,1,8,1,headless_arrows,0.289716353,0.4
+AMP-dependent synthetase,2724,3216,1,#D89B86,#D89B86,1,1,8,1,headless_arrows,0.346679118,0.4
+SAM-dependent methyltransferase,3226,3455,1,#F37372,#F37372,1,1,8,1,headless_arrows,0.389926462,0.4
+2-IPM synthase,3465,4031,1,#E83537,#E83537,1,1,8,1,headless_arrows,0.437492705,0.4
+Iron-containing redox enzyme,4041,4400,1,#E94531,#E94531,1,1,8,1,headless_arrows,0.492646201,0.4
+BsmA domain containing protein,4410,4640,1,#F69359,#F69359,1,1,8,1,headless_arrows,0.528189565,0.4
+diaminopimelate epimerase,4650,4941,1,#FDB156,#FDB156,1,1,8,1,headless_arrows,0.559764212,0.4
+molybdopterin oxidoreductase,4951,5647,1,#FE9221,#FE9221,1,1,8,1,headless_arrows,0.618536244,0.4
+LysR family TR,5657,5947,1,#F58725,#F58725,1,1,8,1,headless_arrows,0.677249912,0.4
+LuxR family TR,5957,6064,1,#DCA08B,#DCA08B,1,1,8,1,headless_arrows,0.701587487,0.4
+XRE family TR,6074,6366,1,#BDA2CE,#BDA2CE,1,1,8,1,headless_arrows,0.726041788,0.4
+methylesterase,6376,6646,1,#8F6AB1,#8F6AB1,1,1,8,1,headless_arrows,0.760009338,0.4
+MFS transporter,6656,7125,1,#764D99,#764D99,1,1,8,1,headless_arrows,0.804307225,0.4
+"1,4-beta-xylanase",7135,7486,1,#BEAA99,#BEAA99,1,1,8,1,headless_arrows,0.853332555,0.4
+ATP-dependent carboxylate-amide ligase,7496,7917,1,#FBF794,#FBF794,1,1,8,1,headless_arrows,0.899556437,0.4
+AMP-dependent synthetase,7927,8317,1,#D6A85E,#D6A85E,1,1,8,1,headless_arrows,0.948056496,0.4
+SAM-dependent methyltransferase,8327,8567,1,#B15928,#B15928,1,1,8,1,headless_arrows,0.985992763,0.4

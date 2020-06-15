@@ -1,0 +1,216 @@
+---
+title: "Urea Fate & Degradation Databse"
+output:
+  flexdashboard::flex_dashboard:
+    theme: cosmo
+    vertical_layout: fill
+    logo: www/tractor_resized.png
+    favicon: www/tractor_resized.png
+    social: menu
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library("xtable")
+library("data.table")
+library("shiny")
+library("readxl")
+library("flexdashboard")
+```
+
+
+```{r global}
+## Read in the dataset
+tab <- read_excel("data/Compounds.xlsx", sheet = 1)
+colnames(tab)[1:8] <- c("Compound", "Formula", "MW", "SMILES", "Synonyms", "CAS", "imgurl", "rxnurl")
+```
+
+Home
+=====================================
+Column {.sidebar}
+-----------------------------------------------------------------------
+***
+***
+***
+**Welcome to the Urea Fate & Degradation Database**
+<br>
+<br>
+**Our Mission:**
+<br>
+*Understanding the fate and effects of urea compounds on plants and microbes in soil*
+<br>
+<br>
+Urea and substituted urea compounds are now the major nitrogen-based fertilizers applied in agricultural systems.  The global demand for urea is predicted to reach 1.87 x 10e11 kg by 2021 (International Fertilizer Association, 2017) and recent findings suggest substituted urea formulations can increase productivity and decrease environmental impacts. 
+<br>
+<br>
+The Urea Fate & Degradation Database is a web app to explore pathways for the biodegradation urea-type compounds in soil. This site is maintained by [Dr. Larry Wackett’s lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota. We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradataion Database was designed in collaboration with Hamline University.
+<br>
+<br>
+
+Column
+-----------------------------------------------------------------------
+```{r, out.width = "100%"}
+knitr::include_graphics("www/nitrogen-fertilizer-global.jpg")
+```
+
+
+Compound database
+===================================== 
+***
+***
+
+Inputs {.sidebar}
+-----------------------------------------------------------------------
+<br>
+<br>
+
+```{r}
+      textInput("search", label = "Search by keyword:",
+                value = 'e.g. Biuret'
+      )
+
+      selectizeInput("compound", "Search by compound name:",
+                    choices = c(sort(tab$Compound)),
+                    selected = NULL, multiple = TRUE
+      )
+
+```
+
+Outputs
+-----------------------------------------------------------------------
+```{r}   
+ renderTable({
+      # textInput filtering
+      srch <- tab[grep(input$search, tab$Compound),]
+      
+      # selectizeInput filtering
+      cmpd <- tab[tab$Compound %in% input$compound,]
+      
+      # What is going on here?
+      out <- data.frame(rbind(cmpd, srch))
+      
+      # What is going on here?
+      dedup <- out[!duplicated(out),]
+      
+      return(xtable(dedup[,1:5]))
+
+    })
+```   
+
+Pathway database
+=====================================
+<br>
+<br>
+<br>
+<br>
+    
+Column {.sidebar}
+-----------------------------------------------------------------------
+<br>
+<br>
+    
+
+Click on a compound to see its reaction(s):
+
+
+```{r, out.width = "250px"} 
+# Add code chunk for Urea action button here
+```
+<br>
+
+Allophanate
+```{r} 
+  tags$button(
+        id = "Allophanate",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Allophanate"],
+                 height = "50px")
+      )
+```
+
+<br>
+Cyanamide   
+```{r}
+    tags$button(
+        id = "Cyanamide",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Cyanamide"],
+                 height = "20px")
+      )  
+```
+<br>
+Biuret
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Biuret",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Biuret"],
+                 height = "50px")
+      )   
+```
+<br>
+Cyanuric acid
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Cyanuric_acid",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Cyanuric acid"],
+                 height = "50px")
+      )
+
+```
+
+Column {.bgwhite}
+-----------------------------------------------------------------------
+```{r, out.width = "250px"}   
+
+rv <- reactiveValues(img = 'www/np_dwnloads/white.png') # If nothing is activated, then just a white box
+
+# Add observeEvent for Urea here! Urea.gif is in the www/ folder  
+
+  observeEvent(input$Cyanuric_acid, {
+    rv$img <- paste0("www/Cyanuric acid.gif")
+  })
+
+  observeEvent(input$Cyanamide, {
+    rv$img <- paste0("www/Cyanamide.gif")
+  })
+  
+    observeEvent(input$Biuret, {
+    rv$img <- paste0("www/Biuret.gif")
+  })
+  
+    observeEvent(input$Allophanate, {
+    rv$img <- paste0("www/Allophanate.gif")
+  })
+
+renderImage({
+   list(src = rv$img)
+}, deleteFile = FALSE)
+
+
+```  
+
+
+```{r}
+
+## Challenges!
+
+# Challenge 1. Add a new action button to the 'Pathway database' page for the compound Urea.
+# You can follow the example used for other compounds. The file Urea.gif is already in the www/ folder.
+
+# Challenge 2. Add a 'Submit' action button to the Compound database page so that the table only
+# update if the user hits submit.
+
+# Challenge 3. Now try implementing eventReactive or observeEvent one one of the pages
+# of your TARA oceans app. For example, to remove NAs each time a new variable is selected.
+
+
+# Super challenge 4. Using your knowledge of reactivity, create a function or use 
+# logic gates to update circle radius size depending on the input variable so that
+# all circles are reasonably sized on the map. The rescale function from the scales
+# package below may be helpful.
+# library(scales)
+# scales::rescale(c(-10, -9, -5, 2, 6), to = c(4, 5)) # just an example
+
+```

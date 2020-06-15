@@ -1,0 +1,25 @@
+Gene,Size,Homolog,Organism,Accession,ID/Sim,Function
+orf-1,116,"IF34_RS13520, ",S. griseofuscus NRRL B-5429,WP_037654767.1,94/99,glyoxalase
+belA,195,"IF34_RS13510, S. griseofuscusNRRL B-5429",S. griseofuscus NRRL B-5430,WP_037654762.1,92/91,acetyltransferase
+belB,308,"IF34_RS13505, S. griseofuscusNRRL B-5429",S. griseofuscus NRRL B-5431,WP_037654758.1,86/89,peptidase U61
+belC,650,"IF34_RS13500, S. griseofuscusNRRL B-5429",S. griseofuscus NRRL B-5432,WP_037654756.1,89/99,acyl-peptide hydrolase
+belD,435,"SAMN04490357_6289, S.misionensis DSM 40306", S. misionensis DSM 40306,SED91236.1,89/99,acetyl-ornithine deacetylase
+belE,278,"IF34_RS13490, , S.griseofuscus NRRL B-5429",S. griseofuscus NRRL B-5432,WP_037654752.1,95/99,"ABC transporter substrate-binding protein"
+belF,199,"TR50_RS23725, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103171,WP_042425392.1,87/98,"3-isopropylmalate dehydrataseSS"
+belG,464,"TR50_RS23730, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103172,WP_042425520.1,91/95,"3-isopropylmalate dehydrataseLS"
+belH,492,"TR50_RS23735, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103173,WP_042425395.1,84/96,AMP-dependent synthetase
+belI,229,"TR50_RS23740, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103174,WP_042425398.1,91/99,"SAM-dependentmethyltransferase"
+belJ,566,"TR50_RS23745, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103175,WP_052441271.1,89/99,2-IPM synthase
+belK,359,"TR50_RS23750, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103176,WP_042425527.1,85/94,Iron-containing redox enzyme
+belL,230,"TR50_RS23755, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103177,WP_042425400.1,91/99,BsmA domain containing protein
+belM,291,"TR50_RS23760, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103178,WP_042425403.1,79/99,diaminopimelate epimerase
+belN,696,"TR50_RS23765, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103179,WP_042425531.1,92/98,molybdopterin oxidoreductase
+belO,290,"TR50_RS23775, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103180,WP_042425408.1,86/96,LysR family TR
+belP,107,"TR50_RS23780, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103181,WP_052441274.1,62/82,LuxR family TR
+belQ,292,"TR50_RS23785, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103182,WP_052441275.1,75/99,XRE family TR
+belR,270,"TR50_RS42885, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103183,WP_052441268.1,84/87,methylesterase
+belS,469,"TR50_RS423705, St.anmyonensis NBRC 103185",St. anmyonensis NBRC 103184,WP_052441269.1,83/99,MFS transporter
+belT,351,SAMN04490357_6287, S. misionensis DSM 40306,SED91179.1,91/99,"1,4-beta-xylanase"
+belU,421,TR50_RS23710,St. anmyonensis NBRC 103184,WP_042425383.1,83/98,"ATP-dependent carboxylate-amide ligase"
+belV,390,"TR50_RS23720, ",St. anmyonensis NBRC 103185,WP_052441270.1,91/99,AMP-dependent synthetase
+orf+1,240,SAMN04490357_6286, S. misionensis DSM 40306,SED91152.1,95/99,SAM-dependent methyltransferase

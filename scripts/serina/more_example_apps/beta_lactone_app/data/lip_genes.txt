@@ -1,0 +1,15 @@
+Gene	Size	Homolog	Organism	Accession	ID/Sim	Function
+LstA	374	C5CSE2	Streptomyces toxytricini	AIT38298	30/44	beta-ketoacyl-ACP-synthase III
+LstB	288	Q1IQ32	Streptomyces toxytricini	AIT38299	32/48	beta-ketoacyl-ACP-synthase III
+LstC	874	O31826	Streptomyces toxytricini	AIT38300	24/38	acyl-coA synthetase
+LstD	563	P9WQP6	Streptomyces toxytricini	AIT38301	35/48	dehydrogenase/isomerase
+LstE	1581 Q9R9I9 Streptomyces toxytricini AIT38302 34/50	NRPS
+LstF	230	Q8KCG8	Streptomyces toxytricini	AIT38303	36/60	Formyltransferase
+Orf1	206	P45862	Streptomyces toxytricini	AIT38304	31/41	Unknown
+Orf2	202	B4SHW1	Streptomyces toxytricini	AIT38305	29/41	TetR family regulator
+Orf3	306	Q99L04	Streptomyces toxytricini	AIT38306	36/53	Putative dehydrogenase
+Orf4	268	P33586	Streptomyces toxytricini	AIT38307	35/48	Putative thioesterase
+Orf5	297	P77559	Streptomyces toxytricini	AIT38308	31/47	Transcriptional regulator
+Orf6	199	P50161	Streptomyces toxytricini	AIT38309	32/47	Putative dehydrogenase
+Orf7	156	Q44115	Streptomyces toxytricini	AIT38310	32/50	Unknown
+Orf8	396	P05789	Streptomyces toxytricini	AIT38311	23/39	Putative esterase
