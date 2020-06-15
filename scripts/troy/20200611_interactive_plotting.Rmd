@@ -17,6 +17,7 @@ library(tidyverse)
 library(plotly)
 library(leaflet)
 library(leaflet.providers)
+library(scales)
 
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE,
                       message = FALSE, fig.align = 'center',
@@ -178,7 +179,11 @@ renderLeaflet({
       addProviderTiles(providers$Esri.WorldPhysical) %>%
       addCircleMarkers(lng = ~lon, lat = ~lat,
         popup = content,
-        radius = log(dat[,colnames(dat) == input$I11]),      
+        radius = case_when(
+          is.na(dat[,colnames(dat) == input$I11]) == FALSE
+          ~ log(dat[,colnames(dat) == input$I11]) %>% 
+                     scales::rescale(to = c(3, 7)),
+          TRUE ~ 3),      
         fillOpacity = 0.5, 
         stroke = FALSE,
         color = ~pal(dat[ ,colnames(dat) == input$I10]))

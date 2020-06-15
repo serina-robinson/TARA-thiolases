@@ -36,7 +36,9 @@ jitter_latlong <- function(coord, type = c("lat", "long"), latitude, km = 1) { #
   degree_per_km <- 1 / km_per_degree # blah
   coord + (runif(1, min = -1, max = 1) * degree_per_km * km)
 } #^ taking the coord, adding or subtracting a randomized amount, and then scaling it by the length a degree should be and how many km we want to allow it to move
-
+?runif
+?set.seed
+set.seed(22)
 # What is going on here???
 jitter_latlong <- Vectorize(jitter_latlong,
                            vectorize.args = c("coord", "latitude"))
@@ -55,7 +57,7 @@ jitter_latlong <- Vectorize(jitter_latlong,
 #' @export
 # Helper function
 length_of_degree <- function(degree, type = c("lat", "long")) { # making a function that depends on degree and type 
-  type <- match.arg(type) #making sure your input gets correctly sorted at lat or long again?
+  type <- match.arg(type) # making sure your input gets correctly sorted at lat or long again?
   length_at_equator <- 110.5742727 # in kilometers /// specifying how long 1 degree at the equator is
   if (type == "long") { # if degree is a longitude then we need to convert it
     cos(degree * (2 * pi) / 360) * length_at_equator # convert the degrees to radians and take the cos to do something

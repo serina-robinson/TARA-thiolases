@@ -1,0 +1,141 @@
+---
+title: "Playing around with reactivity in R"
+output:
+  flexdashboard::flex_dashboard:
+    theme: cosmo
+    vertical_layout: fill
+    social: menu
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(knitr)
+library(shiny)
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE
+                      , message = FALSE, fig.align = 'center'
+                      , fig.dim = c(4, 6))
+```
+
+
+eventReactive
+=====================================
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+```{r}
+# input field
+textInput("user_text", label = "Enter some text:", placeholder = "Please enter some text.")
+
+# submit button
+actionButton("submit", label = "Submit")
+
+# display text output
+textOutput("text")
+```
+
+<!-- reactive, reactiveValue and eventReactive are various kinds of reactive expressions in Shiny. They yield output which can be used as input in other expressions, which will in turn take a dependency on the reactive expression. -->
+
+<!-- observe and observeEvent are similar to reactive expressions. The big difference is that the observers do not yield any output and thus they are only useful for their side effects. -->
+
+
+```eventReactives``` are not dependent on all reactive expressions in their body. Instead, they are only dependent on the expressions specified in the event section.
+
+In the example above, we have added a submit button, and created an ```eventReactive.``` Whenever ```input$user_text``` changes, the ```eventReactive``` is not invalidated, since the ```eventReactive``` is only dependent on the actionButton ```input$submit.``` Whenever that button is pressed, text_reactive and subsequently renderText output are invalidated, and will be recalulated based on the updated  ```input$user_text.```
+
+
+
+Column
+-----------------------------------------------------------------------
+```{r}
+# eventReactive demo
+
+# reactive expression
+text_reactive <- eventReactive( 
+  input$submit, {
+    input$user_text
+})
+  
+  # text output
+renderText({
+    text_reactive()
+})
+  
+```
+
+
+observeEvent
+=====================================
+Column {.sidebar}
+-----------------------------------------------------------------------
+An ```observeEvent``` object can be used to trigger a piece of code when a certain event occurs. The major difference with regards to a reactive expression is that it yields no output, and it should only be used for its side effects (such as modifying a reactiveValues object, or triggering a pop-up).
+
+There are both ```observe``` and ```observeEvent``` objects. Note that observe does not ignore NULL's, therefore it will fire even if its inputs are still NULL. ```observeEvent``` by default does ignore NULL, as is almost always desirable.
+<br>
+<br>
+```{r}
+# action buttons
+actionButton("button1","Button 1")
+```
+<br>
+<br>
+```{r}
+actionButton("button2","Button 2")
+```
+
+Column
+-----------------------------------------------------------------------
+
+```{r}
+observeEvent(
+    input$button2, {
+    # The observeEvent takes no dependency on button 2, even though we refer to the input in the following line.
+    input$button1  
+    showModal(modalDialog(
+      title = "Button pressed",
+      "You pressed one of the buttons!"
+    ))
+})
+```
+
+
+reactiveValues
+=====================================
+Column {.sidebar}
+-----------------------------------------------------------------------
+```reactiveValues``` can be used to store objects, to which other expressions can take a dependency.
+
+In the example below, a ```reactiveValues``` object is initialized with value "No text has been submitted yet.". A separate observer is created to update the ```reactiveValues``` object whenever the submit button is pressed. Note that the ```reactiveValues``` itself does not take a dependency on the expressions in its body.
+
+
+```{r}
+textInput("user_text2", label = "Enter some text:", placeholder = "Please enter some text.")
+
+
+actionButton("submit2", label = "Submit")
+
+# display text output
+textOutput("text2")
+```
+
+
+Column
+-----------------------------------------------------------------------
+
+```{r}
+# observe event for updating the reactiveValues
+observeEvent(input$submit2, {
+  text_reactive2$text <- input$user_text2
+})
+
+# reactiveValues
+text_reactive2 <- reactiveValues(
+  text = "No text has been submitted yet."
+)
+
+# text output
+renderText({
+  text_reactive2$text
+})
+```
