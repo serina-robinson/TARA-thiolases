@@ -2,7 +2,7 @@
 pacman::p_load("tidyverse")
 
 # Set working directory
-setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases")
+setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 
 # Read in your full50 dataset
 full50 <- read_csv("data/full50_raw.csv")
@@ -36,8 +36,7 @@ jitter_latlong <- function(coord, type = c("lat", "long"), latitude, km = 1) { #
   degree_per_km <- 1 / km_per_degree # blah
   coord + (runif(1, min = -1, max = 1) * degree_per_km * km)
 } #^ taking the coord, adding or subtracting a randomized amount, and then scaling it by the length a degree should be and how many km we want to allow it to move
-?runif
-?set.seed
+
 set.seed(22)
 # What is going on here???
 jitter_latlong <- Vectorize(jitter_latlong,
@@ -102,7 +101,7 @@ full50_1 <- full50 %>%
 select(full50_1, lon_jitter, lat_jitter) %>% 
   view()
 
-write_csv(full50_1, "data/full50_1.csv")
+# write_csv(full50_1, "data/full50_1.csv")
 
 ### to do:
 # challenges 4 and 5
