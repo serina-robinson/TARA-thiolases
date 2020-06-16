@@ -28,16 +28,11 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE,
 ```{r global, include = FALSE, echo = FALSE, warning = TRUE}
 # Read in the dataset for mapping
 alldata <- read_csv("../../data/TARA_tree_annotation_df.csv")
-  # read_csv("../../data/full50_raw.csv")  
 alldata <- data.frame(alldata) # This is a weird conversion required from a tibble to a data frame
-full50 <- read_csv("../../data/full50_1.csv")
+full50 <- read_csv("../../data/full50_4.csv")
 full50 <- data.frame(full50)
-dat <- full50
-## to do list:
-# any way to make input for full TARA set or 50 ordered?
-# make radius input work for map
-# challenges 4, 5, 7, 8
-# fix jitters for new data
+dat <- alldata
+
 ```
 
 Scatter plot {data-icon="fa-hashtag"}

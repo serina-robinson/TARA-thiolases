@@ -101,7 +101,7 @@ full50_1 <- full50 %>%
 select(full50_1, lon_jitter, lat_jitter) %>% 
   view()
 
-# write_csv(full50_1, "data/full50_1.csv")
+write_csv(full50_1, "data/full50_2.csv")
 
 ### to do:
 # challenges 4 and 5

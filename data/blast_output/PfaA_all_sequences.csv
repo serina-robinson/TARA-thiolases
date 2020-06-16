@@ -1,0 +1,51 @@
+Genome,Genome ID,PATRIC ID,RefSeq Locus Tag,Gene,Product,Length (NT),Length (AA),ALN Length,Identity,Query cover,Subject cover,Hit from,Hit to,Score,E value
+Shewanella oneidensis MR-1,211586.12,fig|211586.12.peg.1540,SO_1602,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7596,2531,2531,99,98,100,1,2531,5046,0
+Shewanella putrefaciens CN-32,319224.16,fig|319224.16.peg.1363,Sputcn32_1326,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7929,2642,2642,68,97,99,1,2622,3348,0
+Shewanella sp. W3-18-1,351745.9,fig|351745.9.peg.2900,Sputw3181_2777,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7935,2644,2644,68,97,99,1,2624,3346,0
+Vibrio crassostreae 9CS106,1191300.3,fig|1191300.3.peg.2026,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7536,2511,2511,61,97,99,2,2489,2888,0
+Vibrio kanaloae 5S-149,1191299.3,fig|1191299.3.peg.2260,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7527,2508,2508,60,98,100,2,2499,2873,0
+Shewanella benthica KT99,314608.4,fig|314608.4.peg.2624,KT99_04852,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7794,2597,2597,60,97,99,18,2586,2866,0
+Shewanella sp. MR-4,60480.19,fig|60480.19.peg.2764,Shewmr4_2666,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7974,2657,2657,86,64,63,1,1662,2756,0
+Shewanella sp. ANA-3,94122.6,fig|94122.6.peg.3174,Shewana3_2840,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7875,2624,2624,88,63,61,1,1612,2702,0
+Shewanella sp. MR-7,60481.13,fig|60481.13.peg.2823,Shewmr7_2733,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7923,2640,2640,87,64,62,1,1645,2659,0
+Shewanella algae strain MARS 14,38313.12,fig|38313.12.peg.3105,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7305,2434,2434,54,97,99,10,2421,2300,0
+Shewanella baltica OS155,325240.15,fig|325240.15.peg.1693,Sbal_1425,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8082,2693,2693,71,63,61,1,1641,2280,0
+Shewanella baltica OS678,693973.6,fig|693973.6.peg.1543,Sbal678_1488,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8085,2694,2694,70,63,62,1,1657,2265,0
+Shewanella baltica OS223,407976.7,fig|407976.7.peg.3020,Sbal223_2929,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8115,2704,2704,71,63,61,1,1642,2264,0
+Shewanella baltica OS185,402882.13,fig|402882.13.peg.1587,Shew185_1419,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8112,2703,2703,70,63,61,1,1643,2263,0
+Shewanella denitrificans OS217,318161.16,fig|318161.16.peg.2766,Sden_2627,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7995,2664,2664,65,62,62,4,1648,2062,0
+Shewanella violacea DSS12,637905.5,fig|637905.5.peg.1159,SVI_1202,pfaA,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8226,2741,2741,65,63,59,14,1633,2058,0
+Shewanella frigidimarina NCIMB 400,318167.14,fig|318167.14.peg.1262,Sfri_1221,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7863,2620,2620,66,62,61,2,1600,2055,0
+Vibrio cyclitrophicus FF75,1136163.9,fig|1136163.9.peg.1702,M565_ctg1P1678,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7836,2611,2611,65,62,62,2,1617,2050,0
+Vibrio cyclitrophicus ZF14,1136166.3,fig|1136166.3.peg.3719,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7839,2612,2612,63,64,63,2,1655,2045,0
+Shewanella sp. P1-14-1,1723761.3,fig|1723761.3.peg.644,AN944_00617,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8409,2802,2802,64,63,60,1,1678,2043,0
+Photobacterium profundum SS9,298386.8,fig|298386.8.peg.1587,PBPRA1460,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7725,2574,2574,65,63,62,2,1596,2043,0
+Vibrio crassostreae strain Evh12,246167.18,fig|246167.18.peg.3487,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7845,2614,2614,63,64,63,2,1653,2038,0
+Vibrio genomosp. F10 str. ZF-129,1187848.3,fig|1187848.3.peg.2148,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7845,2614,2614,64,62,61,14,1601,2033,0
+Vibrio splendidus LGP32,575788.5,fig|575788.5.peg.3479,VS_2215,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7815,2604,2604,64,63,62,2,1625,2027,0
+Shewanella woodyi ATCC 51908,392500.6,fig|392500.6.peg.1480,Swoo_1423,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8253,2750,2750,64,62,59,30,1661,2011,0
+Shewanella pealeana ATCC 700345,398579.7,fig|398579.7.peg.3043,Spea_2907,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8052,2683,2683,63,63,63,19,1701,1996,0
+Shewanella sediminis HAW-EB3,425104.7,fig|425104.7.peg.3402,Ssed_3202,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8295,2764,2764,64,63,59,30,1668,1995,0
+Shewanella piezotolerans WP3,225849.4,fig|225849.4.peg.3265,swp_3550,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8163,2720,2720,63,63,61,1,1660,1994,0
+Shewanella halifaxensis HAW-EB4,458817.8,fig|458817.8.peg.3157,Shal_3008,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8298,2765,2765,64,63,59,19,1658,1993,0
+Moritella viscosa,80854.5,fig|80854.5.peg.2222,MVIS_2082,pfaA,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7587,2528,2528,46,96,99,20,2525,1977,0
+Shewanella loihica PV-4,323850.11,fig|323850.11.peg.2665,Shew_2665,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7860,2619,2619,63,63,63,6,1658,1972,0
+Shewanella waksmanii ATCC BAA-643,1336233.3,fig|1336233.3.peg.4154,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8130,2709,2709,64,62,60,25,1637,1958,0
+Shewanella amazonensis SB2B,326297.10,fig|326297.10.peg.1152,Sama_1115,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7629,2542,2542,58,64,63,3,1602,1684,0
+Psychromonas hadalis ATCC BAA-638,1278302.3,fig|1278302.3.peg.1703,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7806,2601,2601,54,63,59,15,1560,1602,0
+Moritella sp. PE36,58051.5,fig|58051.5.peg.1970,PE36_12337,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8400,2799,2799,51,63,58,20,1644,1579,0
+Moritella marina ATCC 15381,1202962.4,fig|1202962.4.peg.881,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7959,2652,2652,52,62,61,20,1633,1575,0
+Pseudoalteromonas sp. '520P1 No. 423',1690037.3,fig|1690037.3.peg.2731,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8007,2668,2668,52,62,59,24,1593,1564,0
+Moritella dasanensis ArB 0140,1201293.3,fig|1201293.3.peg.3986,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8424,2807,2807,51,63,57,20,1627,1554,0
+Colwellia piezophila ATCC BAA-637,1265503.3,fig|1265503.3.peg.2706,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8241,2746,2746,52,62,58,35,1622,1529,0
+Psychromonas ossibalaenae ATCC BAA-1528,1278307.3,fig|1278307.3.peg.1425,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8247,2748,2748,52,62,56,25,1570,1529,0
+Psychromonas sp. CNPT3,314282.5,fig|314282.5.peg.1266,PCNPT3_08215,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7908,2635,2635,51,64,61,10,1620,1525,0
+Colwellia psychrerythraea ND2E,28229.4,fig|28229.4.peg.3023,ND2E_3866,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8700,2899,2899,50,63,57,21,1684,1505,0
+Colwellia sp. MT41,58049.4,fig|58049.4.peg.1536,CMT41_07195,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8271,2756,2756,51,64,60,22,1663,1503,0
+Psychromonas ingrahamii 37,357804.7,fig|357804.7.peg.1847,Ping_1684,pfaA,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7986,2661,2661,51,63,60,11,1604,1503,0
+Colwellia psychrerythraea 34H,167879.5,fig|167879.5.peg.2821,CPS_3104,pfaA,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8349,2782,2782,51,63,59,3,1636,1501,0
+Psychromonas arctica DSM 14288,1123036.3,fig|1123036.3.peg.317,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8211,2736,2736,51,62,60,6,1643,1485,0
+SAR324 cluster bacterium SCGC AAA001-C10,913329.4,fig|913329.4.peg.1532,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",5052,1683,1683,46,62,97,15,1651,1339,0
+Krokinobacter sp. 4H-3-7-5,983548.3,fig|983548.3.peg.2486,Krodi_2409,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",4620,1539,1539,45,62,99,4,1520,1236,0
+Vibrio genomosp. F6 str. FF-238,1191298.3,fig|1191298.3.peg.735,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",3585,1194,1194,56,47,99,8,1185,1201,0
+Desulfatibacillum alkenivorans AK-01,439235.4,fig|439235.4.peg.1116,Dalk_1056,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",6966,2321,2321,47,58,63,9,1471,1196,0
