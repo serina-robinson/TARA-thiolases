@@ -27,17 +27,10 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE,
 
 ```{r global, include = FALSE, echo = FALSE, warning = TRUE}
 # Read in the dataset for mapping
-alldata <- read_csv("../../data/TARA_tree_annotation_df.csv")
-  # read_csv("../../data/full50_raw.csv")  
-alldata <- data.frame(alldata) # This is a weird conversion required from a tibble to a data frame
-full50 <- read_csv("../../data/full50_1.csv")
-full50 <- data.frame(full50)
-dat <- full50
-## to do list:
-# any way to make input for full TARA set or 50 ordered?
-# make radius input work for map
-# challenges 4, 5, 7, 8
-# fix jitters for new data
+
+dat <- read_csv("../../data/full50_1.csv")
+dat <- data.frame(dat)
+
 ```
 
 Scatter plot {data-icon="fa-hashtag"}
@@ -49,18 +42,14 @@ Inputs {.sidebar data-width=350}
 choicesvec <- dat %>% 
             select_if(is.numeric)
 
-# selectInput(inputId = "I0",
-#             label = "Dataset:",
-#             choices = c("Full Dataset" = alldata,"50 Ordered" = full50),
-#             selected = "Full Dataset")
 selectInput(inputId = "I1", 
             label = "Plot x-axis by:", 
             choices = colnames(choicesvec),
-            selected = "temperature")
+            selected = "depth_m")
 selectInput(inputId = "I2", 
             label = "Plot y-axis by:", 
             choices = colnames(dat),
-            selected = "depth_m")
+            selected = "temperature")
 selectInput(inputId = "I3", 
             label = "Color points by:", 
             choices = colnames(dat),
@@ -72,8 +61,6 @@ Column {.tabset}
 ```{r }
 
 renderPlotly({
-# dat <- case_when(input$I0 == alldata ~ alldata,
-                 # input$I0 == full50 ~ full50)
 fig1 <- plot_ly(dat, x = ~dat[,input$I1], y = ~dat[,input$I2], color = ~dat[,input$I3], type = "scatter") %>%
   layout(yaxis = list(title = " "), xaxis = list(title = " "))
   # add_trace()

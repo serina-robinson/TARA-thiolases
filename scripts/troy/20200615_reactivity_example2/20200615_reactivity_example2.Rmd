@@ -66,20 +66,30 @@ Inputs {.sidebar}
 
 ```{r}
       textInput("search", label = "Search by keyword:",
-                value = 'e.g. Biuret'
-      )
+                value = 'e.g. Biuret')
 
       selectizeInput("compound", "Search by compound name:",
                     choices = c(sort(tab$Compound)),
                     selected = NULL, multiple = TRUE
       )
+```
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+```{r}
+      actionButton("submit", "Submit")
 ```
 
 Outputs
 -----------------------------------------------------------------------
 ```{r}   
- renderTable({
+Table <- eventReactive(input$submit, {
       # textInput filtering
       srch <- tab[grep(input$search, tab$Compound),]
       
@@ -95,6 +105,9 @@ Outputs
       return(xtable(dedup[,1:5]))
 
     })
+
+renderTable({Table()})
+
 ```   
 
 Pathway database
@@ -112,9 +125,14 @@ Column {.sidebar}
 
 Click on a compound to see its reaction(s):
 
-
+Urea
 ```{r, out.width = "250px"} 
-# Add code chunk for Urea action button here
+  tags$button(
+        id = "Urea",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Urea"],
+                 height = "50px")
+  )
 ```
 <br>
 
@@ -166,7 +184,9 @@ Column {.bgwhite}
 
 rv <- reactiveValues(img = 'www/np_dwnloads/white.png') # If nothing is activated, then just a white box
 
-# Add observeEvent for Urea here! Urea.gif is in the www/ folder  
+  observeEvent(input$Urea, {
+    rv$img <- paste0("www/urea.gif")
+  }) 
 
   observeEvent(input$Cyanuric_acid, {
     rv$img <- paste0("www/Cyanuric acid.gif")
