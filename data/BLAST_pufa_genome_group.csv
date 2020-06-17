@@ -1,0 +1,51 @@
+Genome,Genome ID,PATRIC ID,RefSeq Locus Tag,Gene,Product,Length (NT),Length (AA),ALN Length,Identity,Query cover,Subject cover,Hit from,Hit to,Score,E value
+Moritella sp. JT01,756698.3,fig|756698.3.peg.1935,AKG98_1928,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8505,2834,2834,52,65,58,20,1664,1639,0
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.6711,CEN39_03095,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",7170,2389,2389,43,56,64,43,1560,1134,0
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.5720,CEN39_21375,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",3822,1274,1274,45,46,95,42,1253,1019,0
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.403,OZSIB_0386,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",8013,2670,2670,43,35,33,1,872,702,0
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.1633,DRH90_07350,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",6468,2155,2155,38,43,49,6,1061,681,0
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2953,CEN39_11075,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",6153,2050,2050,42,35,42,684,1549,626,0
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2955,CEN39_11085,,"hypothetical protein",5082,1693,1693,35,38,57,10,977,518,5e-151
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.1640,,,"Polyketide synthase",3228,1076,1076,31,34,82,11,888,382,7e-110
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.4319,OZSIB_4217,,"Modular polyketide synthase",8823,2940,2940,30,36,30,736,1630,334,2e-91
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.2555,Isop_2003,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",6564,2187,2187,32,29,36,982,1767,312,7e-85
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2702,CEN39_10145,,"Polyketide synthase modules and related proteins",6072,2023,2023,28,36,44,10,890,308,1e-83
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.264,,,"Polyketide synthase modules and related proteins",5514,1837,1837,28,35,46,15,856,296,6e-80
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2078,CEN39_07775,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",1746,581,581,32,23,96,10,569,281,8e-80
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.2554,Isop_2002,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",1275,424,424,44,13,80,62,399,269,1e-77
+Rhodonellum psychrophilum DSM 17998 strain GCM71,1123057.7,fig|1123057.7.peg.709,P872_14935,,"Polyketide synthase modules and related proteins",6735,2244,2244,27,35,37,599,1427,282,1e-75
+Sedimentitalea sp. W43,2483033.3,fig|2483033.3.peg.5098,EBB79_23590,,"Polyketide synthase modules and related proteins",6477,2158,2158,27,34,37,18,823,278,2e-74
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.3686,,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaB / omega-3 polyunsaturated fatty acid synthase subunit, PfaC",4107,1369,1369,34,18,33,16,466,274,8e-74
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.269,,,"Polyketide synthase modules and related proteins",7644,2547,2547,28,34,31,686,1484,263,1e-69
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2079,CEN39_07780,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaB",2679,893,893,33,18,50,4,450,246,4e-66
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.402,OZSIB_0385,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaB / omega-3 polyunsaturated fatty acid synthase subunit, PfaC",8067,2688,2688,35,18,17,21,476,251,5e-66
+Moritella sp. JT01,756698.3,fig|756698.3.peg.1937,AKG98_1930,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaC",5880,1959,1959,35,18,23,4,451,248,4e-65
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.2695,DRH90_11995,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaB / omega-3 polyunsaturated fatty acid synthase subunit, PfaC",7164,2387,2387,35,18,19,22,472,245,4e-64
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.1786,,,"Polyketide synthase modules and related proteins",4548,1515,1515,36,18,28,17,443,240,6e-63
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.1351,,,"Polyketide synthase modules and related proteins",13926,4641,4641,32,18,9,403,835,241,8e-63
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.1343,,,"Modular polyketide synthase",6303,2100,2100,33,18,21,675,1115,228,3e-59
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.4618,CEN39_01920,,"Polyketide synthase modules and related proteins",1632,544,544,30,20,88,3,481,219,3e-59
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2954,CEN39_11080,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",2472,823,823,27,30,93,56,818,211,4e-55
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.6710,CEN39_03090,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaB",3222,1073,1073,23,36,80,3,864,193,8e-49
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2076,CEN39_07765,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaA",1176,391,391,35,15,91,32,387,182,4e-48
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.2556,Isop_2004,,"omega-3 polyunsaturated fatty acid synthase subunit, PfaB / omega-3 polyunsaturated fatty acid synthase subunit, PfaC",7122,2373,2373,41,10,11,231,499,182,4e-45
+Epsilonproteobacteria bacterium strain B11_G4,2026809.16,fig|2026809.16.peg.2010,DRQ88_09980,fabF,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1251,416,416,29,18,98,6,414,160,1e-40
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.1350,,,"Polyketide synthase modules and related proteins",3153,1050,1050,28,18,38,589,987,165,2e-40
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.1840,VR65_07835,,"Malonyl CoA-acyl carrier protein transacylase (EC 2.3.1.39)",951,316,316,34,12,90,2,286,141,5e-35
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.596,,,"Polyketide synthase modules and related proteins",1077,359,359,29,15,99,3,357,142,5e-35
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2699,,,"Polyketide synthase modules and related proteins",1071,357,357,29,15,97,9,355,140,2e-34
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.1768,Cagg_1713,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1242,413,413,31,16,92,31,411,136,1e-32
+Desulfotalea psychrophila LSv54,177439.6,fig|177439.6.peg.3025,DP2788,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1245,414,414,27,17,95,20,411,135,2e-32
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.695,Isop_0517,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1290,429,429,28,15,82,77,427,134,6e-32
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.1577,Isop_1237,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1248,415,415,31,11,67,135,413,134,7e-32
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.1565,DRH90_07045,fabD,"Malonyl CoA-acyl carrier protein transacylase (EC 2.3.1.39)",939,312,312,31,12,91,3,287,130,2e-31
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.581,DRH90_02615,fabF,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1242,413,413,33,11,67,135,411,131,3e-31
+Rhodonellum psychrophilum DSM 17998 strain GCM71,1123057.7,fig|1123057.7.peg.3365,P872_19230,,"Malonyl CoA-acyl carrier protein transacylase (EC 2.3.1.39)",912,303,303,31,12,95,6,292,129,3e-31
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.2680,Cagg_2588,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1416,471,471,32,11,59,192,469,130,1e-30
+Desulfotalea psychrophila LSv54,177439.6,fig|177439.6.peg.2778,DP2550,,"Malonyl CoA-acyl carrier protein transacylase (EC 2.3.1.39)",948,315,315,33,12,91,2,289,126,6e-30
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.1671,VR65_27575,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1242,413,413,25,18,98,5,410,126,1e-29
+Vulcaniibacterium thermophilum strain KCTC 32020,1169913.3,fig|1169913.3.peg.203,,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1239,412,412,31,10,60,136,382,126,2e-29
+Salinibacterium sp. UTAS2018,2508880.3,fig|2508880.3.peg.683,ESZ53_03415,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1236,411,411,30,14,81,72,403,125,3e-29
+Alicyclobacillus kakegawensis NBRC 103104,1220571.3,fig|1220571.3.peg.748,,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1239,412,412,32,11,67,134,411,124,7e-29
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.1218,Isop_0947,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1284,427,427,30,14,79,86,423,124,7e-29
+Moritella sp. JT01,756698.3,fig|756698.3.peg.2115,AKG98_2104,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASII (EC 2.3.1.179)",1245,414,414,32,11,67,137,412,124,1e-28

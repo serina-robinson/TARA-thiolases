@@ -44,3 +44,4 @@ view(select(full50_4, lat, polar))
 
 # write new file
 write_csv(full50_4, "data/full50_4.csv")
+
