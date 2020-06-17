@@ -62,6 +62,23 @@ merged$start
 
 # Challenge 5. Read in the new BLAST results and join with full50 again. Compare the results to Challenge 1.
 # Are there any 'thermophiles' that appear to have PUFA genes? What about OleBs?
+OleB <- read_csv("data/BLAST_OleB_genome_group.csv") %>% 
+  janitor::clean_names()
+
+merged_OleB <- full50 %>% 
+  left_join(OleB, by = c("genome_x" = "genome"))
+merged_OleB1 <- merged_OleB %>% 
+  mutate(ole_b_patric = merged_OleB$patric_id)
+# multiple hits per strain?
+# mutate new column "ole_b_patric"
+  
+pufa <- read_csv("data/BLAST_pufa_genome_group.csv") %>% 
+  janitor::clean_names()
+
+merged2 <- full50 %>% 
+  left_join(pufa, by = c("genome_x" = "genome"))
+merged2$e_value
+# mutate new column "pufa"
 
 # Challenge 6. Make a plot of whether each genome has a hit for PfaA, OleA, B, C, and D
 # You can use ggplot with geom_tile() See example code below. Note this is an abbreviated
@@ -71,23 +88,24 @@ merged$start
 # Pull out the genome positions for OleA, C, and D using the
 # function in the stringr package called 'word'
 # You can use ?word to look it up
-
-dat_wide <- full50 %>%
-  dplyr::filter(!is.na(OleA_patric)) %>%
-  dplyr::mutate(OleA_pos = stringr::word(OleA_patric, sep = "\\.", -1),
-         OleC_pos = stringr::word(OleC_patric, sep = "\\.", -1),
-         OleD_pos = stringr::word(OleD_patric, sep = "\\.", -1)) %>%
-  dplyr::select(genome.x, OleA_pos, OleC_pos, OleD_pos)
+?word
+dat_wide <- merged_OleB1 %>%
+  dplyr::filter(!is.na(ole_a_patric)) %>%
+  dplyr::mutate(OleA_pos = stringr::word(ole_a_patric, sep = "\\.", -1),
+                OleB_pos = stringr::word(ole_b_patric, sep = "\\.", -1),
+                OleC_pos = stringr::word(ole_c_patric, sep = "\\.", -1),
+                OleD_pos = stringr::word(ole_d_patric, sep = "\\.", -1)) %>%
+  dplyr::select(genome_x, OleA_pos, OleB_pos, OleC_pos, OleD_pos)
 
 # Convert to long format for ggplot  
 dat_long <- dat_wide %>%
-  gather(key = gene.id, value = gene.pos, -genome.x) %>%
+  gather(key = gene.id, value = gene.pos, -genome_x) %>%
   mutate(gene.pos = as.numeric(gene.pos))
 
 
 # Plot data
 pdf("output/OleACD_heatmap.pdf", height = 20, width = 10)
-ggplot(dat_long, aes(gene.id, genome.x)) +
+ggplot(dat_long, aes(gene.id, genome_x)) +
   geom_tile(aes(fill = gene.pos)) + 
   geom_text(aes(label = round(gene.pos, 1))) + 
   scale_fill_gradient(low = "dodgerblue", high = "red") +

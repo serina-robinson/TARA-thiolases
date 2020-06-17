@@ -1,0 +1,51 @@
+Genome,Genome ID,PATRIC ID,RefSeq Locus Tag,Gene,Product,Length (NT),Length (AA),ALN Length,Identity,Query cover,Subject cover,Hit from,Hit to,Score,E value
+Moritella sp. JT01,756698.3,fig|756698.3.peg.3340,AKG98_3345,,"Haloalkane dehalogenase-like protein",879,292,292,78,96,100,1,292,488,4e-174
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.400,OZSIB_0383,,"Haloalkane dehalogenase-like protein",918,305,305,55,93,93,10,292,337,4e-114
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.1838,DRH30_08875,,"Haloalkane dehalogenase-like protein",891,296,296,51,95,98,5,293,322,1e-108
+Vulcaniibacterium thermophilum strain KCTC 32020,1169913.3,fig|1169913.3.peg.1565,,,"Haloalkane dehalogenase-like protein",948,315,315,54,93,90,20,303,314,5e-105
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.4701,DRH90_20595,,"Haloalkane dehalogenase-like protein",915,304,304,48,95,95,14,302,295,5e-98
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.4850,VR65_10445,,"Haloalkane dehalogenase-like protein",882,293,293,47,93,95,6,283,266,1e-86
+Epsilonproteobacteria bacterium strain B11_G4,2026809.16,fig|2026809.16.peg.2168,DRQ88_10760,,"Haloalkane dehalogenase-like protein",846,281,281,43,93,98,6,280,264,6e-86
+Verrucomicrobia bacterium strain B12_G4,2026799.183,fig|2026799.183.peg.458,DRP71_02105,,"Haloalkane dehalogenase-like protein",900,299,299,43,94,94,20,299,252,4e-81
+Desulfotalea psychrophila LSv54,177439.6,fig|177439.6.peg.2863,DP2632,,"Haloalkane dehalogenase-like protein",867,288,288,44,94,98,3,283,251,7e-81
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.560,Cagg_0552,,"Haloalkane dehalogenase-like protein",885,294,294,44,96,96,12,294,238,1e-75
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.2558,Isop_2006,,"Haloalkane dehalogenase-like protein",966,321,321,40,92,87,24,303,222,3e-69
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.452,DRH30_02200,,"Haloalkane dehalogenase-like protein",951,316,316,38,92,89,13,294,200,1e-60
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.1748,DRH30_08455,,"hypothetical protein",822,273,273,34,89,99,1,271,171,3e-50
+Salinibacterium sp. UTAS2018,2508880.3,fig|2508880.3.peg.321,ESZ53_01600,,"Haloalkane dehalogenase-like protein / AMP-dependent synthetase/ligase in alkane synthesis cluster",2829,942,942,30,84,28,40,304,136,1e-34
+Paeniglutamicibacter gangotriensis strain ANT_H27,254787.3,fig|254787.3.peg.2963,FQ154_13795,,"Haloalkane dehalogenase-like protein / AMP-dependent synthetase/ligase in alkane synthesis cluster",2589,862,862,31,81,28,53,292,123,3e-30
+Psychrobacter cibarius strain W1,282669.3,fig|282669.3.peg.967,,,"Haloalkane dehalogenase-like protein / AMP-dependent synthetase/ligase in alkane synthesis cluster",3138,1045,1045,29,81,23,203,445,111,3e-26
+Sedimentitalea sp. W43,2483033.3,fig|2483033.3.peg.3606,EBB79_16760,,"Hydrolase, alpha/beta fold family protein, At1g52510/AT4G12830 homolog, group4",909,302,302,31,86,84,35,289,102,1e-24
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.2815,DRH30_13510,,"hypothetical protein",1062,353,353,28,92,78,59,334,102,2e-24
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.2534,DRH30_12170,,"hypothetical protein",936,311,311,28,98,94,17,307,100,7e-24
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.3559,OLEAN_C34210,dhmA,"tRNA-specific adenosine-34 deaminase (EC 3.5.4.-) / domain of unknown function",906,301,301,26,93,93,19,298,97,7e-23
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.4280,DRH90_18825,,"Hydrolase, alpha/beta fold family protein, At1g52510/AT4G12830 homolog, group4",912,303,303,29,89,87,35,298,95,5e-22
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2796,CEN39_01150,,"Hydrolase, alpha/beta fold family",882,293,293,26,92,95,8,285,93,2e-21
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.5695,CEN39_02310,,"Epoxide hydrolase (EC 3.3.2.9)",858,285,285,25,95,100,1,284,90,2e-20
+Sedimentitalea sp. W43,2483033.3,fig|2483033.3.peg.2795,EBB79_12975,,"hypothetical protein",951,316,316,36,42,39,27,150,89,7e-20
+Sedimentitalea sp. W43,2483033.3,fig|2483033.3.peg.3532,EBB79_16390,,"Hydrolase, alpha/beta fold family",1002,333,333,27,90,82,56,329,88,9e-20
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.212,DRH30_01020,,"Hydrolase, alpha/beta fold family protein, At1g52510/AT4G12830 homolog 2",885,294,294,35,41,42,9,131,82,1e-17
+Moritella sp. JT01,756698.3,fig|756698.3.peg.2440,AKG98_2433,,"hypothetical protein",1011,336,336,23,92,80,64,333,81,5e-17
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.4527,DRH90_19840,,"hypothetical protein",1035,344,344,28,85,71,99,343,81,5e-17
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.2852,Cagg_2754,,"Poly(3-hydroxyalkanoate) depolymerase",855,284,284,25,92,96,13,284,79,1e-16
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.4539,CEN39_01860,,"hypothetical protein",936,311,311,25,90,91,27,309,79,2e-16
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.2992,Cagg_2885,,"2-hydroxymuconic semialdehyde hydrolase (EC 3.7.1.9)",828,275,275,27,91,97,9,274,75,3e-15
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.1539,DRH30_07475,,"Hydrolase, alpha/beta fold family",924,307,307,25,97,93,1,287,75,4e-15
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.441,CEN39_03980,,"Hydrolase, alpha/beta fold family protein, At1g52510/AT4G12830 homolog",852,283,283,25,83,84,39,277,74,5e-15
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.2243,OLEAN_C21660,,"Hydrolase, alpha/beta fold family",966,321,321,26,88,80,50,306,74,1e-14
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2446,CEN39_09115,,"hypothetical protein",843,280,280,39,39,42,10,126,73,1e-14
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.4479,CEN39_16740,,"Hydrolase, alpha/beta fold family",837,278,278,24,87,88,23,267,68,7e-13
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.3049,OLEAN_C29360,,"Hydrolase, alpha/beta fold family",1008,335,335,24,90,79,52,315,67,3e-12
+Salinibacterium sp. UTAS2018,2508880.3,fig|2508880.3.peg.2576,ESZ53_12715,,"cyclic nucleotide-binding protein",828,275,275,29,35,38,24,128,65,6e-12
+Paeniglutamicibacter gangotriensis strain ANT_H27,254787.3,fig|254787.3.peg.2403,FQ154_11275,,"2-hydroxymuconic semialdehyde hydrolase (EC 3.7.1.9)",861,286,286,24,90,90,26,281,65,1e-11
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.3262,CEN39_12180,,"Hydrolase, alpha/beta fold family",804,267,267,25,91,97,7,265,65,1e-11
+Moritella sp. JT01,756698.3,fig|756698.3.peg.3256,AKG98_3268,,"hypothetical protein",777,258,258,34,34,40,20,121,62,8e-11
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.174,OLEAN_C01700,,"hypothetical protein",993,330,330,24,86,79,55,315,62,1e-10
+Desulfotalea psychrophila LSv54,177439.6,fig|177439.6.peg.1528,DP1408,,"Proline iminopeptidase (EC 3.4.11.5)",1074,357,357,31,38,32,56,171,62,1e-10
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.1398,DRH90_06290,,"hypothetical protein",876,291,291,24,93,98,7,291,62,1e-10
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.376,Cagg_0369,,"3-Oxoadipate enol-lactonase, alpha/beta hydrolase fold family [EC:3.1.1.24]",789,262,262,32,37,41,10,116,59,7e-10
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.2464,OLEAN_C23840,,"hypothetical protein",969,322,322,22,86,77,61,309,60,8e-10
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.2574,,,"Lactone-specific esterase",1020,339,339,29,41,36,41,163,60,1e-9
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.1497,OLEAN_C14470,estRB8,"Hydrolase, alpha/beta fold family",1002,333,333,23,85,74,67,311,58,3e-9
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.3623,CEN39_01525,,"Putative hydrolase",861,286,286,20,92,95,4,275,57,4e-9
+Alicyclobacillus kakegawensis NBRC 103104,1220571.3,fig|1220571.3.peg.1809,,,"hypothetical protein",831,276,276,23,92,93,19,276,57,4e-9
