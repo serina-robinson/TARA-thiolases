@@ -5,7 +5,8 @@ pacman::p_load("tidyverse",
                "viridis")
 
 # Set working directory
- setwd("C:/...") # fill in your working directory
+setwd("~/Documents/University_of_Minnesota/Wackett_Lab/github/TARA-thiolases/")
+#  setwd("C:/...") # fill in your working directory
  
 # Today we're going to be focused on
 # PUFA genes and genome neighborhoods 
@@ -34,6 +35,7 @@ blast <- read_csv("data/blast_output/20200615_TARA_psychrophiles_PUFA_blast.csv"
 # Read in your mapping dataset
 full50 <- read_csv("data/full50_raw.csv")
 full50$genome.x # this is the column we are interested in!
+# full50$genome.x[full50$genome.x %in% blast$genome]
 
 # Challenge 1.
 # Combine your BLAST results with genome.x in your full50 dataset... how would you do this?
