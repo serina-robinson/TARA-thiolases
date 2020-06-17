@@ -32,17 +32,19 @@ blast <- read_csv("data/blast_output/20200615_TARA_psychrophiles_PUFA_blast.csv"
   janitor::clean_names() # one of my favorite functions of all times! Can you tell what it does?
 view(blast)
 spec(blast)
-blast$
-# Read in your mapping dataset
-full50 <- read_csv("data/full50_4.csv")
-full50$genome.x # this is the column we are interested in!
 
+# Read in your mapping dataset
+
+full50 <- read_csv("data/full50_4.csv")
+
+full50$genome_x # this is the column we are interested in!
+view(full50)
 # Challenge 1.
 # Combine your BLAST results with genome.x in your full50 dataset... how would you do this?
 # Hint: the argument 'by' in the 'join' family of functions is helpful.
 # If you do it correctly you should get 1 TRUE and 49 FALSE
 merged <- full50 %>% 
-  left_join(blast, by = c("genome.x" = "genome"))
+  left_join(blast, by = c("genome_x" = "genome"))
 merged$start
 # Challenge 2. Create your own psychrophile/thermophile genome
 # group using in PATRIC and search for your 20 genome IDs to create the groups. 
