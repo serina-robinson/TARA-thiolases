@@ -25,6 +25,7 @@ dummies <- make_alignment_dummies(
 dummies
 exgenes
 class(dummies)
+exgenes$direction <- ifelse(example_genes$strand == "forward", 1, -1)
 ggplot(exgenes, aes(xmin = start, xmax = end, y = molecule, fill = gene)) +
   geom_gene_arrow() +
   geom_blank(data = dummies) +  #what does geom_blank do?
@@ -55,18 +56,15 @@ ggplot(exgenes, aes(xmin = start, xmax = end, y = molecule, fill = gene)) +
 # The example_features.csv files below are incomplete
 
 # Here are some example feature lists
-olea <- read_csv("data/feature_lists/OleA_example_features.csv") %>%
+olea <- read_csv("data/feature_lists/OleA_complete_features.csv") %>%
   mutate(gene = "oleA")
-oleb <- read_csv("data/feature_lists/OleB_example_features.csv") %>%
+oleb <- read_csv("data/feature_lists/OleB_complete_features.csv") %>%
   mutate(gene = "oleB")
-olec <- read_csv("data/feature_lists/OleC_example_features.csv") %>%
+olec <- read_csv("data/feature_lists/OleC_complete_features.csv") %>%
   mutate(gene = "oleC")
-oled <- read_csv("data/feature_lists/OleD_example_features.csv") %>%
+oled <- read_csv("data/feature_lists/OleD_complete_features.csv") %>%
   mutate(gene = "oleD")
 view(olea)
-
-
-
 
 # Combine everything using the bind_rows function
 combined <- olea %>%
@@ -88,7 +86,7 @@ plotdat <- combined %>%
   dplyr::mutate(strand = case_when(direction == 1 ~ "forward",
                                    direction == -1 ~ "reverse")) %>%
   arrange(molecule)
-plotdat
+plotdat <- combined
 exgenes
 # Make a gene plot
 pdf("output/gene_diagram.pdf")
