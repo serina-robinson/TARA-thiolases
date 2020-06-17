@@ -63,23 +63,36 @@ merged$start
 # Challenge 5. Read in the new BLAST results and join with full50 again. Compare the results to Challenge 1.
 # Are there any 'thermophiles' that appear to have PUFA genes? What about OleBs?
 OleB <- read_csv("data/BLAST_OleB_genome_group.csv") %>% 
-  janitor::clean_names()
+  janitor::clean_names() %>% 
+  filter(query_cover > 75, identity >= 25) %>% 
+  group_by(genome) %>% 
+  arrange(identity) %>% 
+  slice(1)
+OleB
+duplicated(OleB$genome)
 
 merged_OleB <- full50 %>% 
   left_join(OleB, by = c("genome_x" = "genome"))
 merged_OleB1 <- merged_OleB %>% 
   mutate(ole_b_patric = merged_OleB$patric_id)
-# multiple hits per strain?
-# mutate new column "ole_b_patric"
+
   
-pufa <- read_csv("data/BLAST_pufa_genome_group.csv") %>% 
-  janitor::clean_names()
+pfa <- read_csv("data/BLAST_pufa_genome_group.csv") %>% 
+  janitor::clean_names() %>% 
+ # filter() %>% 
+  group_by(genome) %>% 
+  arrange(identity) %>% 
+  slice(1)
+view(pfa)
 
-merged2 <- full50 %>% 
-  left_join(pufa, by = c("genome_x" = "genome"))
-merged2$e_value
+
+merged_pfa <- full50 %>% 
+  left_join(pfa, by = c("genome_x" = "genome"))
+merged_pfa1 <- merged_OleB %>% 
+  mutate(pfa_patric = merged_pfa$patric_id)
 # mutate new column "pufa"
-
+fullmerged <- left_join(merged_OleB1, merged_pfa1)
+view(fullmerged)
 # Challenge 6. Make a plot of whether each genome has a hit for PfaA, OleA, B, C, and D
 # You can use ggplot with geom_tile() See example code below. Note this is an abbreviated
 # version using only the OleACD hits from the full50 dataset - you will want to expand this
@@ -89,13 +102,14 @@ merged2$e_value
 # function in the stringr package called 'word'
 # You can use ?word to look it up
 ?word
-dat_wide <- merged_OleB1 %>%
+dat_wide <- fullmerged %>%
   dplyr::filter(!is.na(ole_a_patric)) %>%
   dplyr::mutate(OleA_pos = stringr::word(ole_a_patric, sep = "\\.", -1),
                 OleB_pos = stringr::word(ole_b_patric, sep = "\\.", -1),
                 OleC_pos = stringr::word(ole_c_patric, sep = "\\.", -1),
-                OleD_pos = stringr::word(ole_d_patric, sep = "\\.", -1)) %>%
-  dplyr::select(genome_x, OleA_pos, OleB_pos, OleC_pos, OleD_pos)
+                OleD_pos = stringr::word(ole_d_patric, sep = "\\.", -1),
+                Pfa_pos = stringr::word(pfa_patric, sep = "\\.", -1)) %>%
+  dplyr::select(genome_x, OleA_pos, OleB_pos, OleC_pos, OleD_pos, Pfa_pos)
 
 # Convert to long format for ggplot  
 dat_long <- dat_wide %>%
@@ -116,5 +130,10 @@ abc <- read_csv("data/blast_output/PfaA_all_sequences.csv") %>%
   janitor::clean_names()
 
 view(abc)
+
+stringr::word(merged_OleB1$ole_a_patric, sep = "|", -1)
+
+
+
 # Try messing around with the plot. You can change the color gradient for example.
 # You can also make other types of plots using the geom_* functions
