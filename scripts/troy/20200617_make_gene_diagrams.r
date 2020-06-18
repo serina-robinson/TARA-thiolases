@@ -18,12 +18,12 @@ ggplot(exgenes,
 # Let's say we want to align by genE
 # We'll use make_alignment_dummies
 dummies <- make_alignment_dummies(
-  exgenes,
+  plotdat,
   aes(xmin = start, xmax = end, y = molecule, id = gene),
-  on = "genF"
+  on = "oleA"
 )
 dummies
-exgenes
+view(plotdat)
 class(dummies)
 exgenes$direction <- ifelse(example_genes$strand == "forward", 1, -1)
 ggplot(exgenes, aes(xmin = start, xmax = end, y = molecule, fill = gene)) +
@@ -88,11 +88,15 @@ plotdat <- combined %>%
   arrange(molecule)
 plotdat <- combined
 exgenes
+
+
 # Make a gene plot
 pdf("output/gene_diagram.pdf")
 ggplot(plotdat, 
-       aes(xmin = start, xmax = end, fill = gene, y = molecule)) +
+       aes(xmin = start, xmax = end, fill = gene, y = molecule, label = gene)) +
   geom_gene_arrow() +
+ # geom_blank(data = dummies) +
+ # geom_gene_label(align = "left") +
   facet_wrap(~ molecule, scales = "free", ncol = 1) +
   scale_fill_brewer(palette = "Set3") +
   theme_genes()
