@@ -47,23 +47,32 @@ mlt_boot
 mlt_df <- data.frame(label = mlt_boot$data$label) %>%
   dplyr::mutate(fixnam = paste0(word(label, sep = "_", 2)))  # WHOA what is happening here??
 ?paste0
+
+mlt_df6 <- mlt_df5 %>% 
+  mutate(temp_color = case_when(temp_status2 == "thermophile" ~ "red",
+                                temp_status2 == "mesophile" ~ "purple",
+                                temp_status2 == "psychrophile" ~ "blue",
+                                TRUE ~ "gray"))
+
 # Then merge the data frame with the original tree using %<+%
-mlt_append <- mlt %<+% mlt_df5 #oh my goodness what a ridiculous operator %<+% is
-mlt_append$data$temp_status
+mlt_append <- mlt %<+% mlt_df6 #oh my goodness what a ridiculous operator %<+% is
+table(mlt_append$data$temp_status2)
+table(mlt_append$data$temp_color)
 # Now plot with updated labels
 pdf("output/tree.pdf", width = 6, height = 5)
 mlt_append +
   xlim(0, 4) +
-  geom_tiplab(aes(label = fixnam, color = temp_status2)) +
-  geom_nodelab(aes(label = fixnam2), hjust = 1.2, vjust = -0.25) +
-  scale_color_manual(values = c("purple", "blue", "red"))
- # geom_tippoint(x = 3.5, aes(color = temperature))
+  geom_tippoint(x = 3.5, aes(color = temperature)) +
+  geom_tiplab(aes(label = fixnam), color = mlt_df6$temp_color[1:20]) +
+  geom_nodelab(aes(label = fixnam2), hjust = 1.2, vjust = -0.25) 
+ # scale_color_manual(values = c("purple", "blue", "red"))
+  
 dev.off()
-
-
+as.factor(mlt_df5$temp_status2[1:20])
+mlt_df6$temp_color[mlt_append$data$isTip]
 ?geom_point
 ?geom_nodelab
-view(mlt_df)
+view(mlt_df6)
 ?geom_nodelab
 view(mlt_append$data$fixnam2)
 # Challenge 1. Color the tree leaves by whether or not the sequence is a psychrophile 

@@ -30,7 +30,7 @@ for (i in 1:n) {
     d[j, i] <- d[i, j] <- 1 - jaccard_sim
   }
 }
-
+d
 tree <- ape::bionj(d) 
 #########
 
@@ -57,13 +57,13 @@ p
 # This code is copied from the 20200617 script
 
 # Here are some example feature lists
-olea <- read_csv("data/feature_lists/OleA_example_features.csv") %>%
+olea <- read_csv("data/feature_lists/OleA_complete_features.csv") %>%
   mutate(gene = "oleA")
-oleb <- read_csv("data/feature_lists/OleB_example_features.csv") %>%
+oleb <- read_csv("data/feature_lists/OleB_complete_features.csv") %>%
   mutate(gene = "oleB")
-olec <- read_csv("data/feature_lists/OleC_example_features.csv") %>%
+olec <- read_csv("data/feature_lists/OleC_complete_features.csv") %>%
   mutate(gene = "oleC")
-oled <- read_csv("data/feature_lists/OleD_example_features.csv") %>%
+oled <- read_csv("data/feature_lists/OleD_complete_features.csv") %>%
   mutate(gene = "oleD")
 
 # Combine everything using the bind_rows function
@@ -100,13 +100,13 @@ mlt <- ggtree(ml)
 
 # Uh oh...we have a problem...the tip labels don't match the molecule names!
 mlt$data$label %in% plotdat$molecule # all FALSE
-
+mlt$data$label
 # How to fix???
 # Do a join between the tree tip labels and the gene diagram plotting coordinates...by "genus"
 tree_df <- data.frame(label = mlt$data$label) %>%
   dplyr::mutate(genus = stringr::word(label, sep = "_", 2)) %>%
   dplyr::filter(!is.na(genus))
-duplicated(genus_df) # are any duplicated??
+duplicated(tree_df) # are any duplicated??
 
 plotdat_df <- plotdat %>%
   dplyr::mutate(genus = stringr::word(molecule, sep = " ", 1))
@@ -122,11 +122,11 @@ plotdat_fixed <- plotdat_df %>%
   group_by(molecule) %>%
   dplyr::mutate(difference = start - first(start)) %>% # what the heck am I doing here???
   dplyr::filter(abs(difference) < 10000) # what about here
-
+view(plotdat_fixed)
 
 mltr2 <- mlt + 
   geom_tiplab() + 
-  xlim_tree(10) + 
+  xlim_tree(15) + 
   geom_facet(mapping = aes(xmin = start, xmax = end, fill = gene),
              data = plotdat_fixed, geom = geom_motif, panel = 'Alignment',
              on = "oleA", label = 'gene', align = 'left') +
