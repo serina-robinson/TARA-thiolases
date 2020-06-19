@@ -1,0 +1,51 @@
+Genome,Genome ID,PATRIC ID,RefSeq Locus Tag,Gene,Product,Length (NT),Length (AA),ALN Length,Identity,Query cover,Subject cover,Hit from,Hit to,Score,E value
+Moritella sp. JT01,756698.3,fig|756698.3.peg.3342,AKG98_3347,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1068,355,355,66,95,96,11,351,486,5e-171
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.398,OZSIB_0381,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1053,350,350,50,90,91,18,336,330,1e-109
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.4852,VR65_10455,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1023,340,340,46,92,96,6,332,299,8e-98
+Desulfotalea psychrophila LSv54,177439.6,fig|177439.6.peg.2861,DP2630,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1020,339,339,44,92,96,10,336,296,1e-96
+Vulcaniibacterium thermophilum strain KCTC 32020,1169913.3,fig|1169913.3.peg.1560,,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",987,328,328,46,91,99,4,328,290,1e-94
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.4699,DRH90_20585,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1035,344,344,42,92,95,12,337,282,4e-91
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.1840,DRH30_08885,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",993,330,330,43,90,97,4,322,273,8e-88
+Epsilonproteobacteria bacterium strain B11_G4,2026809.16,fig|2026809.16.peg.2170,DRQ88_10770,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",990,329,329,42,91,98,5,328,268,9e-86
+Verrucomicrobia bacterium strain B12_G4,2026799.183,fig|2026799.183.peg.319,DRP71_01460,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1038,345,345,41,89,92,13,330,257,2e-81
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.1343,Isop_1049,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1137,378,378,42,90,86,5,328,251,9e-79
+Verrucomicrobia bacterium strain B12_G4,2026799.183,fig|2026799.183.peg.3124,DRP71_14415,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1032,343,343,39,91,95,12,337,236,1e-73
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.557,Cagg_0549,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",990,329,329,41,90,97,3,322,228,2e-70
+Salinibacterium sp. UTAS2018,2508880.3,fig|2508880.3.peg.320,ESZ53_01595,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",987,328,328,35,90,95,4,316,192,1e-56
+Psychrobacter cibarius strain W1,282669.3,fig|282669.3.peg.966,,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1329,442,442,33,90,73,63,385,177,8e-50
+Paeniglutamicibacter gangotriensis strain ANT_H27,254787.3,fig|254787.3.peg.2964,FQ154_13800,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",1029,342,342,33,93,96,1,329,172,4e-49
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.1805,OLEAN_C17430,,"hypothetical protein",1026,341,341,28,90,95,4,327,146,3e-39
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.1635,DRH30_07950,,"hypothetical protein",1065,354,354,30,90,92,15,339,126,5e-32
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.3378,Isop_2613,,"Putative oxidoreductase",1077,358,358,26,89,88,10,323,123,4e-31
+Paeniglutamicibacter gangotriensis strain ANT_H27,254787.3,fig|254787.3.peg.2967,FQ154_13815,,"NAD(P)H steroid dehydrogenase-like protein in alkane synthesis cluster",519,172,172,39,42,92,1,159,113,5e-29
+Sedimentitalea sp. W43,2483033.3,fig|2483033.3.peg.4056,EBB79_18945,,"FIG036672: Nucleoside-diphosphate-sugar epimerase",987,328,328,25,89,96,5,318,107,6e-26
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.3518,,,"FIG036672: Nucleoside-diphosphate-sugar epimerase",1032,343,343,30,90,94,14,334,99,7e-23
+Alicyclobacillus kakegawensis NBRC 103104,1220571.3,fig|1220571.3.peg.2095,,,"Hopanoid-associated sugar epimerase HpnA",1008,335,335,28,90,94,2,316,87,8e-19
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.4567,CEN39_17060,,"Hopanoid-associated sugar epimerase HpnA",990,329,329,27,86,91,4,303,85,3e-18
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.2978,VR65_02400,,"Nucleoside-diphosphate-sugar epimerases",987,328,328,25,88,95,3,314,75,1e-14
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.1614,VR65_28240,,"hypothetical protein",981,326,326,24,90,96,4,315,74,2e-14
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.2694,DRH30_12935,,"hypothetical protein",981,326,326,25,87,92,3,303,74,2e-14
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.3590,OZSIB_3512,,"hypothetical protein",1038,345,345,26,80,84,4,293,74,2e-14
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.2092,DRH30_10130,,"hypothetical protein",1029,342,342,24,69,72,11,255,72,2e-13
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.4277,Isop_3340,,"Oxidoreductase",846,281,281,24,65,80,1,226,70,3e-13
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.3551,OZSIB_3471,,"UDP-glucose 4-epimerase (EC 5.1.3.2)",1011,336,336,28,37,46,1,155,70,5e-13
+Epsilonproteobacteria bacterium strain B11_G4,2026809.16,fig|2026809.16.peg.1325,DRQ88_06585,,"Dihydroflavonol-4-reductase (EC 1.1.1.219)",1125,374,374,26,80,74,45,321,70,1e-12
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.6102,CEN39_22710,,"Nucleoside-diphosphate-sugar epimerases",1005,334,334,22,92,96,6,324,69,1e-12
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.6418,VR65_13170,,"hypothetical protein",981,326,326,23,90,96,4,315,67,6e-12
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.457,CEN39_26490,,"Nucleoside-diphosphate-sugar epimerases",1008,335,335,23,91,95,1,317,66,1e-11
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.3902,Cagg_3781,,"Nucleoside-diphosphate-sugar epimerases",924,307,307,25,72,79,5,248,65,1e-11
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.3609,DRH90_16005,,"hypothetical protein",1035,344,344,25,69,71,11,255,64,5e-11
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.3900,DRH90_17190,,"Dihydroflavonol-4-reductase (EC 1.1.1.219)",1023,340,340,30,62,64,12,227,64,6e-11
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.1635,CEN39_06330,,"Nucleoside-diphosphate-sugar epimerases",1005,334,334,23,93,97,1,324,62,1e-10
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.769,DRH90_03490,,"dTDP-glucose 4,6-dehydratase (EC 4.2.1.46)",1023,340,340,23,70,82,1,278,61,5e-10
+Rhodonellum psychrophilum DSM 17998 strain GCM71,1123057.7,fig|1123057.7.peg.1091,P872_01295,,"dTDP-glucose 4,6-dehydratase (EC 4.2.1.46)",1062,353,353,23,89,94,5,337,61,6e-10
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.2493,Isop_1955,,"Hopanoid-associated sugar epimerase HpnA",1143,380,380,26,76,71,46,314,59,4e-9
+Alicyclobacillus kakegawensis NBRC 103104,1220571.3,fig|1220571.3.peg.2517,,,"UDP-glucose 4-epimerase (EC 5.1.3.2)",960,319,319,29,61,71,5,232,58,4e-9
+Verrucomicrobia bacterium strain B12_G4,2026799.183,fig|2026799.183.peg.27,DRP71_00130,,"dTDP-glucose 4,6-dehydratase (EC 4.2.1.46)",993,330,330,24,68,79,12,271,58,5e-9
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.1245,Isop_0964,,"UDP-glucose 4-epimerase (EC 5.1.3.2)",987,328,328,29,55,62,8,209,58,6e-9
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.924,VR65_22340,,"UDP-glucose 4-epimerase (EC 5.1.3.2)",1035,344,344,26,62,73,2,253,57,9e-9
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.2404,DRH30_11555,,"hypothetical protein",1107,368,368,26,75,78,12,297,56,2e-8
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.2192,OZSIB_2185,,"NAD-dependent epimerase/dehydratase",1017,338,338,23,69,80,5,276,55,5e-8
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.5011,VR65_07900,,"UDP-glucose 4-epimerase (EC 5.1.3.2)",954,317,317,22,69,76,1,241,55,6e-8
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.1392,Isop_1088,,"dTDP-glucose 4,6-dehydratase (EC 4.2.1.46)",993,330,330,22,75,84,4,280,54,9e-8
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.6118,VR65_11255,,"UDP-glucose 4-epimerase (EC 5.1.3.2)",1113,370,370,30,30,34,6,130,54,9e-8

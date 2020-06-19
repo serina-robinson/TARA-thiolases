@@ -1,0 +1,51 @@
+Genome,Genome ID,PATRIC ID,RefSeq Locus Tag,Gene,Product,Length (NT),Length (AA),ALN Length,Identity,Query cover,Subject cover,Hit from,Hit to,Score,E value
+Moritella sp. JT01,756698.3,fig|756698.3.peg.3339,AKG98_3344,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1050,349,349,78,100,100,1,349,579,0
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.2557,Isop_2005,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1056,351,351,54,100,100,1,351,395,1e-135
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.401,OZSIB_0384,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1041,346,346,53,100,100,1,346,377,8e-129
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.2696,DRH90_12000,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1041,346,346,53,100,100,1,346,366,3e-124
+Verrucomicrobia bacterium strain B12_G4,2026799.183,fig|2026799.183.peg.457,DRP71_02100,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1029,342,342,39,100,100,1,342,262,8e-84
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.2518,VR65_14505,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1038,345,345,37,100,100,2,345,247,1e-77
+Epsilonproteobacteria bacterium strain B11_G4,2026809.16,fig|2026809.16.peg.2167,DRQ88_10755,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1032,343,343,36,99,99,1,341,218,8e-67
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.556,Cagg_0548,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1020,339,339,37,100,100,1,339,215,1e-65
+Desulfotalea psychrophila LSv54,177439.6,fig|177439.6.peg.798,DP0741,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",897,298,298,40,87,100,1,298,206,1e-62
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.1837,DRH30_08870,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1017,338,338,37,100,100,1,338,203,3e-61
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.2890,DRH30_13875,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1017,338,338,36,100,100,1,338,199,1e-59
+Paeniglutamicibacter gangotriensis strain ANT_H27,254787.3,fig|254787.3.peg.2962,FQ154_13790,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1026,341,341,34,95,93,25,341,194,1e-57
+Vulcaniibacterium thermophilum strain KCTC 32020,1169913.3,fig|1169913.3.peg.856,,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",1023,340,340,34,100,100,1,340,185,4e-54
+Salinibacterium sp. UTAS2018,2508880.3,fig|2508880.3.peg.322,ESZ53_01605,,"3-oxoacyl-[ACP] synthase III in alkane synthesis cluster",870,289,289,34,87,100,1,289,171,1e-49
+Psychrobacter cibarius strain W1,282669.3,fig|282669.3.peg.967,,,"Haloalkane dehalogenase-like protein / AMP-dependent synthetase/ligase in alkane synthesis cluster",3138,1045,1045,32,52,17,14,195,96,3e-21
+Alicyclobacillus kakegawensis NBRC 103104,1220571.3,fig|1220571.3.peg.752,,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",984,327,327,27,85,86,39,319,93,3e-21
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.2437,DRH30_11705,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",960,319,319,25,87,95,16,319,84,4e-18
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.2803,CEN39_01180,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",996,331,331,25,87,87,38,325,82,3e-17
+Desulfobulbaceae bacterium BRH_c16a,1629713.5,fig|1629713.5.peg.1677,VR65_27605,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",975,324,324,26,87,89,37,324,81,5e-17
+Verrucomicrobia bacterium strain B12_G4,2026799.183,fig|2026799.183.peg.2168,DRP71_10035,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",999,332,332,25,87,87,42,331,81,8e-17
+Rhodonellum psychrophilum DSM 17998 strain GCM71,1123057.7,fig|1123057.7.peg.1383,P872_02740,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",999,332,332,24,87,89,38,332,81,9e-17
+Sedimentitalea sp. W43,2483033.3,fig|2483033.3.peg.4057,EBB79_18950,,"3-oxoacyl-(acyl carrier protein) synthase (EC 2.3.1.41)",1053,350,350,24,92,87,38,342,80,1e-16
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.325,DRH90_01455,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1008,335,335,24,84,86,38,325,79,3e-16
+Epsilonproteobacteria bacterium strain B11_G4,2026809.16,fig|2026809.16.peg.975,DRQ88_04835,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",993,330,330,25,83,85,42,322,79,4e-16
+Chloroflexus aggregans DSM 9485,326427.4,fig|326427.4.peg.3093,Cagg_2987,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",966,321,321,24,87,90,28,316,77,2e-15
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.848,DRH90_03805,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1014,337,337,24,87,89,38,336,77,3e-15
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.1865,DRH30_09015,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1032,343,343,23,87,89,40,343,76,4e-15
+Rhodonellum psychrophilum DSM 17998 strain GCM71,1123057.7,fig|1123057.7.peg.1137,P872_01550,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1059,352,352,23,87,84,37,333,74,1e-14
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.1803,OLEAN_C17410,fabH,"hypothetical protein",1038,345,345,26,71,70,31,273,74,2e-14
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.2737,,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",987,328,328,23,85,84,44,320,74,2e-14
+Candidatus Riflebacteria bacterium BY5,2268124.3,fig|2268124.3.peg.4425,OZSIB_4323,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1020,339,339,22,87,86,41,330,70,6e-13
+Rhodonellum psychrophilum DSM 17998 strain GCM71,1123057.7,fig|1123057.7.peg.1800,P872_16585,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1077,358,358,24,94,92,23,353,70,6e-13
+Deltaproteobacteria bacterium strain B30_G6,2026735.166,fig|2026735.166.peg.5267,DRH90_23005,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1008,335,335,23,84,86,38,325,68,2e-12
+Moritella sp. JT01,756698.3,fig|756698.3.peg.121,AKG98_111,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1101,366,366,26,78,70,66,322,64,5e-11
+Vulcaniibacterium thermophilum strain KCTC 32020,1169913.3,fig|1169913.3.peg.199,,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",981,326,326,25,86,87,37,318,64,6e-11
+Epsilonproteobacteria bacterium strain B11_G4,2026809.16,fig|2026809.16.peg.2183,DRQ88_10835,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1083,360,360,23,86,84,49,351,60,8e-10
+Isosphaera pallida ATCC 43644,575540.3,fig|575540.3.peg.2515,Isop_1971,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1218,405,405,24,87,71,118,405,58,5e-9
+Janthinobacterium sp. CG3,1075768.5,fig|1075768.5.peg.3519,,,"3-oxoacyl-[acyl-carrier-protein] synthase (EC 2.3.1.41)",993,330,330,23,89,90,25,322,56,2e-8
+Salinibacterium sp. UTAS2018,2508880.3,fig|2508880.3.peg.681,ESZ53_03405,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1005,334,334,30,42,40,49,182,54,8e-8
+Desulfotalea psychrophila LSv54,177439.6,fig|177439.6.peg.3031,DP2793,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",975,324,324,24,87,89,37,324,54,9e-8
+Sedimentitalea sp. W43,2483033.3,fig|2483033.3.peg.1989,EBB79_09405,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",972,323,323,23,99,99,4,323,54,1e-7
+Fischerella thermalis CCMEE 5201,2019672.3,fig|2019672.3.peg.281,CEN39_03760,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",993,330,330,23,87,88,40,328,51,9e-7
+Paeniglutamicibacter gangotriensis strain ANT_H27,254787.3,fig|254787.3.peg.2918,FQ154_13600,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1056,351,351,24,84,84,48,341,50,0.0000
+Oleispira antarctica RB-8,698738.7,fig|698738.7.peg.1802,OLEAN_C17400,,"hypothetical protein",888,295,295,21,86,97,1,286,49,0.0000
+Rhodonellum psychrophilum DSM 17998 strain GCM71,1123057.7,fig|1123057.7.peg.425,P872_24500,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",999,332,332,23,88,88,36,327,45,0.0001
+Deltaproteobacteria bacterium strain B9_G4,2026735.148,fig|2026735.148.peg.935,DRH30_04570,,"Hydroxymethylglutaryl-CoA synthase (EC 2.3.3.10)",1101,366,366,24,91,85,14,323,43,0.0004
+Moritella sp. JT01,756698.3,fig|756698.3.peg.1926,AKG98_1919,,"3-ketoacyl-CoA thiolase (EC 2.3.1.16) @ Acetyl-CoA acetyltransferase (EC 2.3.1.9), FadA2",1281,426,426,29,25,20,40,125,42,0.0008
+Epsilonproteobacteria bacterium strain B11_G4,2026809.16,fig|2026809.16.peg.2082,DRQ88_10340,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1113,370,370,23,50,44,65,226,41,0.0015
+Psychrobacter cibarius strain W1,282669.3,fig|282669.3.peg.1589,,,"3-ketoacyl-CoA thiolase (EC 2.3.1.16) @ Acetyl-CoA acetyltransferase (EC 2.3.1.9), FadA2",1365,454,454,33,24,18,62,144,39,0.0111
+Psychrobacter cibarius strain W1,282669.3,fig|282669.3.peg.154,,,"3-oxoacyl-[acyl-carrier-protein] synthase, KASIII (EC 2.3.1.180)",1068,355,355,25,84,84,47,345,38,0.0112
