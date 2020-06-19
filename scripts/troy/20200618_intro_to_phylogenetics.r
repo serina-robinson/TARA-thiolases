@@ -12,7 +12,7 @@ ml <- read.tree("data/trees/20_olea_ML_50_psychro_thermo_tree.nwk") # maximum-li
 # It has it's own book! https://yulab-smu.github.io/treedata-book/index.html
 njt <- ggtree(nj) # neighbor-joining
 mlt <- ggtree(ml) # maximum-likelihood
-njt
+
 # Using the patchwork package you can plot them side by side using a '+'
 # https://www.datanovia.com/en/blog/ggplot-multiple-plots-made-ridiculuous-simple-using-patchwork-r-package/
 njt + mlt

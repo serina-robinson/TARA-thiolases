@@ -15,6 +15,7 @@ library(knitr)
 library(shiny)
 library(tidyverse)
 library(plotly)
+library(ggtree)
 
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE,
                       message = FALSE, fig.align = 'center',
@@ -86,3 +87,15 @@ fig1 <- plot_ly(dat, x = ~dat[[input$color_env]], color = ~polar, type = "box") 
 ```
 
 
+Tree
+=====================================
+Inputs {.sidebar data-width=350}
+----------------------------------------------------------------------
+
+Column
+----------------------------------------------------------------------
+```{r }
+ml <- read.tree("../../data/trees/20200617_20_psychro_thermo_ML_500boot.nwk") # maximum-likelihood method
+mlt <- ggtree(ml)
+mlt
+```
