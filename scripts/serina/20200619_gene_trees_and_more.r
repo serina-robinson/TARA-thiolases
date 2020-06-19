@@ -59,25 +59,78 @@ p
 # Here are some example feature lists
 olea <- read_csv("data/feature_lists/OleA_complete_features.csv") %>%
   mutate(gene = "oleA")
+blastolea <- read_csv("data/blast_output/BLAST_OleA_genome_group.csv")
+combolea <- olea %>% 
+  left_join(blastolea) %>% 
+  janitor::clean_names() %>% 
+  filter(query_cover > 75, identity > 25) %>% 
+  arrange(desc(identity)) %>% 
+  group_by(genome, gene) %>% 
+  slice(1)
+combolea
+
+
 oleb <- read_csv("data/feature_lists/OleB_complete_features.csv") %>%
   mutate(gene = "oleB")
+blastoleb <- read_csv("data/blast_output/BLAST_OleB_genome_group.csv")
+# view(blastoleb)
+# view(oleb)
+# dim(oleb)
+# setdiff(oleb$Genome, blastoleb$Genome)
+comboleb <- oleb %>% 
+  left_join(blastoleb) %>% 
+  janitor::clean_names() %>% 
+  filter(query_cover > 75, identity > 25) %>% 
+  arrange(desc(identity)) %>% 
+  group_by(genome, gene) %>% 
+  slice(1)
+comboleb
+table(comboleb$genome, comboleb$gene)
+
+
 olec <- read_csv("data/feature_lists/OleC_complete_features.csv") %>%
   mutate(gene = "oleC")
+blastolec <- read_csv("data/blast_output/BLAST_OleC_genome_group.csv")
+combolec <- olec %>% 
+  left_join(blastolec) %>% 
+  janitor::clean_names() %>% 
+  filter(query_cover > 75, identity > 25) %>% 
+  arrange(desc(identity)) %>% 
+  group_by(genome, gene) %>% 
+  slice(1)
+combolec
+
+
 oled <- read_csv("data/feature_lists/OleD_complete_features.csv") %>%
   mutate(gene = "oleD")
+blastoled <- read_csv("data/blast_output/BLAST_OleD_genome_group.csv")
+comboled <- oled %>% 
+  left_join(blastoled) %>% 
+  janitor::clean_names() %>% 
+  filter(query_cover > 75, identity > 25) %>% 
+  arrange(desc(identity)) %>% 
+  group_by(genome, gene) %>% 
+  slice(1)
+comboled
 
+
+
+view(olea)
 # Combine everything using the bind_rows function
-combined <- olea %>%
-  bind_rows(oleb, olec, oled) %>%
+combined <- combolea %>%
+  bind_rows(comboleb, combolec, comboled) %>%
   janitor::clean_names() %>%
-  dplyr::rename(molecule = genome)
-
+  dplyr::rename(molecule = genome) %>% 
+  group_by(molecule, gene) %>% 
+  slice(1) %>% 
+  ungroup()
+view(combined)
 # Filter for only the sequences that are in your dataset
 full50 <- read_csv("data/full50_4.csv")
 gens_to_keep <- full50$genome_x
-
+# plotdat <- combined
 plotdat <- combined %>%
-  dplyr::filter(molecule %in% gens_to_keep) %>%
+ # dplyr::filter(molecule %in% gens_to_keep) %>%
   dplyr::select(molecule, gene, start, end, strand) %>%
   dplyr::mutate(direction = case_when(strand == "+" ~ 1,
                                       strand == "-" ~ -1)) %>%
@@ -92,12 +145,13 @@ gpl <- ggplot(plotdat,
   facet_wrap(~ molecule, scales = "free", ncol = 1) +
   scale_fill_brewer(palette = "Set3") +
   theme_genes()
+pdf("output/tree3.pdf")
 gpl
-
+dev.off()
 # Read in the phylogenetic tree
 ml <- read.tree("data/trees/20200617_20_psychro_thermo_ML_500boot.nwk") # maximum-likelihood method
 mlt <- ggtree(ml)
-
+view(plotdat)
 # Uh oh...we have a problem...the tip labels don't match the molecule names!
 mlt$data$label %in% plotdat$molecule # all FALSE
 mlt$data$label
@@ -107,10 +161,13 @@ tree_df <- data.frame(label = mlt$data$label) %>%
   dplyr::mutate(genus = stringr::word(label, sep = "_", 2)) %>%
   dplyr::filter(!is.na(genus))
 duplicated(tree_df) # are any duplicated??
-
+tree_df$genus[grep("Deltaproteobacteria", tree_df$genus)][1] <- "Deltaproteobacteria1"
+tree_df$genus[grep("Deltaproteobacteria", tree_df$genus)][2] <- "Deltaproteobacteria2"
 plotdat_df <- plotdat %>%
   dplyr::mutate(genus = stringr::word(molecule, sep = " ", 1))
-
+view(plotdat_df)
+table(plotdat_df$genus)
+view(tree_df)
 # Join them by = "genus"
 # What sort of gymnastics is happening here?
 plotdat_fixed <- plotdat_df %>%
@@ -134,15 +191,15 @@ mltr2 <- mlt +
   scale_x_continuous(expand=c(0,0)) +
   theme(strip.text=element_blank(),
         panel.spacing=unit(0, 'cm'))
-mltr2 # well that looks bad
+# well that looks bad
 
 ## in case the facet panels were not ordered properly
 mltr3 <- mltr2 + facet_grid(cols = vars(factor(.panel, 
                     levels = c("Tree", "Alignment"))),
                     scales = 'free_x')
-
-mltr3 # Well at least the Moritella looks good!!
-
+pdf("output/tree2.pdf", width = 10, height = 7)
+mltr3 
+dev.off()
 
 # Challenge 1. Add the gene diagrams for all 20 leaves (not just the 4 plotted currently...)
 
