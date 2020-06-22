@@ -1,6 +1,6 @@
 # Install packages
 pacman::p_load("gggenes", "ggtree", "ggplot2", "tidyverse", "plotly")
-
+setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 ### All of this code below is calculate a phylogenetic tree for example_genes
 # The geom_motif is defined in ggtree and it is a wrapper layer of gggenes::geom_gene_arrow. 
 # The geom_motif can automatically adjust genomic alignment by selective gene (via the on parameter) 
@@ -10,60 +10,63 @@ pacman::p_load("gggenes", "ggtree", "ggplot2", "tidyverse", "plotly")
 # a phylogeny for the genomes need to be firstly constructed. 
 # We calculate jaccard similarity based on the ratio of overlapping genes
 # among genomes and correspondingly determine genome distance. 
-
-
-##### All of this is just to generate a phylogenetic tree ###
-get_genes <- function(data, genome) {
-  filter(data, molecule == genome) %>% pull(gene)
-}
-
-g <- unique(example_genes[,1])
-n <- length(g)
-d <- matrix(nrow = n, ncol = n)
-rownames(d) <- colnames(d) <- g
-genes <- lapply(g, get_genes, data = example_genes)
-
-for (i in 1:n) {
-  for (j in 1:i) {
-    jaccard_sim <- length(intersect(genes[[i]], genes[[j]])) / 
-      length(union(genes[[i]], genes[[j]]))
-    d[j, i] <- d[i, j] <- 1 - jaccard_sim
-  }
-}
-d
-tree <- ape::bionj(d) 
-#########
-
-tree # This looks just like any newick tree that you read in from MEGAX
-
-# Example gene plot
-p <- ggtree(tree, branch.length='none') + 
-  geom_tiplab() + xlim_tree(5.5) + 
-  geom_facet(mapping = aes(xmin = start, xmax = end, fill = gene),
-             data = example_genes, geom = geom_motif, panel = 'Alignment',
-             on = 'genE', label = 'gene', align = 'left') +
-  scale_fill_brewer(palette = "Set3") + 
-  scale_x_continuous(expand=c(0,0)) +
-  theme(strip.text=element_blank(),
-        panel.spacing=unit(0, 'cm'))
-
-## in case the facet panels were not ordered properly
-p <- p + facet_grid(cols = vars(factor(.panel, levels = c("Tree", "Alignment"))),
-                    scales = 'free_x')
-p
-
-
-#### Now let's do it with our genes
-# This code is copied from the 20200617 script
-
+# 
+# 
+# ##### All of this is just to generate a phylogenetic tree ###
+# get_genes <- function(data, genome) {
+#   filter(data, molecule == genome) %>% pull(gene)
+# }
+# 
+# g <- unique(example_genes[,1])
+# n <- length(g)
+# d <- matrix(nrow = n, ncol = n)
+# rownames(d) <- colnames(d) <- g
+# genes <- lapply(g, get_genes, data = example_genes)
+# 
+# for (i in 1:n) {
+#   for (j in 1:i) {
+#     jaccard_sim <- length(intersect(genes[[i]], genes[[j]])) / 
+#       length(union(genes[[i]], genes[[j]]))
+#     d[j, i] <- d[i, j] <- 1 - jaccard_sim
+#   }
+# }
+# d
+# tree <- ape::bionj(d) 
+# #########
+# 
+# tree # This looks just like any newick tree that you read in from MEGAX
+# 
+# # Example gene plot
+# p <- ggtree(tree, branch.length='none') + 
+#   geom_tiplab() + xlim_tree(5.5) + 
+#   geom_facet(mapping = aes(xmin = start, xmax = end, fill = gene),
+#              data = example_genes, geom = geom_motif, panel = 'Alignment',
+#              on = 'genE', label = 'gene', align = 'left') +
+#   scale_fill_brewer(palette = "Set3") + 
+#   scale_x_continuous(expand=c(0,0)) +
+#   theme(strip.text=element_blank(),
+#         panel.spacing=unit(0, 'cm'))
+# 
+# ## in case the facet panels were not ordered properly
+# p <- p + facet_grid(cols = vars(factor(.panel, levels = c("Tree", "Alignment"))),
+#                     scales = 'free_x')
+# p
+# 
+# 
+# #### Now let's do it with our genes
+# # This code is copied from the 20200617 script
+full50 <- read_csv("data/full50_5.csv")
+ # view(full50)
+oleanames <- full50$ole_a_patric
 # Here are some example feature lists
 olea <- read_csv("data/feature_lists/OleA_complete_features.csv") %>%
   mutate(gene = "oleA")
 blastolea <- read_csv("data/blast_output/BLAST_OleA_genome_group.csv")
 combolea <- olea %>% 
   left_join(blastolea) %>% 
-  janitor::clean_names() %>% 
-  filter(query_cover > 75, identity > 25) %>% 
+  janitor::clean_names() %>%
+ # filter(query_cover > 75, identity > 20) %>% 
+  filter(patric_id %in% oleanames) %>% 
   arrange(desc(identity)) %>% 
   group_by(genome, gene) %>% 
   slice(1)
@@ -80,7 +83,7 @@ blastoleb <- read_csv("data/blast_output/BLAST_OleB_genome_group.csv")
 comboleb <- oleb %>% 
   left_join(blastoleb) %>% 
   janitor::clean_names() %>% 
-  filter(query_cover > 75, identity > 25) %>% 
+  filter(query_cover > 75, identity > 20) %>% 
   arrange(desc(identity)) %>% 
   group_by(genome, gene) %>% 
   slice(1)
@@ -94,7 +97,7 @@ blastolec <- read_csv("data/blast_output/BLAST_OleC_genome_group.csv")
 combolec <- olec %>% 
   left_join(blastolec) %>% 
   janitor::clean_names() %>% 
-  filter(query_cover > 75, identity > 25) %>% 
+  filter(query_cover > 75, identity > 20) %>% 
   arrange(desc(identity)) %>% 
   group_by(genome, gene) %>% 
   slice(1)
@@ -107,15 +110,38 @@ blastoled <- read_csv("data/blast_output/BLAST_OleD_genome_group.csv")
 comboled <- oled %>% 
   left_join(blastoled) %>% 
   janitor::clean_names() %>% 
-  filter(query_cover > 75, identity > 25) %>% 
+  filter(query_cover > 75, identity > 20) %>% 
   arrange(desc(identity)) %>% 
   group_by(genome, gene) %>% 
   slice(1)
 comboled
+full50[43, "genus"] <- "Psychrobacter"
+full50[39, "genus"] <- "Deltaproteobacteria2"
+full50[40, "genus"] <- "Deltaproteobacteria1"
+full50_1 <- full50 %>% 
+  filter(!is.na(genus))
+
+ml <- read.tree("data/trees/20200617_20_psychro_thermo_ML_500boot.nwk") # maximum-likelihood method
+mlt <- ggtree(ml)
 
 
+mlt$data <- mlt$data %>% 
+  mutate(genus = word(label, sep = "_", 2))
 
-view(olea)
+mlt$data$genus[grep("peg.1837", mlt$data$label)] <- "Deltaproteobacteria1"
+mlt$data$genus[grep("peg.848", mlt$data$label)] <- "Deltaproteobacteria2"
+
+
+mlt_dat <- mlt$data %>% 
+  left_join(full50_1, by = "genus")
+mlt_dat1 <- mlt_dat %>%   
+  mutate(temp_color = case_when(temperature_range == "Thermophilic" ~ "red",
+                                temperature_range == "Mesophilic" ~ "purple",
+                                temperature_range == "Psychrophilic" ~ "blue",
+                                TRUE ~ "black"),
+         label2 = round(as.numeric(label.x)*100), 2)
+mlt_dat1[21,"label2"] <- " "
+
 # Combine everything using the bind_rows function
 combined <- combolea %>%
   bind_rows(comboleb, combolec, comboled) %>%
@@ -126,8 +152,8 @@ combined <- combolea %>%
   ungroup()
 view(combined)
 # Filter for only the sequences that are in your dataset
-full50 <- read_csv("data/full50_4.csv")
-gens_to_keep <- full50$genome_x
+
+# gens_to_keep <- full50$genome_x
 # plotdat <- combined
 plotdat <- combined %>%
  # dplyr::filter(molecule %in% gens_to_keep) %>%
@@ -139,54 +165,55 @@ plotdat <- combined %>%
   arrange(molecule)
 
 # Make a gene plot - check it is still working
-gpl <- ggplot(plotdat, 
-       aes(xmin = start, xmax = end, fill = gene, y = molecule)) +
-  geom_gene_arrow() +
-  facet_wrap(~ molecule, scales = "free", ncol = 1) +
-  scale_fill_brewer(palette = "Set3") +
-  theme_genes()
-pdf("output/tree3.pdf")
-gpl
-dev.off()
+# gpl <- ggplot(plotdat, 
+#        aes(xmin = start, xmax = end, fill = gene, y = molecule)) +
+#   geom_gene_arrow() +
+#   facet_wrap(~ molecule, scales = "free", ncol = 1) +
+#   scale_fill_brewer(palette = "Set3") +
+#   theme_genes()
+# pdf("output/tree3.pdf")
+# gpl
+# dev.off()
 # Read in the phylogenetic tree
-ml <- read.tree("data/trees/20200617_20_psychro_thermo_ML_500boot.nwk") # maximum-likelihood method
-mlt <- ggtree(ml)
-view(plotdat)
+
+
 # Uh oh...we have a problem...the tip labels don't match the molecule names!
-mlt$data$label %in% plotdat$molecule # all FALSE
-mlt$data$label
+#mlt$data$label %in% plotdat$molecule # all FALSE
+#mlt$data$label
 # How to fix???
 # Do a join between the tree tip labels and the gene diagram plotting coordinates...by "genus"
 tree_df <- data.frame(label = mlt$data$label) %>%
   dplyr::mutate(genus = stringr::word(label, sep = "_", 2)) %>%
   dplyr::filter(!is.na(genus))
-duplicated(tree_df) # are any duplicated??
+# duplicated(tree_df) # are any duplicated??
+
 tree_df$genus[grep("Deltaproteobacteria", tree_df$genus)][1] <- "Deltaproteobacteria1"
 tree_df$genus[grep("Deltaproteobacteria", tree_df$genus)][2] <- "Deltaproteobacteria2"
 plotdat_df <- plotdat %>%
   dplyr::mutate(genus = stringr::word(molecule, sep = " ", 1))
-view(plotdat_df)
-table(plotdat_df$genus)
-view(tree_df)
+
+plotdat_df$genus[grep("B9_G4", plotdat_df$molecule)] <- "Deltaproteobacteria1"
+plotdat_df$genus[grep("B30_G6", plotdat_df$molecule)] <- "Deltaproteobacteria2"
 # Join them by = "genus"
 # What sort of gymnastics is happening here?
 plotdat_fixed <- plotdat_df %>%
   left_join(., tree_df, by = "genus") %>%
-  dplyr::select(-molecule, -genus) %>%
+  dplyr::select(-molecule) %>%
   dplyr::rename(molecule = label) %>%
-  dplyr::select(molecule, gene, start, end, strand, direction) %>%
+  dplyr::select(molecule, genus, gene, start, end, strand, direction) %>%
   arrange(molecule, gene)  %>%
   group_by(molecule) %>%
   dplyr::mutate(difference = start - first(start)) %>% # what the heck am I doing here???
-  dplyr::filter(abs(difference) < 10000) # what about here
-view(plotdat_fixed)
+  dplyr::filter(abs(difference) < 12000) # what about here
+
 
 mltr2 <- mlt + 
-  geom_tiplab() + 
-  xlim_tree(15) + 
+  geom_tiplab(aes(label = mlt_dat1$genus), color = mlt_dat1$temp_color[1:20]) + 
+  xlim_tree(2.8) + 
+  geom_nodelab(aes(label = mlt_dat1$label2), hjust = 1.2, vjust = -0.25) +
   geom_facet(mapping = aes(xmin = start, xmax = end, fill = gene),
              data = plotdat_fixed, geom = geom_motif, panel = 'Alignment',
-             on = "oleA", label = 'gene', align = 'left') +
+             on = "oleA") +
   scale_fill_brewer(palette = "Set3") + 
   scale_x_continuous(expand=c(0,0)) +
   theme(strip.text=element_blank(),
@@ -197,9 +224,18 @@ mltr2 <- mlt +
 mltr3 <- mltr2 + facet_grid(cols = vars(factor(.panel, 
                     levels = c("Tree", "Alignment"))),
                     scales = 'free_x')
-pdf("output/tree2.pdf", width = 10, height = 7)
+pdf("output/tree6.pdf", width = 11, height = 6)
 mltr3 
 dev.off()
+
+
+
+###to do
+# fix deltaproteobacteria thing
+# make it look good
+# other script
+# challenge 4
+
 
 # Challenge 1. Add the gene diagrams for all 20 leaves (not just the 4 plotted currently...)
 
@@ -219,6 +255,8 @@ plotdat2 <- plotdat %>%
   dplyr::filter(abs(difference) < 10000)
 plotdat2
 
+write_csv(mlt_dat1, "data/mlt_dat1.csv")
+write_csv(plotdat_fixed, "data/plotdat_fixed.csv")
 # Bonus challenge; is there a way to select the oleA rather than just the first 'start' entry?
 
 # Challenge 3. 

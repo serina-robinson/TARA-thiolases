@@ -18,7 +18,8 @@ library(plotly)
 library(leaflet)
 library(leaflet.providers)
 library(scales)
-
+library(gggenes)
+library(ggtree)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE,
                       message = FALSE, fig.align = 'center',
                       fig.dim = c(4, 6))
@@ -169,4 +170,47 @@ renderLeaflet({
         stroke = FALSE,
         color = ~pal(dat[ ,colnames(dat) == input$I10]))
 })
+```
+
+
+Gene Diagram {data-icon="fa-square"}
+=====================================
+Inputs {.sidebar data-width=350}
+----------------------------------------------------------------------
+
+
+Output
+----------------------------------------------------------------------
+```{r }
+ml <- read.tree("../../data/trees/20200617_20_psychro_thermo_ML_500boot.nwk")
+mlt <- ggtree(ml)
+
+
+mlt$data <- mlt$data %>% 
+  mutate(genus = word(label, sep = "_", 2))
+
+mlt$data$genus[grep("peg.1837", mlt$data$label)] <- "Deltaproteobacteria1"
+mlt$data$genus[grep("peg.848", mlt$data$label)] <- "Deltaproteobacteria2"
+
+mlt_dat1 <- read_csv("../../data/mlt_dat1.csv")
+plotdat_fixed <- read_csv("../../data/plotdat_fixed.csv")
+
+mltr2 <- mlt + 
+  geom_tiplab(aes(label = mlt_dat1$genus), color = mlt_dat1$temp_color[1:20]) + 
+  xlim_tree(5.8) + 
+  geom_nodelab(aes(label = mlt_dat1$label2), hjust = 1.2, vjust = -0.25) +
+  geom_facet(mapping = aes(xmin = start, xmax = end, fill = gene),
+             data = plotdat_fixed, geom = geom_motif, panel = 'Alignment',
+             on = "oleA") +
+  scale_fill_brewer(palette = "Set3") + 
+  scale_x_continuous(expand=c(0,0)) +
+  theme(strip.text=element_blank(),
+        panel.spacing=unit(0, 'cm'))
+
+mltr3 <- mltr2 + facet_grid(cols = vars(factor(.panel, 
+                    levels = c("Tree", "Alignment"))),
+                    scales = 'free_x')
+
+mltr3
+
 ```

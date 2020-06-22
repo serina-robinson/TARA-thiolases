@@ -5,6 +5,7 @@
 # full50_3: designated temperature definition for tara samples with temp value as "sampled"
 #           cleaned up column names
 # full50_4: designated polar as |lat| > 60 and filled in NAs
+# full50_5: set temperature ranges
 
 library(tidyverse)
 library(janitor)
@@ -45,3 +46,15 @@ view(select(full50_4, lat, polar))
 # write new file
 write_csv(full50_4, "data/full50_4.csv")
 
+# set temperature ranges
+
+full50_4 <- read_csv("data/full50_4.csv")
+full50_5 <- full50_4 %>% 
+  mutate(temperature_range = case_when(temperature >= 40 ~ "Thermophilic",
+                           temperature < 15 ~ "Psychrophilic",
+                           is.na(temperature) ~ NA_character_,
+                           TRUE ~ "Mesophilic"))
+view(select(full50_5, temperature, temperature_range))
+
+# write new file
+write_csv(full50_5, "data/full50_5.csv")
