@@ -243,15 +243,17 @@ Column {.bgwhite}
 -----------------------------------------------------------------------
 ```{r, out.width = "250px"}   
 
-rv <- reactiveValues(img = 'www/np_dwnloads/white.png') # If nothing is activated, then just a white box
+rv <- reactiveValues(img = 'www/np_dwnloads/white.png', img2 = 'www/np_dwnloads/white.png') # If nothing is activated, then just a white box
 
   observeEvent(input$Urea, {
-    rv$img <- paste0("www/Urea.gif")
+    rv$img <- paste0("www/Urea (urease) decompvert.jpg")
+    rv$img2 <- paste0("www/Urea (carboxylase) decompvert.jpg")
   })
   
   observeEvent(input$Cyanuric_acid, {
     # Table
     rv$img <- paste0("www/Cyanuric acid.gif")
+    rv$img2 <- paste0("www/np_dwnloads/white.png")
   })
 
   observeEvent(input$Cyanamide, {
@@ -273,9 +275,32 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png') # If nothing is activate
    list(src = rv$img)
 }, deleteFile = FALSE)
   
-  
+  output$img2 <- renderImage({
+   list(src = rv$img2)
+}, deleteFile = FALSE)
+```
+
+<div class = "row">
+<div class = "col-md-6">
+<center>
+
+```{r}
 imageOutput("img")
+```
+
+</center>
+</div>
+
+<div class = "col-md-6">
+<center>   
+
+```{r}
+imageOutput("img2")
 ```  
+
+</center>
+</div>
+</div>
 
 Acknowledgements
 =====================================
