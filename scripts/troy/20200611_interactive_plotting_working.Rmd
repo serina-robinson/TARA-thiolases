@@ -1,5 +1,5 @@
 ---
-title: "Comparison of oleA-containing bacteria"
+title: "OleA-containing bacteria"
 output:
   flexdashboard::flex_dashboard:
   theme: cosmo
@@ -20,6 +20,7 @@ library(leaflet.providers)
 library(scales)
 library(gggenes)
 library(ggtree)
+library(GGally)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE,
                       message = FALSE, fig.align = 'center',
                       fig.dim = c(4, 6))
@@ -29,9 +30,10 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE,
 ```{r global, include = FALSE, echo = FALSE, warning = TRUE}
 # Read in the dataset for mapping
 
-dat <- read_csv("../../data/full50_1.csv")
+dat <- read_csv("../../data/full50_5.csv")
 dat <- data.frame(dat)
-
+fullcomb <- read_csv("../../data/fullcomb.csv")
+fullcomb <- data.frame(fullcomb)
 ```
 
 Scatter plot {data-icon="fa-hashtag"}
@@ -214,3 +216,47 @@ mltr3 <- mltr2 + facet_grid(cols = vars(factor(.panel,
 mltr3
 
 ```
+
+Correlation Diagram {data-icon="fa-circle"}
+=====================================
+Inputs {.sidebar data-width=350}
+----------------------------------------------------------------------
+
+```{r}
+
+
+selectInput(inputId = "I20", 
+            label = "Variable 1:", 
+            choices = colnames(fullcomb),
+            selected = "temperature")
+selectInput(inputId = "I21", 
+            label = "Variable 2:", 
+            choices = colnames(fullcomb),
+            selected = "temperature")
+selectInput(inputId = "I22", 
+            label = "Variable 3:", 
+            choices = colnames(fullcomb),
+            selected = "temperature")
+selectInput(inputId = "I23", 
+            label = "Variable 4:", 
+            choices = colnames(fullcomb),
+            selected = "temperature")
+
+
+```
+
+Output
+----------------------------------------------------------------------
+```{r}
+
+renderPlot({
+  ind2nam <- colnames(fullcomb)[input$I20 == colnames(fullcomb)]
+  ind2 <- fullcomb[,colnames(fullcomb) == input$I20]
+  ggplot(fullcomb) + 
+  geom_point(aes(x = ind2, y = topt)) +
+  xlab(ind2nam) +
+  theme_classic() 
+
+  })
+```
+
