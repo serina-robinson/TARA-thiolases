@@ -259,16 +259,19 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png', img2 = 'www/np_dwnloads/
   observeEvent(input$Cyanamide, {
     # Table
     rv$img <- paste0("www/Cyanamide.gif")
+    rv$img2 <- paste0("www/np_dwnloads/white.png")
   })
   
     observeEvent(input$Biuret, {
     # Table
     rv$img <- paste0("www/Biuret.gif")
+    rv$img2 <- paste0("www/np_dwnloads/white.png")
   })
   
     observeEvent(input$Allophanate, {
     # Table
     rv$img <- paste0("www/Allophanate.gif")
+    rv$img2 <- paste0("www/np_dwnloads/white.png")
   })
     
   output$img <- renderImage({
@@ -278,6 +281,9 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png', img2 = 'www/np_dwnloads/
   output$img2 <- renderImage({
    list(src = rv$img2)
 }, deleteFile = FALSE)
+  
+ # texttest <- readLines("data/allophanate.txt")
+ # renderText(texttest)
 ```
 
 <div class = "row">
