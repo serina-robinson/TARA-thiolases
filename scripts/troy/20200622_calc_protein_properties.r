@@ -1,5 +1,5 @@
 # Install packages
-pacman::p_load("tidyverse", "Peptides", "seqinr")
+pacman::p_load("tidyverse", "Peptides", "seqinr", "ggplot2", "GGally")
 
 # Set working directory
 setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
@@ -83,15 +83,46 @@ view(tomerdf)
 
 # Challenge 2. Join the tomerdf with combdf. Take a look at the distribution of topt. 
 # What do you notice?
-
+combined <- combdf %>% 
+  left_join(tomerdf, by = c("nams" = "sequence"))
+view(combined)
 # Challenge 3. Read in full50 (or some version of it) and join with df from Challenge 2.
+full50 <- read_csv("data/full50_5.csv")
+# full50$label == full50$newnams
+# full50$label[30]
+# full50$newnams[30]
+# combined[50,1]
 
+combined1 <- combined %>% 
+  mutate(genome = word(nams, sep = "_", 1))
+full50join <- full50 %>% 
+  mutate(genome = case_when(!is.na(label) ~ word(label, sep = "_", 1),
+                          is.na(label) ~ paste0(word(ole_a_patric, sep = "\\|", 2))))
+  
+
+  
+fullcomb <- combined1 %>% 
+  left_join(full50join, by = "genome")
+view(fullcomb)
+fullcomb$topt
+cbind(fullcomb$topt, fullcomb$genome)
 # Challenge 4. Plot relationships between protein predicted optimal temperature and 
 # different protein properties like hydrophobicity (Kyte-Doolittle) and instability indices
-
+ggplot(fullcomb) + 
+  geom_point(aes(x = topt, y = hydrophob_full)) +
+  theme_classic() 
+ggplot(fullcomb) + 
+  geom_point(aes(x = topt, y = instab)) +
+  theme_classic() 
 # Challenge 5. Use Ggally function from 20200605 to investigate associations between all protein properties
 # and temperature properties (both optimal growth temp of organism from full50 and protein optimum from tomerdf)
-
+ggpairs(fullcomb, columns = c(4:6, 57), cardinality_threshold = 50) +
+  theme_classic()
+grep("topt", colnames(fullcomb))
+colnames(fullcomb)
 # Super challenge 6. Make a new page in your web app for interactive plotting of protein properties
 # relative to temperature (both optimal growth temp of organism from full50 and protein optimum from tomerdf)
 
+
+write_csv(fullcomb, "data/fullcomb.csv")
+###### work on this -> make inputs for columns
