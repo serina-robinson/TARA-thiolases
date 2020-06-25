@@ -12,7 +12,7 @@ ref <- readAAStringSet("data/4KU5.fasta")
 names(ref) <- "4KU5"
   
 # Align the query and the reference
-alned <- AlignSeqs(c(ref, query), verbose = TRUE)
+alned <- DECIPHER::AlignSeqs(c(ref, query), verbose = TRUE)
 BrowseSeqs(alned)
 ref_aln <- alned["4KU5"]
 query_aln <- alned[length(alned)]
@@ -65,24 +65,31 @@ dev.off()
 # What does the chemistry coloring look like if you add a postively charged residue?
 # What does hydrophobicity coloring look like?
 
-## Challenge 2. (hard) Write a function to extract the channel residues from all 50 TARA sequences
+## Challenge 2. Look at the DECIPHER documentation:
+# http://www2.decipher.codes/Documentation/ArtOfAlignmentInR.pdf
+# How does DECIPHER compare to other tools like Muscle?
+# Pay particular attention to the flowchart in Fig. 6.
+# What function would you run after AlignSeqs if you were doing this for phylogenetics?
+# What would you do if you had nucleotide sequences?
+
+## Challenge 3. (hard) Write a function to extract the channel residues from all 50 TARA sequences
 # This writing functions tutorial might be helpful: https://swcarpentry.github.io/r-novice-inflammation/02-func-R/
 
-## Challenge 3. (hard) Modify your function so that it has an input allowing you to change which residues you search for.
+## Challenge 4. (hard) Modify your function so that it has an input allowing you to change which residues you search for.
 # For example, allow it to only search for channel_a residues? Or channel_b residues? (and next week, positive patch residues)
 
-## Challenge 4. (hard) Make ggseqlogos for each of your TARA sequences. 
+## Challenge 5. (hard) Make ggseqlogos for each of your TARA sequences. 
 # Use cowplot to write them to the same pdf. 
 # If possible, make one PDF for Channel A residues in TARA sequences
 # And one PDF for Channel B residues.
 # You might want to use a for loop here.
 # Are they the same, or different? Where are they different?
 
-## Challenge 5. (even harder) Try to follow the tutorial to first align all 50 sequences 
+## Challenge 6. (even harder) Try to follow the tutorial to first align all 50 sequences 
 # and then visualize in one ggseqlogo what the alignment looks like. What residues are conserved?
 # which positions are variable?
 
-## Super challenge 6. Make a sequence logo, sequence alignment and bar plot like the last part of the tutorial.
+## Super challenge 7. Make a sequence logo, sequence alignment and bar plot like the last part of the tutorial.
 # What other types of plots could you make? Could you some include temperature information?
 # What about PUFA presence/absence? Do the PUFA-containing organisms have different channel residues?
 
