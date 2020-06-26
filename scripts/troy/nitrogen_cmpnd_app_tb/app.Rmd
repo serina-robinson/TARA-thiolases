@@ -23,7 +23,7 @@ library("readxl")
 ## Read in the datasets
 ## This is the chemical compound dataset
 tab <- read_excel("data/Compounds_complete.xlsx", sheet = 1)
-colnames(tab)[1:10] <- c("Compound", "Formula", "MW", "SMILES", "Synonyms", "CAS", "imgurl", "rxnurl", "C-N_Ratio", "Cost")
+colnames(tab)[1:10] <- c("Compound", "Formula", "MW", "SMILES", "Synonyms", "CAS", "imgurl", "rxnurl", "CN_Ratio", "Cost")
 
 ```
 

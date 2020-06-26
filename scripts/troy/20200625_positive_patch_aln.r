@@ -49,12 +49,13 @@ new_inds
 query_pos <- as.character(unlist(lapply(1:length(new_inds), function(x) {
   substr(query_aln, new_inds[x], new_inds[x]) })))
 olea_chans <- paste0(query_pos, collapse = "")
-olea_chans
+olea_chans2
+olea_chans2 <- paste0(olea_chans, "HHRKRH")
 
 # Visualize 
-pdf("output/channel_logo.pdf", width = 10, height = 2)
+pdf("output/channel_logo2.pdf", width = 10, height = 2)
 p <- ggplot() + 
-  geom_logo(olea_chans, method = "p", col_scheme = 'hydrophobicity') + 
+  geom_logo(olea_chans2, method = "p", col_scheme = 'chemistry') + 
   theme_logo() 
   #theme(legend.position = 'none', axis.text.x = element_blank()) 
 p
@@ -76,6 +77,47 @@ dev.off()
 ## Challenge 3. (hard) Write a function to extract the channel residues from all 50 TARA sequences
 # This writing functions tutorial might be helpful: https://swcarpentry.github.io/r-novice-inflammation/02-func-R/
 
+# if seqs is a text file of all of the unaligned fasta olea sequences
+seqs <- readAAStringSet("data/50_TARA_psychro_thermo_unaligned.fasta")
+length(seqs)
+
+getresidues(seqs = seqs)
+
+getresidues <- function(seqs) {
+  
+  ref <- readAAStringSet("data/4KU5.fasta")
+  names(ref) <- "4KU5"
+  channel_b <- sort(c(176, 173, 172, 242, 243, 112, 111, 171, 117, 316, 203, 246))
+  channel_a <- sort(c(253, 258, 261, 284, 291, 292, 295, 343, 345, 349, 351, 353))
+  aa_inds <- c(channel_a, channel_b)
+  
+ for(i in 1:length(seq)) {
+    query <- seqs[i]
+    alned <- DECIPHER::AlignSeqs(c(ref, query), verbose = TRUE)
+    ref_aln <- alned["4KU5"]
+    query_aln <- alned[length(alned)]
+
+    poslist <- list()
+    position = 1
+
+    for(j in 1:width(ref_aln)) {
+      if (substr(ref_aln, j, j) != "-") {
+        if (position %in% aa_inds) {
+          poslist[[j]] <- j}
+        position = position + 1}}
+
+    new_inds <- unlist(poslist)
+
+    query_pos <- as.character(unlist(lapply(1:length(new_inds), function(x) {
+      substr(query_aln, new_inds[x], new_inds[x]) })))
+
+    olea_chans2 <- paste0(query_pos, collapse = "")
+
+     }
+  
+}
+olea_chans
+olea_chans2
 ## Challenge 4. (hard) Modify your function so that it has an input allowing you to change which residues you search for.
 # For example, allow it to only search for channel_a residues? Or channel_b residues? (and next week, positive patch residues)
 
