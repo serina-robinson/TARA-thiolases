@@ -1,0 +1,40 @@
+Cyanoguanidine
+
+
+Cyanoguanidine, also known as dicyandiamide, is used in a number of industrial processes as well as agriculture. The EPA estimates an aggregated product volume for the U.S. in 2016 ranging from 1,000,000 to 10,000,000 lbs (PubChem). Cyanoguanidine can be produced as a degradation product of the drug metformin (Doomkaew et al. 2014). In agriculture it is used as a nitrification inhibitor, which works by inhibiting the ammonia monooxygenase enzyme Nitrosomonas europea, on which it has a bacteriostatic effect (McCarty 1999, Varadachari and Goertz 2010). It is also known to be a transformation product of cyanamide, another agricultural additive (PubChem). Given cyanoguanidine’s high solubility and non-ionic structure, it does not bind to charged exchange sites in the soil, making it prone to leaching. For this reason, concern has been raised as to the environmental effects of cyanoguanidine in waterways and aquifers. It was detected in trace quantities of milk powder export from New Zealand, causing concern over other food contamination possibilities (Martin-Hendrie 2014). Studies have indicated excess ammonia buildup which has been shown to be negative for many taxa (Salis et al. 2017, Smith and Schallenberg 2017).
+
+A near-neutral soil pH facilitates cyanoguanidine mineralization better than acidic conditions (Rodgers, Wickramasinghe and Jenkinson 1985). While metallic oxides are thought to degrade cyanoguanidine abiotically (Hallinger et al. 1990), biotic modes also exist. It has been found that microbes can degrade cyanobacteria, working alone and in consortia (Hallinger et al. 1990, Schwarzer et al. 1998). For the bacteria working in consortia, close contact “appears to be of paramount importance to initiate growth and DCD [cyanoguanidine] degradation” (Schwarzer et al. 1998). The specific strains of bacteria as well as degradation products have not been fully elucidated. Prior studies have demonstrated that there are multiple pathways in which bacteria are capable of degrading cyanoguanidine (Hallinger et al. 1990). Abiological degradation pathways also exist. For one strain of bacteria (identified as Rhodococcus), it was found that a cell-free buffer solution was capable of degrading cyanoguanidine, indicating enzymatic action (Ibid.) Minet et al. have experimented with a slow controlled release of cyanoguanidine from a hydrogel, which has shown promise (2013). Cyanoguanidine is listed as an irritant according to GHS classification (Pubchem).
+
+Bacterial strains capable of degradation:
+Pseudomonas sp. (Hallinger et al. 1990)
+Rhodococcus sp. (Ibid.)
+Note: in the study discovering the two strains above, the authors were not certain of the genera of the bacteria.
+Consortia of Xanthomonas maltophilia and Rhodobacter sp. (Schwarzer et al. 1998)
+Consortia of Xanthomonas maltophilia and Aureobacterium sp. (Ibid.)
+Mycobacterium sp. Strain EK1 (Teaumroon et al. 1996)
+
+Degradation Products:
+Hallinger et al. found Pseudomonas sp. producing guanidine and an unidentified product (1990). It was noted that “concomitantly with a rapid decrease in DCD concentration there was rapid bacterial growth”
+Hallinger et al. found Rhodococcus sp. producing cyanourea, urea and an unidentified product distinct from that of Pseudomonas (1990). As with the above species, degradation was rapid and stimulated rapid bacterial growth; 200 ug of DCD-nitrogen was metabolized in three days from a 0.2 ml inoculum.
+(Note: is the above study, the authors were able to extract a cell-free phosphate buffer extract from Rhodococcus that degraded cyanoguanidine rapidly; this was assumed to be the enzyme, but only produced cyanourea. This cyanoguanidine-degrading principle was found to be heat-labile. The authors also prepared cell-free extracts from Pseudomonas, but found no degradative capacity therewith. Both strains of bacteria appeared unable to metabolize urea, and neither strain produced guanylurea, which is the product of metallic oxide (abiotic) degradation.)
+
+Urease (Estermaier et al. 1992):
+The urease found in jack bean and other Leguminosae and certain bacterial species such as Bacillus pasteurii have been demonstrated to have cyanamide hydrolase activity. This degraded cyanoguanidine, producing equal parts cyanourea and ammonia. The plant urease was found to have a higher degradative potential than that of the bacterial urease, but this may have been an artifact of the study. The relatively slow rate of degradation by urease appears to be significantly different from the rapid degradation recorded by Hallinger et al. (2009).
+
+It should be noted that cyanamide hydratase (E.C. 4.2.1.69) is not likely involved in cyanogunaidine degradation.  Maier-Greiner et al. found that cyanoguanidine was not readily degraded by cyanamide hydratase, but rather lowered enzyme activity to 74% (1991). The enzyme is reported as having an “extremely narrow substrate specificity”, and growing cells on cyanoguanidine substrate did not cause enzyme production (Ibid.). A novel cyanamide hydratase was discovered in the yeast Saccharomyces cerevisiae which has not been tested with cyanoguanidine (Li et al. 2015).
+A nitrile hydratase was involved in bioremediation of insecticide acetamiprid by cleaving a cyanoguanidine moiety (Guo et al. 2019) and may be capable of cyanogunaidine degradation.
+
+Bacterial strains capable of degradation:
+Pseudomonas sp. (Hallinger et al. 1990)
+Rhodococcus sp. (Ibid.)
+Note: in the study discovering the two strains above, the authors were not certain of the genera of the bacteria.
+Consortia of Xanthomonas maltophilia and Rhodobacter sp. (Schwarzer et al. 1998)
+Consortia of Xanthomonas maltophilia and Aureobacterium sp. (Ibid.)
+Mycobacterium sp. Strain EK1 (Teaumroon et al. 1996)
+
+Degradation Products:
+Hallinger et al. found Pseudomonas sp. producing guanidine and an unidentified product (1990). It was noted that “concomitantly with a rapid decrease in DCD concentration there was rapid bacterial growth”
+Hallinger et al. found Rhodococcus sp. producing cyanourea, urea and an unidentified product distinct from that of Pseudomonas (1990). As with the above species, degradation was rapid and stimulated rapid bacterial growth; 200 ug of DCD-nitrogen was metabolized in three days from a 0.2 ml inoculum.
+(Note: is the above study, the authors were able to extract a cell-free phosphate buffer extract from Rhodococcus that degraded cyanoguanidine rapidly; this was assumed to be the enzyme, but only produced cyanourea. This cyanoguanidine-degrading principle was found to be heat-labile. The authors also prepared cell-free extracts from Pseudomonas, but found no degradative capacity therewith. Both strains of bacteria appeared unable to metabolize urea, and neither strain produced guanylurea, which is the product of metallic oxide (abiotic) degradation.)
+
+

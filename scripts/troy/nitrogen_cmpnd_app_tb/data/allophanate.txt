@@ -1,2 +1,14 @@
 Allophanate
-Allophanate (the conjugate base of allophanic acid; also known as urea-1-carboxylate) is created as an intermediate in the degradation of cyanuric acid to ammonia and carbon dioxide. (Esquirol et al. 2018). Within that pathway, it is a direct product of biuret acted upon by biuret amidohydrolase. (Ibid.) For many years, s-triazine was thought to be metabolized through urease, but has been demonstrated to rather have allophanate as an intermediate, upon which allophanate hydrolase acts. Ultimately this leads to the production of ammonia and carbon dioxide. (Cheng et al. 2005) Allophanate is also the product of urea carboxylase acting on urea and bicarbonate (Kanamori et al. 2005).
+Allophanate (the conjugate base of allophanic acid; also known as urea-1-carboxylate) is created as an intermediate in the degradation of cyanuric acid to ammonia and carbon dioxide. (Esquirol et al. 2018). Within that pathway, it is a direct product of biuret acted upon by biuret amidohydrolase. (Ibid.) For many years s-triazine degradation was thought to produce urea as an intermediate, but it has been discovered that allophanate, rather than urea, is created (Cheng et al. 2005). Allophanate is also the product of urea carboxylase acting on urea and bicarbonate (Kanamori et al. 2005). Allophanate hydrolase acts upon allophanate to produce ammonia and carbon dioxide (Cheng et al. 2005)
+
+
+Enzyme
+Allophanate hydrolase, E.C. 3.5.1.54
+Allophanate hydrolase (AtzF) has been purified and characterized for Pseudomonas sp. strain ADP (Shapir, Sadowsky & Wackett 2005). Orthologs appear as common among a wide variety of bacteria (Ibid.) The allophanate is broken down with the reaction:
+Allophanate + H2O → 2NH3 + 2CO2 (Shapir, Sadowsky & Wackett 2005)
+
+
+Bacteria
+Pseudomonas sp. Strain ADP (Martinez et al. 2001)
+Enterobacter cloacae strain 99 (Shapir et al. 2006)
+Oleomonas sagarensis (Kanamori et al. 2005) 

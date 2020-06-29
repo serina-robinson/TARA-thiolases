@@ -79,22 +79,22 @@ dev.off()
 
 # if seqs is a text file of all of the unaligned fasta olea sequences
 seqs <- readAAStringSet("data/50_TARA_psychro_thermo_unaligned.fasta")
+query <- seqs[1]
 length(seqs)
+ref <- readAAStringSet("data/4KU5.fasta")
+names(ref) <- "4KU5"
 
-getresidues(seqs = seqs)
+getresidues(query, ref)
 
-getresidues <- function(seqs) {
+getresidues <- function(query, ref) {
   
-  ref <- readAAStringSet("data/4KU5.fasta")
-  names(ref) <- "4KU5"
+
   channel_b <- sort(c(176, 173, 172, 242, 243, 112, 111, 171, 117, 316, 203, 246))
   channel_a <- sort(c(253, 258, 261, 284, 291, 292, 295, 343, 345, 349, 351, 353))
   aa_inds <- c(channel_a, channel_b)
-  
- for(i in 1:length(seq)) {
-    query <- seqs[i]
-    alned <- DECIPHER::AlignSeqs(c(ref, query), verbose = TRUE)
-    ref_aln <- alned["4KU5"]
+
+    alned <- DECIPHER::AlignSeqs(c(ref, query), verbose = FALSE)
+    ref_aln <- alned[1]
     query_aln <- alned[length(alned)]
 
     poslist <- list()
@@ -111,11 +111,9 @@ getresidues <- function(seqs) {
     query_pos <- as.character(unlist(lapply(1:length(new_inds), function(x) {
       substr(query_aln, new_inds[x], new_inds[x]) })))
 
-    olea_chans2 <- paste0(query_pos, collapse = "")
-
+    olea_chans <- paste0(query_pos, collapse = "")
+return(olea_chans)
      }
-  
-}
 olea_chans
 olea_chans2
 ## Challenge 4. (hard) Modify your function so that it has an input allowing you to change which residues you search for.
@@ -140,9 +138,11 @@ olea_chans2
 # positive patches among your 50 sequences.
 
 ## read about apply family of functions (lapply in line 49ish)
-# maybe replace with for loop
+###### maybe replace with for loop
 
 ## Mutate the serine back to a C in 4ku5.fasta (write to new file)
 
 ## read papers about positive patch
+
+## make aa_inds variable
   

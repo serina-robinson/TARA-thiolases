@@ -1,4 +1,3 @@
-Scientific Publications
 1. Ahmed, Moddassir, et al. "Hazards of Nitrogen Fertilizers and Ways to Reduce Nitrate Accumulation in Crop Plants." Environmental Science and Pollution Research International, vol. 27, no. 15, 2020, pp. 17661-17670. PubMed, https://www.ncbi.nlm.nih.gov/pubmed/32180142, doi:10.1007/s11356-020-08236-y.
 2. Amberger, A. “Cyanamide in plant metabolism.” International Journal of Plant Physiology and Biochemistry Vol. 5, no. 1, 2013, pp. 1-10
 3. Amberger, A., and M. P. Germann-Bauer. "Effect of the Nitrification Inhibitors 1-Amidino-2-Thiourea and Dicyandiamide in Combination with Urea and Ammonium Sulfate." Fertilizer Research, vol. 21, no. 3, 1990, pp. 179-183. CrossRef, doi:10.1007/BF01087429.

@@ -53,7 +53,7 @@ Last updated: June 25th, 2020
 Column 
 -----------------------------------------------------------------------
 ```{r, out.width = "100%"}
-knitr::include_graphics("www/nitrogen-fertilizer-global.jpg")
+knitr::include_graphics("www/testhomepage.jpg")
 ```
 
 About
@@ -114,8 +114,9 @@ Last updated: June 25th, 2020
 
 Inputs
 -----------------------------------------------------------------------
-<br>
-<br>
+
+***
+
 **Web Resources**
 
 * [International Fertilizer Association](https://www.fertilizer.org/statistics)
@@ -132,6 +133,8 @@ Inputs
 * [Pubchem - Chemistry Database](pubchem.ncbi.nlm.nih.gov)
 * [Expasy - Bioinformatics Resource Portal](https://enzyme.expasy.org/)
 * [KEGG - Kyoto Encyclopedia of Genes and Genomes](https://www.genome.jp/kegg/kegg2.html)
+
+***
 
 **Scientific Publications**
 
@@ -209,23 +212,32 @@ Database
 ***
 ***
 
-Inputs {.sidebar}
+Inputs {.sidebar data-width=150}
 -----------------------------------------------------------------------
 <br>
 <br>
 
+***
+
 ```{r}
 
-      selectizeInput("compound", label = "Search by compound name:",
-                    choices = c(sort(tab$Compound)),
-                     selected = NULL, multiple = TRUE
-      )
+      # selectizeInput("compound", label = "Search by compound name:",
+      #               choices = c(sort(tab$Compound)),
+      #                selected = NA, multiple = TRUE
+      # )
+```
+
+***
+
+```{r}
       
       textInput("search", label = "Search by keyword:",
                 placeholder = 'e.g. Biuret'
       )
 
 ```
+
+***
 
 Outputs
 -----------------------------------------------------------------------
@@ -238,13 +250,15 @@ Outputs
       srchupper <- paste0(toupper(substring(input$search, 1, 1)), 
                           substring(input$search, 2))
       srch3 <- tab[grep(srchupper, tab$Synonyms),]
-      cmpd <- tab[tab$Compound %in% input$compound,]
-      out <- data.frame(rbind(cmpd, srch, srch2, srch3))
+      # cmpd <- tab[tab$Compound %in% input$compound,]
+      out <- data.frame(rbind(
+        # cmpd, 
+        srch, srch2, srch3
+                              ))
       dedup <- out[!duplicated(out),]
       return(xtable(dedup[,c(1:5, 9, 10)]))
 
     })
-
 ```   
 
 Reactions
@@ -262,94 +276,166 @@ Column {.sidebar}
 
 Click on a compound to see its reaction(s):
 
-Urea
+
+
+<!-- Urea -->
 ```{r, out.width = "250px"} 
     tags$button(
         id = "Urea",
         class = "btn action-button",
         tags$img(src = tab$imgurl[tab$Compound == "Urea"],
-                 height = "50px")
+                 width = "175px")
       )
 ```
 <br>
+<br>
 
-Allophanate
+<!-- Allophanate -->
 ```{r} 
   tags$button(
         id = "Allophanate",
         class = "btn action-button",
         tags$img(src = tab$imgurl[tab$Compound == "Allophanate"],
-                 height = "50px")
+                 width = "175px")
       )
 ```
 
 <br>
-Cyanamide   
+<br>
+<!-- Cyanamide    -->
 ```{r}
     tags$button(
         id = "Cyanamide",
         class = "btn action-button",
         tags$img(src = tab$imgurl[tab$Compound == "Cyanamide"],
-                 height = "20px")
+                 width = "175px")
       )  
 ```
 <br>
-Biuret
+<br>
+<!-- Biuret -->
 ```{r, out.width = "250px"} 
       tags$button(
         id = "Biuret",
         class = "btn action-button",
         tags$img(src = tab$imgurl[tab$Compound == "Biuret"],
-                 height = "50px")
+                 width = "175px")
       )   
 ```
+
 <br>
-Cyanuric acid
+<br>
+<!-- Cyanuric acid -->
 ```{r, out.width = "250px"} 
       tags$button(
         id = "Cyanuric_acid",
         class = "btn action-button",
         tags$img(src = tab$imgurl[tab$Compound == "Cyanuric acid"],
-                 height = "50px")
+                 width = "175px")
       )
 
 ```
+<br>
+<br>
+<!-- Cyanoguanidine -->
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Cyanoguanidine",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Cyanoguanidine"],
+                 width = "175px")
+      )   
+```
+<br>
+<br>
+<!-- Methylenediurea -->
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Methylenediurea",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Methylenediurea"],
+                 width = "175px")
+      ) 
+
+```
+<br>
+<br>
+<!-- Guanyl thiourea -->
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Guanyl_thiourea",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Guanyl thiourea"],
+                 width = "175px")
+      )   
+```
+
 
 Column 
 -----------------------------------------------------------------------
 ```{r, out.width = "250px"}   
 
-rv <- reactiveValues(img = 'www/np_dwnloads/white.png', img2 = 'www/np_dwnloads/white.png') # If nothing is activated, then just a white box
+rv <- reactiveValues(img = 'www/np_dwnloads/white.png', 
+                     img2 = 'www/np_dwnloads/white.png',
+                     img3 = 'www/np_dwnloads/white.png',
+                     tbl = NA) 
+
 
   observeEvent(input$Urea, {
-    rv$img <- paste0("www/Urea (urease) decompvert.jpg")
-    rv$img2 <- paste0("www/Urea (carboxylase) decompvert.jpg")
+    rv$tbl <- read.delim("data/Urea.txt")   
+    rv$img <- paste0("www/Urea urease reaction.jpg")
+    rv$img2 <- paste0("www/Urea carboxylase reaction.jpg")
+    rv$img3 <- paste0("www/np_dwnloads/white.png")
   })
   
   observeEvent(input$Cyanuric_acid, {
-    # Table
-    rv$img <- paste0("www/Cyanuric acid.gif")
+    # rv$tbl <- read.delim("data/Cyanuric_acid.txt")
+    rv$img <- paste0("www/Cyanuric acid reaction.jpg")
     rv$img2 <- paste0("www/np_dwnloads/white.png")
+    rv$img3 <- paste0("www/np_dwnloads/white.png")
   })
 
   observeEvent(input$Cyanamide, {
-    # Table
-    rv$img <- paste0("www/Cyanamide.gif")
-    rv$img2 <- paste0("www/np_dwnloads/white.png")
+    rv$tbl <- read.delim("data/Cyanamide.txt")
+    rv$img <- paste0("www/Cyanamide hydratase reaction.jpg")
+    rv$img2 <- paste0("www/Cyanamide urease reaction.jpg")
+    rv$img3 <- paste0("www/np_dwnloads/white.png")
   })
   
     observeEvent(input$Biuret, {
-    # Table
-    rv$img <- paste0("www/Biuret.gif")
+    # rv$tbl <- read.delim("data/Biuret.txt")
+    rv$img <- paste0("www/Biuret reaction.jpg")
     rv$img2 <- paste0("www/np_dwnloads/white.png")
+    rv$img3 <- paste0("www/np_dwnloads/white.png")
   })
   
     observeEvent(input$Allophanate, {
-    # Table
-    rv$img <- paste0("www/Allophanate.gif")
+    rv$tbl <- read.delim("data/Allophanate.txt")
+    rv$img <- paste0("www/Allophanate reaction.jpg")
     rv$img2 <- paste0("www/np_dwnloads/white.png")
+    rv$img3 <- paste0("www/np_dwnloads/white.png")
   })
     
+    observeEvent(input$Cyanoguanidine, {
+    rv$tbl <- read.delim("data/Cyanoguanidine.txt")
+    rv$img <- paste0("www/Cyanoguanidine reaction 1.jpg")
+    rv$img2 <- paste0("www/Cyanoguanidine reaction 2.jpg")
+    rv$img3 <- paste0("www/Cyanoguanidine reaction 3.jpg")
+  })
+    
+    observeEvent(input$Methylenediurea, {
+    rv$tbl <- read.delim("data/Methylenediurea.txt")
+    rv$img <- paste0("www/Methylenediurea reaction.jpg")
+    rv$img2 <- paste0("www/np_dwnloads/white.png")
+    rv$img3 <- paste0("www/np_dwnloads/white.png")
+  })
+    
+    observeEvent(input$Guanyl_thiourea, {
+    rv$tbl <- read.delim("data/Guanyl_thiourea.txt")
+    rv$img <- paste0("www/Guanyl thiourea reaction.jpg")
+    rv$img2 <- paste0("www/test1.jpg")
+    rv$img3 <- paste0("www/np_dwnloads/white.png")
+  })    
   output$img <- renderImage({
    list(src = rv$img)
 }, deleteFile = FALSE)
@@ -358,31 +444,57 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png', img2 = 'www/np_dwnloads/
    list(src = rv$img2)
 }, deleteFile = FALSE)
   
- # texttest <- readLines("data/allophanate.txt")
- # renderText(texttest)
+  output$img3 <- renderImage({
+   list(src = rv$img3)
+}, deleteFile = FALSE)  
+ 
+  output$tbl <- renderTable({
+    list(src = rv$tbl)
+})
+  
+tableOutput("tbl")  
 ```
 
-<div class = "row">
-<div class = "col-md-6">
-<center>
+<!-- <div class = "row"> -->
+<!-- <div class = "col-md-6"> -->
+<!-- <center> -->
+<div class="row">
+  <div class="col-sm-4">
 
+Reaction 1:
 ```{r}
 imageOutput("img")
 ```
-
-</center>
 </div>
+<!-- </center> -->
+<!-- </div> -->
 
-<div class = "col-md-6">
-<center>   
+<!-- <div class = "col-md-6"> -->
+<!-- <center> -->
+  <div class="col-sm-4">
 
+Reaction 2:
 ```{r}
 imageOutput("img2")
 ```  
+</div>
+<!-- </center> -->
+<!-- </div> -->
 
-</center>
+<!-- <div class = "col-md-6"> -->
+<!-- <center> -->
+  <div class="col-sm-4">
+
+Reaction 3:
+```{r}
+imageOutput("img3")
+```  
 </div>
+<!-- </center> -->
+<!-- </div> -->
+<!-- </div> -->
 </div>
+
 
 Acknowledgements
 =====================================
