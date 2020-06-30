@@ -378,8 +378,8 @@ Column
 rv <- reactiveValues(img = 'www/np_dwnloads/white.png', 
                      img2 = 'www/np_dwnloads/white.png',
                      img3 = 'www/np_dwnloads/white.png',
-                     tbl = NA) 
-
+                     tbl = read.delim('data/table_default.txt')
+)
 
   observeEvent(input$Urea, {
     rv$tbl <- read.delim("data/Urea.txt")   
