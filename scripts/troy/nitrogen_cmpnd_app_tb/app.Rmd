@@ -4,8 +4,8 @@ output:
   flexdashboard::flex_dashboard:
     theme: cerulean
     vertical_layout: fill
-    logo: 
-    favicon: 
+    logo: www/leaflogo2.jpg
+    favicon: www/leaflogo2.jpg
     social: menu
     css: styles.css
 runtime: shiny
@@ -53,7 +53,7 @@ Last updated: June 25th, 2020
 Column 
 -----------------------------------------------------------------------
 ```{r, out.width = "100%"}
-knitr::include_graphics("www/testhomepage.jpg")
+knitr::include_graphics("www/homepage1.jpg")
 ```
 
 About
@@ -389,7 +389,7 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png',
   })
   
   observeEvent(input$Cyanuric_acid, {
-    # rv$tbl <- read.delim("data/Cyanuric_acid.txt")
+    rv$tbl <- read.delim("data/Cyanuric_acid.txt")
     rv$img <- paste0("www/Cyanuric acid reaction.jpg")
     rv$img2 <- paste0("www/np_dwnloads/white.png")
     rv$img3 <- paste0("www/np_dwnloads/white.png")
@@ -403,7 +403,7 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png',
   })
   
     observeEvent(input$Biuret, {
-    # rv$tbl <- read.delim("data/Biuret.txt")
+    rv$tbl <- read.delim("data/Biuret.txt")
     rv$img <- paste0("www/Biuret reaction.jpg")
     rv$img2 <- paste0("www/np_dwnloads/white.png")
     rv$img3 <- paste0("www/np_dwnloads/white.png")
@@ -436,7 +436,7 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png',
     rv$img2 <- paste0("www/test1.jpg")
     rv$img3 <- paste0("www/np_dwnloads/white.png")
   })    
-  output$img <- renderImage({
+  output$img1 <- renderImage({
    list(src = rv$img)
 }, deleteFile = FALSE)
   
@@ -451,7 +451,6 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png',
   output$tbl <- renderTable({
     list(src = rv$tbl)
 })
-  
 tableOutput("tbl")  
 ```
 
@@ -463,8 +462,8 @@ tableOutput("tbl")
 
 Reaction 1:
 ```{r}
-imageOutput("img")
-```
+imageOutput("img1")
+```  
 </div>
 <!-- </center> -->
 <!-- </div> -->

@@ -1,5 +1,4 @@
-Synopsis:
-
+Biuret
 A co-product in the production of urea-type fertilizers, biuret (carbamoylurea), is formed by the condensation of two urea molecules (Esquirol et al 2018, Robinson et al 2018). This compound was discovered in 1847 by Wiedemann while studying the thermal decomposition of urea (Kurzer 1955)
 Biuret plays a common role in the feed for ruminants as a way to increase nitrogen content. However, some harmful aspects of biuret exist. About .9 to 1.9 billion kilograms of biuret is forecasted to end up on agricultural land as impurities of urea fertilizers (Robinson et al 2018). Biuret is a known phytotoxic compound and gives way to a need for bioremediation (Esquirol, et al 2018). Bioremediation efforts underway look at the bacterial strains and enzymes capable of degrading S-triazines starting with catabolic genes of the chloro-s-triazine, atrazine. (Martinez-Vaz et al 2001). This compound is an irritant as classified by GHS.
 
@@ -12,7 +11,7 @@ Biuret Hydrolase (Esquirol et al. 2018)
 
 Bacteria:
 
-(Characterized): 
+(Characterized):
 Rhizobium leguminasorum bv. Viciae3841 (Esquirol et al. 2018)
 Herbaspirillum sp. BH-1 (Robinson et al. 2018)
 Pseudomonas sp. BH-2 (Robinson et al. 2018)
