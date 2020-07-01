@@ -1,5 +1,5 @@
 # Install packages
-pacman::p_load("tidyverse", "DECIPHER", "Biostrings", "ggseqlogo")
+pacman::p_load("tidyverse", "DECIPHER", "Biostrings", "ggseqlogo", "cowplot")
 
 # Set working directory
 setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
@@ -60,7 +60,7 @@ p <- ggplot() +
   #theme(legend.position = 'none', axis.text.x = element_blank()) 
 p
 dev.off()
-
+?geom_logo
 ## Challenge 1. Work through the ggseqlogo tutorial:
 # https://omarwagih.github.io/ggseqlogo/#colour_schemes
 # Play around with changing the color. 
@@ -83,15 +83,220 @@ query <- seqs[1]
 length(seqs)
 ref <- readAAStringSet("data/4KU5.fasta")
 names(ref) <- "4KU5"
+channelB <- sort(c(176, 173, 172, 242, 243, 112, 111, 171, 117, 316, 203, 246))
+channelA <- sort(c(253, 258, 261, 284, 291, 292, 295, 343, 345, 349, 351, 353))
+getresidues(query, ref, c(channelA,channelB))
 
-getresidues(query, ref)
+result34 <- getresidues(seqs[34], ref, c(channelA,channelB))
 
-getresidues <- function(query, ref) {
+resultlistA <- c(1:50)
+resultlistB <- c(1:50)
+for(i in 1:length(seqs)) {
+  query <- seqs[i]
+  resultlistA[[i]] <- getresidues(query = query,
+                                 ref = ref,
+                                 aa_inds = channelA)
+}
+for(i in 1:length(seqs)) {
+  query <- seqs[i]
+  resultlistB[[i]] <- getresidues(query = query,
+                                  ref = ref,
+                                  aa_inds = channelB)
+}
+view(resultlist)
+resultlist[34] == result34
+resultdat <- data.frame(resultlist)
+colnames(resultdat) <- "sequence"
+resultdatA <- data.frame(resultlistA)
+colnames(resultdatA) <- "sequence"
+resultdatB <- data.frame(resultlistB)
+colnames(resultdatB) <- "sequence"
+
+p = list()
+
+for(i in 1:length(resultdatA)){
+ p[[i]] <- ggplot() + 
+  geom_logo(resultdatA[i,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+ return(p)}
+
+pdf("output/channel_logo_togetherB.pdf")
+p <- ggplot() + 
+  geom_logo(resultdatB[,i], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p
+dev.off()
+#theme(legend.position = 'none', axis.text.x = element_blank()) 
+pdf("output/channel_logo_allB.pdf", height = 100)
+plot_grid(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42,p43,p44,p45,p46,p47,p48,p49,p50,ncol = 1)
+dev.off()
+p
+p1 <- ggplot() + 
+  geom_logo(resultdatB[1,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p2 <- ggplot() + 
+  geom_logo(resultdatB[2,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p3 <- ggplot() + 
+  geom_logo(resultdatB[3,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p4 <- ggplot() + 
+  geom_logo(resultdatB[4,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p5 <- ggplot() + 
+  geom_logo(resultdatB[5,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p6 <- ggplot() + 
+  geom_logo(resultdatB[6,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p7 <- ggplot() + 
+  geom_logo(resultdatB[7,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p8 <- ggplot() + 
+  geom_logo(resultdatB[8,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p9 <- ggplot() + 
+  geom_logo(resultdatB[9,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p10 <- ggplot() + 
+  geom_logo(resultdatB[10,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p11 <- ggplot() + 
+  geom_logo(resultdatB[11,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p12 <- ggplot() + 
+  geom_logo(resultdatB[12,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p13 <- ggplot() + 
+  geom_logo(resultdatB[13,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p14 <- ggplot() + 
+  geom_logo(resultdatB[14,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p15 <- ggplot() + 
+  geom_logo(resultdatB[15,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p16 <- ggplot() + 
+  geom_logo(resultdatB[16,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p17 <- ggplot() + 
+  geom_logo(resultdatB[17,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p18 <- ggplot() + 
+  geom_logo(resultdatB[18,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p19 <- ggplot() + 
+  geom_logo(resultdatB[19,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p20 <- ggplot() + 
+  geom_logo(resultdatB[20,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p21 <- ggplot() + 
+  geom_logo(resultdatB[21,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p22 <- ggplot() + 
+  geom_logo(resultdatB[22,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p23 <- ggplot() + 
+  geom_logo(resultdatB[23,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p24 <- ggplot() + 
+  geom_logo(resultdatB[24,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p25 <- ggplot() + 
+  geom_logo(resultdatB[25,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p26 <- ggplot() + 
+  geom_logo(resultdatB[26,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p27 <- ggplot() + 
+  geom_logo(resultdatB[27,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p28 <- ggplot() + 
+  geom_logo(resultdatB[28,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p29 <- ggplot() + 
+  geom_logo(resultdatB[29,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p30 <- ggplot() + 
+  geom_logo(resultdatB[30,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p31 <- ggplot() + 
+  geom_logo(resultdatB[31,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p32 <- ggplot() + 
+  geom_logo(resultdatB[32,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p33 <- ggplot() + 
+  geom_logo(resultdatB[33,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p34 <- ggplot() + 
+  geom_logo(resultdatB[34,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p35 <- ggplot() + 
+  geom_logo(resultdatB[35,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p36 <- ggplot() + 
+  geom_logo(resultdatB[36,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p37 <- ggplot() + 
+  geom_logo(resultdatB[37,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p38 <- ggplot() + 
+  geom_logo(resultdatB[38,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p39 <- ggplot() + 
+  geom_logo(resultdatB[39,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p40 <- ggplot() + 
+  geom_logo(resultdatB[40,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p41 <- ggplot() + 
+  geom_logo(resultdatB[41,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p42 <- ggplot() + 
+  geom_logo(resultdatB[42,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p43 <- ggplot() + 
+  geom_logo(resultdatB[43,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p44 <- ggplot() + 
+  geom_logo(resultdatB[44,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p45 <- ggplot() + 
+  geom_logo(resultdatB[45,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p46 <- ggplot() + 
+  geom_logo(resultdatB[46,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p47 <- ggplot() + 
+  geom_logo(resultdatB[47,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p48 <- ggplot() + 
+  geom_logo(resultdatB[48,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p49 <- ggplot() + 
+  geom_logo(resultdatB[49,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+p50 <- ggplot() + 
+  geom_logo(resultdatB[50,1], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+
+plot_grid(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, ncol = 1)
+
+
+
+
+
+
+
+p
+getresidues <- function(query, ref, aa_inds) {
   
 
-  channel_b <- sort(c(176, 173, 172, 242, 243, 112, 111, 171, 117, 316, 203, 246))
-  channel_a <- sort(c(253, 258, 261, 284, 291, 292, 295, 343, 345, 349, 351, 353))
-  aa_inds <- c(channel_a, channel_b)
+  # channel_b <- sort(c(176, 173, 172, 242, 243, 112, 111, 171, 117, 316, 203, 246))
+  # channel_a <- sort(c(253, 258, 261, 284, 291, 292, 295, 343, 345, 349, 351, 353))
+  # aa_inds <- c(channel_a, channel_b)
 
     alned <- DECIPHER::AlignSeqs(c(ref, query), verbose = FALSE)
     ref_aln <- alned[1]
