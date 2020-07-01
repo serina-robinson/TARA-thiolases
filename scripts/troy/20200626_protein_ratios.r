@@ -18,8 +18,10 @@ aastat.df[[1]]
 class(aastat.df)
 view(aastat.df)
 ?AAstat
+seq.df$seqs[[2]]
+class(seq.df$seqs)
 # Wow this is ugly...I'm sure there is a better way to do this haha
-new.df <- data.frame(nams = attr(seqs, "name"))
+new.df_og <- data.frame(nams = attr(seqs, "name"))
 for(i in 1:length(genes)){
   new.df$len[i] <- length(seq.df$seqs[[i]])-1 #aa sequence length
   new.df$Arg[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="R")] / new.df$len[i] 
@@ -35,6 +37,20 @@ for(i in 1:length(genes)){
   new.df$Acidic[i] <- aastat.df[[i]][2][[1]][which(names(aastat.df[[i]][2][[1]])=="Acidic")]
   new.df$Polar[i] <- aastat.df[[i]][2][[1]][which(names(aastat.df[[i]][2][[1]])=="Polar")]
 }
+
+aastat.df2 <- data.frame(t(aastat.df))
+aastat.df3 <- aastat.df2 %>% 
+  mutate(nams = rownames(aastat.df2))
+all.df <- left_join(aastat.df3, new.df_og, by = "nams")
+## to do list:
+# did the join work?
+# keep doing this mutate thing
+# read some of the articles
+# try the next challenges
+?t
+new.df2 <- seq.df %>% 
+  mutate(aa_length = lengths(seqs),
+         Arg = )
 
 ## These are challenges for the WEEK not just for Friday!
 # cold.df = new.df

@@ -53,44 +53,63 @@ Last updated: June 25th, 2020
 Column 
 -----------------------------------------------------------------------
 ```{r, out.width = "100%"}
-knitr::include_graphics("www/homepage1.jpg")
+knitr::include_graphics("www/homepage.jpg")
 ```
 
 About
 ===================================== 
 Column {.sidebar}
 -----------------------------------------------------------------------
-***
-***
-***
-<br>
-<br>
 
-**blah blah blah words and things and stuff**
 <br>
-here are more words 
 <br>
-*italicized words*
+```{r, out.width = "100%"}
+knitr::include_graphics("www/umlogo.png")
+```
+<br>
+<br>
+```{r, out.width = "100%"}
+knitr::include_graphics("www/bti.gif")
+```
+<br>
+<br>
+```{r, out.width = "100%"}
+knitr::include_graphics("www/ione.png")
+```
+<br>
+<br>
+```{r, out.width = "100%"}
+knitr::include_graphics("www/hamline.png")
+```
+<br>
+<br>
 
 Inputs 
 -----------------------------------------------------------------------
-**below are some words:**
-<br>
 
-* word
+***
 
-* word pt 2
+The Organonitrogen Degradation Database (O.D.D.) is a catalog of agriculturally applied nitrogen compounds. The scope of the database is to provide a thorough understanding of the pathways, reactions, bacteria and enzymes involved in organonitrogen degradation in soil. 
 
-* word word word word word
+Organonitrogen compounds, applied directly to soil in bulk quantities, can be leached from the soil and transported to waterways and aquifers; they are known to cause ecosystem imbalance such as heightened pH and eutrophication. A better understanding of the microbial transformations of these compounds provides researchers the ability to remediate potential hazards. 
 
-<br>
+To better understand the fate of these compounds, we have compiled information regarding their biodegradation. Selecting any compound listed in the database will provide information such as general overview, basic chemical information, common use, transformation products, enzymes and bacteria capable of degradation.
 
-* another bulleted word but after a break
+The Organonitrogen Degradation Database, with a wealth of information, has room to be added too. The O.D.D. is a great resource for lecture groups to contribute to and utilize. Lecturers are able to utilize this database in their lesson plans to elicit several learning objectives including	
 
-<br>
+* Understanding microbial degradation
+* Bioremediation tactics
+* Understanding the role of enzymes
+* Further investigations for the use and importance of computational research
+* Practice working through the scientific steps 
 
-*word again but in italics like a description or something*
+This site is maintained by Dr. Larry Wackett’s lab at the University of Minnesota. We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Organonitrogen Degradation Database was designed in collaboration with Hamline University.
 
+
+
+Last updated: July 2020
+
+***
 
 Resources
 ===================================== 
@@ -461,8 +480,8 @@ tableOutput("tbl")
   <div class="col-sm-4">
 
 Reaction 1:
-```{r}
-imageOutput("img1")
+```{r, out.width = "100px"}
+imageOutput("img1", width = "75px")
 ```  
 </div>
 <!-- </center> -->
@@ -473,7 +492,7 @@ imageOutput("img1")
   <div class="col-sm-4">
 
 Reaction 2:
-```{r}
+```{r, out.width = "100px"}
 imageOutput("img2")
 ```  
 </div>
@@ -485,7 +504,7 @@ imageOutput("img2")
   <div class="col-sm-4">
 
 Reaction 3:
-```{r}
+```{r, out.width = "100px"}
 imageOutput("img3")
 ```  
 </div>
@@ -495,37 +514,37 @@ imageOutput("img3")
 </div>
 
 
-Acknowledgements
-=====================================
+<!-- Acknowledgements -->
+<!-- ===================================== -->
 
-Column {.sidebar}
------------------------------------------------------------------------
-<br>
-<br>
-<br>
-This site is maintained by [Dr. Larry Wackett's lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota. 
-<br>
-<br>
-We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradation Database was designed in collaboration with Hamline University. 
+<!-- Column {.sidebar} -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- This site is maintained by [Dr. Larry Wackett's lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota.  -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradation Database was designed in collaboration with Hamline University.  -->
 
-Column {.bgwhite}
------------------------------------------------------------------------
-<br>
-<br>
-<br>
-```{r, out.width = "25%"}
-knitr::include_graphics("www/umlogo.png")
-```
-<br>
-```{r, out.width = "25%"}
-knitr::include_graphics("www/bti.gif")
-```
-<br>
-<br>
-```{r, out.width = "25%"}
-knitr::include_graphics("www/ione.png")
-```
-<br>
-```{r, out.width = "25%"}
-knitr::include_graphics("www/hamline.png")
-```
+<!-- Column {.bgwhite} -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- ```{r, out.width = "25%"} -->
+<!-- knitr::include_graphics("www/umlogo.png") -->
+<!-- ``` -->
+<!-- <br> -->
+<!-- ```{r, out.width = "25%"} -->
+<!-- knitr::include_graphics("www/bti.gif") -->
+<!-- ``` -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- ```{r, out.width = "25%"} -->
+<!-- knitr::include_graphics("www/ione.png") -->
+<!-- ``` -->
+<!-- <br> -->
+<!-- ```{r, out.width = "25%"} -->
+<!-- knitr::include_graphics("www/hamline.png") -->
+<!-- ``` -->

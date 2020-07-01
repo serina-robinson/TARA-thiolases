@@ -88,7 +88,7 @@ channelA <- sort(c(253, 258, 261, 284, 291, 292, 295, 343, 345, 349, 351, 353))
 getresidues(query, ref, c(channelA,channelB))
 
 result34 <- getresidues(seqs[34], ref, c(channelA,channelB))
-
+seqs[9]
 resultlistA <- c(1:50)
 resultlistB <- c(1:50)
 for(i in 1:length(seqs)) {
@@ -104,7 +104,7 @@ for(i in 1:length(seqs)) {
                                   aa_inds = channelB)
 }
 view(resultlist)
-resultlist[34] == result34
+resultlistA[9]
 resultdat <- data.frame(resultlist)
 colnames(resultdat) <- "sequence"
 resultdatA <- data.frame(resultlistA)
@@ -339,6 +339,41 @@ olea_chans2
 # What other types of plots could you make? Could you some include temperature information?
 # What about PUFA presence/absence? Do the PUFA-containing organisms have different channel residues?
 
+# Sequences we're going to use for the logo
+seqs
+
+# Generate the sequence logo
+g <- ggplot() + 
+  geom_logo(resultdatA[,i], method = "p", col_scheme = 'chemistry') + 
+  theme_logo()
+g
+
+# Generate the sequence alignment
+g2 = ggplot(aln, aes(x, species)) +
+  geom_text(aes(label=letter, color=mut, size=mut)) + 
+  scale_x_continuous(breaks=1:10, expand = c(0.105, 0)) + xlab('') + 
+  scale_color_manual(values=c('black', 'red')) + 
+  scale_size_manual(values=c(5, 6)) + 
+  theme_logo() + 
+  theme(legend.position = 'none', axis.text.x = element_blank()) 
+g2
+# Generate barplot data
+bp_data = data.frame(x=1:8, conservation=sample(1:100, 8))
+
+# Generate barplot data 
+p3 = ggplot(bp_data, aes(x, conservation)) +
+  geom_bar(stat='identity', fill='grey') + 
+  theme_logo() + 
+  scale_x_continuous(breaks=1:10, expand = c(0.105, 0)) + 
+  xlab('')
+
+
+# Now combine using cowplot, which ensures the plots are aligned
+suppressMessages( require(cowplot) )
+plot_grid(p1, p2, p3,  ncol = 1, align = 'v')
+
+
+
 ## For next week: Identify 'positive patch' residues and run this same sort of code to visualize and compare
 # positive patches among your 50 sequences.
 
@@ -350,4 +385,5 @@ olea_chans2
 ## read papers about positive patch
 
 ## make aa_inds variable
+
   
