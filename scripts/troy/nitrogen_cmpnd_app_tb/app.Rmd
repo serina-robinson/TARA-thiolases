@@ -452,7 +452,7 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png',
     observeEvent(input$Guanyl_thiourea, {
     rv$tbl <- read.delim("data/Guanyl_thiourea.txt")
     rv$img <- paste0("www/Guanyl thiourea reaction.jpg")
-    rv$img2 <- paste0("www/test1.jpg")
+    rv$img2 <- paste0("www/np_dwnloads/white.png")
     rv$img3 <- paste0("www/np_dwnloads/white.png")
   })    
   output$img1 <- renderImage({

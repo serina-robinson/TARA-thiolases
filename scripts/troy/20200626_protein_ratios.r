@@ -22,17 +22,32 @@ seq.df$seqs[[2]]
 class(seq.df$seqs)
 # Wow this is ugly...I'm sure there is a better way to do this haha
 new.df_og <- data.frame(nams = attr(seqs, "name"))
+rm(new.df)
+new.df <- new.df_og
 for(i in 1:length(genes)){
   new.df$len[i] <- length(seq.df$seqs[[i]])-1 #aa sequence length
-  new.df$Arg[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="R")] / new.df$len[i] 
-  new.df$Lys[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="K")] / new.df$len[i]
-  new.df$Asn[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="N")] / new.df$len[i]
-  new.df$Gln[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="Q")] / new.df$len[i]
+  new.df$Ala[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="A")] / new.df$len[i] 
+  new.df$Cys[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="C")] / new.df$len[i]
+  new.df$Asp[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="D")] / new.df$len[i]
   new.df$Glu[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="E")] / new.df$len[i]
-  new.df$Asp[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="N")] / new.df$len[i]
-  new.df$Pro[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="D")] / new.df$len[i]
+  new.df$Phe[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="F")] / new.df$len[i]
+  new.df$Gly[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="G")] / new.df$len[i]
+  new.df$His[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="H")] / new.df$len[i]
+  new.df$Ile[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="I")] / new.df$len[i]
+  new.df$Lys[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="K")] / new.df$len[i]
+  new.df$Leu[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="L")] / new.df$len[i] 
+  new.df$Met[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="M")] / new.df$len[i]
+  new.df$Asn[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="N")] / new.df$len[i]
+  new.df$Pro[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="P")] / new.df$len[i]
+  new.df$Gln[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="Q")] / new.df$len[i]
+  new.df$Arg[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="R")] / new.df$len[i]
+  new.df$Ser[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="S")] / new.df$len[i]
   new.df$Thr[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="T")] / new.df$len[i]
-  new.df$Leu[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="L")] / new.df$len[i]
+  new.df$Val[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="V")] / new.df$len[i]
+  new.df$Trp[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="W")] / new.df$len[i] 
+  new.df$Tyr[i] <- aastat.df[[i]][1][[1]][which(names(aastat.df[[i]][1][[1]])=="Y")] / new.df$len[i] 
+  new.df$RKrat[i] <- (new.df$Arg[i]) /(new.df$Arg[i] + new.df$Lys[i]) 
+  new.df$acidrat[i] <- (new.df$Asn[i] + new.df$Gln[i]) / (new.df$Asn[i] + new.df$Glu[i] + new.df$Gln[i] + new.df$Arg[i])
   new.df$Aliphatic[i] <- aastat.df[[i]][2][[1]][which(names(aastat.df[[i]][2][[1]])=="Aliphatic")]
   new.df$Acidic[i] <- aastat.df[[i]][2][[1]][which(names(aastat.df[[i]][2][[1]])=="Acidic")]
   new.df$Polar[i] <- aastat.df[[i]][2][[1]][which(names(aastat.df[[i]][2][[1]])=="Polar")]
@@ -41,16 +56,22 @@ for(i in 1:length(genes)){
 aastat.df2 <- data.frame(t(aastat.df))
 aastat.df3 <- aastat.df2 %>% 
   mutate(nams = rownames(aastat.df2))
-all.df <- left_join(aastat.df3, new.df_og, by = "nams")
+aastat.df4 <- aastat.df3 %>% 
+  mutate(nams = case_when(substr(nams, 1, 1) == "X" ~ substr(nams, 2, 100),
+                          TRUE ~ nams))
+all.df <- left_join(aastat.df4, seq.df, by = "nams")
+which(names(aastat.df[[2]][1][[1]])=="R")
+
 ## to do list:
 # did the join work?
 # keep doing this mutate thing
 # read some of the articles
 # try the next challenges
 ?t
-new.df2 <- seq.df %>% 
-  mutate(aa_length = lengths(seqs),
-         Arg = )
+
+allstat.df <- all.df %>% 
+  mutate(aa_length = lengths(seqs)
+         )
 
 ## These are challenges for the WEEK not just for Friday!
 # cold.df = new.df
@@ -64,7 +85,7 @@ new.df2 <- seq.df %>%
 # https://books.google.com/books?id=LANEAgAAQBAJ&pg=PA82&lpg=PA82&dq=arginine-to-lysine+ratio+cold-adapted+enzymes+temperature&source=bl&ots=rC2L68FUye&sig=ACfU3U10pk5Pdz-B7B43ZfUNGFcW8Vf_ww&hl=en&sa=X&ved=2ahUKEwic8I_RwJ7qAhUMbs0KHTpeARcQ6AEwAnoECAgQAQ#v=onepage&q=arginine-to-lysine%20ratio%20cold-adapted%20enzymes%20temperature&f=false
 
 # Challenge 1. Create a new column in cold.df calculating the ratio of asparagine and glutamine against all amino acids
-# and specifically against Asn, Glu, Gln, and Asp. You can use the formula: Asn + Glu / (Asn + Glu + Gln + Asp)
+# and specifically against Asn, Glu, Gln, and Asp. You can use the formula: Asn + Gln / (Asn + Glu + Gln + Asp)
 # Why are we testing this ratio? Do you expect it to be higher or lower in thermophilic enzymes?
 # See Bhanuramanand et al. 2014 for some clues
 
