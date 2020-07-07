@@ -6,7 +6,7 @@ setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 
 # Read in the sequences
 seqs <- read.fasta("data/50_TARA_psychro_thermo_unaligned.fasta", seqtype = "AA", strip.desc = TRUE)
-seqs
+# seqs
 # Create a data frame
 genes <- attr(seqs, "name") #generates a gene list
 seq.df <- data.frame(nams = attr(seqs, "name")) %>%
@@ -15,13 +15,13 @@ seq.df <- data.frame(nams = attr(seqs, "name")) %>%
 aastat.df <- data.frame(sapply(seq.df$seqs, AAstat)) # check out the plot
 aastat.df[[1]]
 class(aastat.df)
-view(aastat.df)
-?AAstat
-seq.df$seqs[[2]]
-class(seq.df$seqs)
+# view(aastat.df)
+# ?AAstat
+# seq.df$seqs[[2]]
+# class(seq.df$seqs)
 # Wow this is ugly...I'm sure there is a better way to do this haha
 new.df_og <- data.frame(nams = attr(seqs, "name"))
-rm(new.df)
+# rm(new.df)
 new.df <- new.df_og
 for(i in 1:length(genes)){
   new.df$len[i] <- length(seq.df$seqs[[i]])-1 #aa sequence length
@@ -59,7 +59,7 @@ for(i in 1:length(genes)){
   new.df$Basic[i] <- aastat.df[[i]][2][[1]][which(names(aastat.df[[i]][2][[1]])=="Basic")]
   new.df$Acidic[i] <- aastat.df[[i]][2][[1]][which(names(aastat.df[[i]][2][[1]])=="Acidic")]
   }
-aastat.df[[i]][2][[1]]
+# aastat.df[[i]][2][[1]]
 aastat.df2 <- data.frame(t(aastat.df))
 aastat.df3 <- aastat.df2 %>% 
   mutate(nams = rownames(aastat.df2))
@@ -67,18 +67,18 @@ aastat.df4 <- aastat.df3 %>%
   mutate(nams = case_when(substr(nams, 1, 1) == "X" ~ substr(nams, 2, 100),
                           TRUE ~ nams))
 all.df <- full_join(aastat.df4, seq.df, by = "nams")
-which(names(aastat.df[[2]][1][[1]])=="R")
-view(all.df)
+# which(names(aastat.df[[2]][1][[1]])=="R")
+# view(all.df)
 ## to do list:
 # did the join work?
 # keep doing this mutate thing
 # read some of the articles
 # try the next challenges
-?t
+# ?t
 
-allstat.df <- all.df %>% 
-  mutate(aa_length = lengths(seqs)
-         )
+# allstat.df <- all.df %>% 
+  # mutate(aa_length = lengths(seqs)
+         # )
 
 ## These are challenges for the WEEK not just for Friday!
 # cold.df = new.df
@@ -123,10 +123,10 @@ new.df[grep("2026809.16.peg.2167_Epsilonproteobacteri", new.df$nams), "nams"] <-
 new.df[grep("2026799.183.peg.457_Verrucomicrobia", new.df$nams), "nams"] <- "2026799.183.peg.457_Verrucomicrobia_psychrophile"
 new.df[grep("2483033.3.peg.4057_Sedimentitalea", new.df$nams), "nams"] <- "2483033.3.peg.4057_Sedimentitalea_mesophile"
 dat <- full_join(full50, new.df, by = "nams")
-ggplot(dat, aes(x=Arg, y=temperature_range)) + 
-  geom_boxplot()
-colnames(dat)
-table(dat$temperature_range)
+# ggplot(dat, aes(x=Arg, y=temperature_range)) + 
+#   geom_boxplot()
+# colnames(dat)
+# table(dat$temperature_range)
  ## find topt and add to dat and then write to file 
 ## Challenge 5. Now make scatter plots comparing the amino acid ratios to optimal/isolation temperature
 # and protein topt. You can either use Ggally or other make them individually
@@ -175,11 +175,14 @@ table(dat$temperature_range)
 # Could you look up if any of them are thermophiles or psychrophiles? 
 # Can you find isolation temperatures and locations?
 # Do the properties of their sequences support trends you're observing with the 50 you've been working with?
-stuff <- read_csv("data/73_OleA_seqs_for_lookup.csv")
+# stuff <- read_csv("data/73_OleA_seqs_for_lookup.csv")
 ## Challenge 14. Have a fun week, don't work to hard, and take at least Friday off!
 
-
-
+## adding topt to dat
+props <- read_csv("data/50_protein_props.csv")
+full50_allstats <- full_join(props, dat, by = "nams")
+view(dat)
+view(full50_allstats)
 ### to do
 # make plots
 # add temp stat for 73 sequences 

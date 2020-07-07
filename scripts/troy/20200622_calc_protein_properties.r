@@ -86,6 +86,14 @@ view(tomerdf)
 combined <- combdf %>% 
   left_join(tomerdf, by = c("nams" = "sequence"))
 view(combined)
+combined[grep("Psychrobacter", combined$nams), "nams"] <- "282669.3.peg.967_Kocuria_mesophile"
+combined[grep("2026735.166.peg.848_Deltaproteobacteria", combined$nams), "nams"] <- "2026735.166.peg.848_Deltaproteobacteria_psychrophile"
+combined[grep("2026735.148.peg.1837_Deltaproteobacteria", combined$nams), "nams"] <- "2026735.148.peg.1837_Deltaproteobacteria_psychrophile"
+combined[grep("2026809.16.peg.2167_Epsilonproteobacteri", combined$nams), "nams"] <- "2026809.16.peg.2167_Epsilonproteobacteria_psychrophile"
+combined[grep("2026799.183.peg.457_Verrucomicrobia", combined$nams), "nams"] <- "2026799.183.peg.457_Verrucomicrobia_psychrophile"
+combined[grep("2483033.3.peg.4057_Sedimentitalea", combined$nams), "nams"] <- "2483033.3.peg.4057_Sedimentitalea_mesophile"
+
+write_csv(combined, "data/50_protein_props.csv")
 # Challenge 3. Read in full50 (or some version of it) and join with df from Challenge 2.
 full50 <- read_csv("data/full50_5.csv")
 # full50$label == full50$newnams
