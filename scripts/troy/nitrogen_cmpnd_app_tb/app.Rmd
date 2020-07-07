@@ -16,15 +16,16 @@ library("xtable")
 library("data.table")
 library("shiny")
 library("readxl")
+library("tidyverse")
 ```
 
 
 ```{r global}
 ## Read in the datasets
 ## This is the chemical compound dataset
-tab <- read_excel("data/Compounds_complete.xlsx", sheet = 1)
+tab1 <- read_excel("data/Compounds_complete.xlsx", sheet = 1)
+tab <- arrange(tab1, Compound)
 colnames(tab)[1:10] <- c("Compound", "Formula", "MW", "SMILES", "Synonyms", "CAS", "imgurl", "rxnurl", "CN_Ratio", "Cost")
-
 ```
 
 Home
@@ -297,15 +298,7 @@ Click on a compound to see its reaction(s):
 
 
 
-<!-- Urea -->
-```{r, out.width = "250px"} 
-    tags$button(
-        id = "Urea",
-        class = "btn action-button",
-        tags$img(src = tab$imgurl[tab$Compound == "Urea"],
-                 width = "175px")
-      )
-```
+
 <br>
 <br>
 
@@ -321,17 +314,7 @@ Click on a compound to see its reaction(s):
 
 <br>
 <br>
-<!-- Cyanamide    -->
-```{r}
-    tags$button(
-        id = "Cyanamide",
-        class = "btn action-button",
-        tags$img(src = tab$imgurl[tab$Compound == "Cyanamide"],
-                 width = "175px")
-      )  
-```
-<br>
-<br>
+
 <!-- Biuret -->
 ```{r, out.width = "250px"} 
       tags$button(
@@ -344,6 +327,33 @@ Click on a compound to see its reaction(s):
 
 <br>
 <br>
+
+<!-- Cyanamide    -->
+```{r}
+    tags$button(
+        id = "Cyanamide",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Cyanamide"],
+                 width = "175px")
+      )  
+```
+
+<br>
+<br>
+
+<!-- Cyanoguanidine -->
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Cyanoguanidine",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Cyanoguanidine"],
+                 width = "175px")
+      )   
+```
+
+<br>
+<br>
+
 <!-- Cyanuric acid -->
 ```{r, out.width = "250px"} 
       tags$button(
@@ -354,31 +364,10 @@ Click on a compound to see its reaction(s):
       )
 
 ```
-<br>
-<br>
-<!-- Cyanoguanidine -->
-```{r, out.width = "250px"} 
-      tags$button(
-        id = "Cyanoguanidine",
-        class = "btn action-button",
-        tags$img(src = tab$imgurl[tab$Compound == "Cyanoguanidine"],
-                 width = "175px")
-      )   
-```
-<br>
-<br>
-<!-- Methylenediurea -->
-```{r, out.width = "250px"} 
-      tags$button(
-        id = "Methylenediurea",
-        class = "btn action-button",
-        tags$img(src = tab$imgurl[tab$Compound == "Methylenediurea"],
-                 width = "175px")
-      ) 
 
-```
 <br>
 <br>
+
 <!-- Guanyl thiourea -->
 ```{r, out.width = "250px"} 
       tags$button(
@@ -389,6 +378,32 @@ Click on a compound to see its reaction(s):
       )   
 ```
 
+<br>
+<br>
+
+<!-- Methylenediurea -->
+```{r, out.width = "250px"} 
+      tags$button(
+        id = "Methylenediurea",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Methylenediurea"],
+                 width = "175px")
+      ) 
+
+```
+
+<br>
+<br>
+
+<!-- Urea -->
+```{r, out.width = "250px"} 
+    tags$button(
+        id = "Urea",
+        class = "btn action-button",
+        tags$img(src = tab$imgurl[tab$Compound == "Urea"],
+                 width = "175px")
+      )
+```
 
 Column 
 -----------------------------------------------------------------------

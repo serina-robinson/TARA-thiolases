@@ -1,11 +1,12 @@
 # Versions
 # full50_raw: original combination of 30 tara sequences, 10 psychrophiles, and 10 thermophiles
-# full50_1: designated tara sequences as psychrphile, thermophile, or mesophile
+# full50_1: designated tara sequences as psychrophile, thermophile, or mesophile
 # full50_2: added jittered coords for 20 non-tara samples
 # full50_3: designated temperature definition for tara samples with temp value as "sampled"
 #           cleaned up column names
 # full50_4: designated polar as |lat| > 60 and filled in NAs
 # full50_5: set temperature ranges
+# full50_6: added nams: combined labels for 2 datasets
 
 library(tidyverse)
 library(janitor)
@@ -58,3 +59,16 @@ view(select(full50_5, temperature, temperature_range))
 
 # write new file
 write_csv(full50_5, "data/full50_5.csv")
+
+# add nams
+full50_6 <- read_csv("data/full50_5.csv") %>% 
+  mutate(nams = case_when(!is.na(label) ~ label,
+                          is.na(label) ~ paste0(word(ole_a_patric, sep = 'fig\\|', -1),
+                                                "_",
+                                                genus,
+                                                "_",
+                                                case_when(temperature_range == "Psychrophilic" ~ "psychrophile",
+                                                          temperature_range == "Mesophilic" ~ "mesophile",
+                                                          temperature_range == "Thermophilic" ~ "thermophile",
+                                                          TRUE ~ "thermophile"))))
+write_csv(full50_6, "data/full50_6.csv")

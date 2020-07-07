@@ -6,11 +6,11 @@ setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 
 # Read in the query and reference sequences
 seqs50 <- readAAStringSet("data/50_TARA_psychro_thermo_unaligned.fasta")
-ref_4ku5 <- readAAStringSet("data/1EBL_A.fasta")
-names(ref_4ku5) <- '4ku5'
-ref_1ebl <- readAAStringSet("data/4KU5.fasta")
+ref_1ebl <- readAAStringSet("data/1EBL_A.fasta")
+ref_4ku5 <- readAAStringSet("data/4KU5.fasta")
 names(ref_1ebl) <- '1ebl'
-
+names(ref_4ku5) <- '4ku5'
+BrowseSeqs(AlignSeqs(c(ref_1ebl, ref_4ku5)), "output/alnedseq2.html")
 # Make function to get residues from query sequence
 getresidues <- function(query, ref, aa_inds) {
   
