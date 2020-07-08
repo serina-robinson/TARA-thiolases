@@ -1,17 +1,7 @@
 Guanyl thiourea
-Guanyl thiourea (1-amidino-2-thiourea, GTU) is a nitrification inhibitor. A nitrification inhibitor compound reduces the amount of nitrogen that is capable of being lost, known as leaching, and therefore unusable by surrounding plants (Amberger, et al 1990). Several benefits of using GTU in contrast to other inhibitors exist. GTU is not harmful to plants, organisms that reside in the soil, or other species that are more complex. This nitrification inhibitor is also non-volatile which means that it can be added to solid fertilizers (Amberger, et al 1990). Guanyl thiourea, in addition, reduces both nitrous oxide and methane making it a safer and more environmentally friendly alternative to other nitrogen inhibitors. At $5.20 per kg, Guanyl thiourea is competitively cheap as well. It uses vary from golf courses to farm fields (Trenkl, 1997, Hang-Wei, et al 2015). Guanyl thiourea’s degradation product, dicyandiamide (DCD), is widely used as a nitrogen inhibitor as well (Trenkl, 1997). This compound is an irritant and health hazard as classified by GHS.
+Guanyl thiourea (1-amidino-2-thiourea, GTU) is a nitrification inhibitor. A nitrification inhibitor compound reduces the amount of nitrogen that is capable of being lost, known as leaching, and therefore unusable by surrounding plants (Amberger, et al 1990). Several benefits of using GTU in contrast to other inhibitors exist. GTU is not harmful to plants, organisms that reside in the soil, or other species that are more complex. This nitrification inhibitor is also non-volatile which means that it can be added to solid fertilizers (Amberger, et al 1990). Guanyl thiourea, in addition, reduces both nitrous oxide and methane making it a safer and more environmentally friendly alternative to other nitrogen inhibitors. At $5.20 per kg, Guanyl thiourea is competitively cheap as well. It uses vary from golf courses to farm fields (Trenkl, 1997, Hang-Wei, et al 2015). Guanyl thiourea&#39;s degradation product, dicyandiamide (DCD), is widely used as a nitrogen inhibitor as well (Trenkl, 1997). This compound is an irritant and health hazard as classified by GHS.
 
-Enzymes:
+<b>Enzymes</b> <br> in Literature: <br> <li>in vivo (liver)- monooxygenase can catalyze S-oxygenation of thiourea resulting in formamidine sulfenic acid and formamidine sulfinic acid. (Sahu et al. 2011)</li> <li>in vivo (humans)- Peroxidase oxidizes thiourea when it is in the presence of iodine. This will result in the formation of formamidine disulfide which breaks down into cyanamide. (Sahu et al. 2011)</li> <br> Pathway Prediction System: <br> <li>Thioacetamide S-oxygenase  1.14</li> <li>Ethionamide monooxygenase  1.14.13.</li>
 
-(in Literature)
-
-in vivo (liver)- monooxygenase can catalyze S-oxygenation of thiourea resulting in formamidine sulfenic acid and formamidine sulfinic acid. (Sahu et al. 2011)
-in vivo (humans)- Peroxidase oxidizes thiourea when it is in the presence of iodine. This will result in the formation of formamidine disulfide which breaks down into cyanamide. (Sahu et al. 2011)
-
-Pathway Prediction System:
-
-Thioacetamide S-oxygenase  1.14
-Ethionamide monooxygenase  1.14.13.
-
-Bacteria:
-Pseudomonas sp. NCIMB (Wang et al. 2017)
+<b>Bacteria</b> <li>Pseudomonas sp. NCIMB (Wang et al. 2017)</li>
+<b>Reactions</b>
