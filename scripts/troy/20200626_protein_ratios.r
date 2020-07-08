@@ -183,10 +183,21 @@ props <- read_csv("data/50_protein_props.csv")
 full50_allstats <- full_join(props, dat, by = "nams")
 view(dat)
 view(full50_allstats)
+lapply(full50_allstats, class)
+write_csv(full50_allstats, "data/full50_allstats.csv")
+full50_allstats[164] <- as.numeric(unlist(full50_allstats[164]))
+full50_allstats[163] <- as.numeric(unlist(full50_allstats[163]))
+full50_allstats[162] <- as.numeric(unlist(full50_allstats[162]))
+full50_allstats[161] <- as.numeric(unlist(full50_allstats[161]))
+full50_allstats[160] <- as.numeric(unlist(full50_allstats[160]))
+full50_allstats[159] <- as.numeric(unlist(full50_allstats[159]))
+full50_allstats[158] <- as.numeric(unlist(full50_allstats[158]))
+full50_allstats[157] <- as.numeric(unlist(full50_allstats[157]))
+full50_allstats[156] <- as.numeric(unlist(full50_allstats[156]))
 ### to do
 # make plots
 # add temp stat for 73 sequences 
-# merge datasets
-# write new dat file
-# write down expected 4ku5 sequences
+# merge datasets ##
+# write new dat file ##
+# write down expected 4ku5 sequences ##
 # 
