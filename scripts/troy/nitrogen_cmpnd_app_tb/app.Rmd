@@ -482,10 +482,18 @@ rv <- reactiveValues(img = 'www/np_dwnloads/white.png',
    list(src = rv$img3)
 }, deleteFile = FALSE)  
  
-  output$tbl <- renderTable({
-    list(src = rv$tbl)
-})
-tableOutput("tbl")  
+  
+  
+# shiny::renderUI(HTML(rv$tbl))
+# output$tbl <- 
+  renderTable({
+  
+tbl1 <- rv$tbl
+tbl1
+},
+# align = c("llr"),
+sanitize.text.function = function(x) x)
+# tableOutput("tbl")
 ```
 
 <!-- <div class = "row"> -->
@@ -494,7 +502,7 @@ tableOutput("tbl")
 <div class="row">
   <div class="col-sm-4">
 
-Reaction 1:
+<!-- Reaction 1: -->
 ```{r, out.width = "100px"}
 imageOutput("img1", width = "75px")
 ```  
@@ -506,7 +514,7 @@ imageOutput("img1", width = "75px")
 <!-- <center> -->
   <div class="col-sm-4">
 
-Reaction 2:
+<!-- Reaction 2: -->
 ```{r, out.width = "100px"}
 imageOutput("img2")
 ```  
@@ -518,7 +526,7 @@ imageOutput("img2")
 <!-- <center> -->
   <div class="col-sm-4">
 
-Reaction 3:
+<!-- Reaction 3: -->
 ```{r, out.width = "100px"}
 imageOutput("img3")
 ```  
