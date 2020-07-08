@@ -1,28 +1,7 @@
 Biuret
-A co-product in the production of urea-type fertilizers, biuret (carbamoylurea), is formed by the condensation of two urea molecules (Esquirol et al 2018, Robinson et al 2018). This compound was discovered in 1847 by Wiedemann while studying the thermal decomposition of urea (Kurzer 1955)
-Biuret plays a common role in the feed for ruminants as a way to increase nitrogen content. However, some harmful aspects of biuret exist. About .9 to 1.9 billion kilograms of biuret is forecasted to end up on agricultural land as impurities of urea fertilizers (Robinson et al 2018). Biuret is a known phytotoxic compound and gives way to a need for bioremediation (Esquirol, et al 2018). Bioremediation efforts underway look at the bacterial strains and enzymes capable of degrading S-triazines starting with catabolic genes of the chloro-s-triazine, atrazine. (Martinez-Vaz et al 2001). This compound is an irritant as classified by GHS.
+A co-product in the production of urea-type fertilizers, biuret (carbamoylurea), is formed by the condensation of two urea molecules (Esquirol et al 2018, Robinson et al 2018). This compound was discovered in 1847 by Wiedemann while studying the thermal decomposition of urea (Kurzer 1955). <br> <br> Biuret plays a common role in the feed for ruminants as a way to increase nitrogen content. However, some harmful aspects of biuret exist. About .9 to 1.9 billion kilograms of biuret is forecasted to end up on agricultural land as impurities of urea fertilizers (Robinson et al 2018). Biuret is a known phytotoxic compound and gives way to a need for bioremediation (Esquirol, et al 2018). Bioremediation efforts underway look at the bacterial strains and enzymes capable of degrading S-triazines starting with catabolic genes of the chloro-s-triazine, atrazine. (Martinez-Vaz et al 2001). This compound is an irritant as classified by GHS.
 
-Enzymes:
+<b>Enzymes</b> <li>AtzE (Esquirol et al. 2018)</li> <li>Biuret Hydrolase (Esquirol et al. 2018)</li>
 
-(Literature):
-
-AtzE (Esquirol et al. 2018)
-Biuret Hydrolase (Esquirol et al. 2018)
-
-Bacteria:
-
-(Characterized):
-Rhizobium leguminasorum bv. Viciae3841 (Esquirol et al. 2018)
-Herbaspirillum sp. BH-1 (Robinson et al. 2018)
-Pseudomonas sp. BH-2 (Robinson et al. 2018)
-
-(Not characterized yet):
-(Esquirol et al. 2018)
-Gordonia sp. KTR9
-Rhizobium leguminosarum strain Vaf10
-Rhizobium leguminosarum bv. trifolii WSM1325
-Rhizobium tropici CIAT 899
-Agrobacterium vitisS4
-Ralstonia pickettii strain D
-Agrobacterium radiobacter strain J14a
-Pseudomonas sp. strain ADP
+<b>Bacteria</b> <br> Characterized: <br> <li><i>Rhizobium leguminasorum</i> bv. Viciae3841 (Esquirol et al. 2018)</li> <li><i>Herbaspirillum</i> sp. BH-1 (Robinson et al. 2018)</li> <li><i>Pseudomonas</i> sp. BH-2 (Robinson et al. 2018)</li> <br> Not characterized yet (Esquirol et al. 2018): <li><i>Gordonia</i> sp. KTR9</li> <li><i>Rhizobium leguminosarum</i> bv. trifolii WSM1325</li> <li><i>Rhizobium tropici</i> CIAT 899</li> <li><i>Agrobacterium vitis</i> S4</li> <li><i>Ralstonia pickettii</i> strain D</li> <li><i>Agrobacterium radiobacter</i> strain J14a</li> <li><i>Pseudomonas</i> sp. strain ADP</li>
+<b>Reaction</b>

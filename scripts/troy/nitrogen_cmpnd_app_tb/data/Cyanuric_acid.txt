@@ -1,28 +1,7 @@
 Cyanuric acid
-The degradation of atrazine and melamine compounds results in a formation of the intermediate cyanuric acid, which is able to degrade further from exposure to more bacteria and their enzymes. (Martinez-Vaz, et al 2001, Esquirol, et al 2018). These pathways are of key interest to researches since they contain many nitrogen-rich compounds and herbicidal characteristics (Esquirol, et al 2018).
-Cyanuric acid plays an integral role in the stabilization of free available chlorine such as that in swimming pools and as a component to everyday cleaning materials like bleach (Tang, et al 2009). The death of many household dogs and cats in 2007 was the immediate result of pet food that had been vitiated by cyanuric acid and its parent compound melamine (Tang, et al 2009). Both harmful and beneficial aspects of cyanuric acid have created a need for a deeper understanding of the mineralization of s-triazine compounds. This compound is an irritant as classified by GHS.
+The degradation of atrazine and melamine compounds results in a formation of the intermediate cyanuric acid, which is able to degrade further from exposure to more bacteria and their enzymes. (Martinez-Vaz, et al 2001, Esquirol, et al 2018). These pathways are of key interest to researches since they contain many nitrogen-rich compounds and herbicidal characteristics (Esquirol, et al 2018). <br> <br> Cyanuric acid plays an integral role in the stabilization of free available chlorine such as that in swimming pools and as a component to everyday cleaning materials like bleach (Tang, et al 2009). The death of many household dogs and cats in 2007 was the immediate result of pet food that had been vitiated by cyanuric acid and its parent compound melamine (Tang, et al 2009). Both harmful and beneficial aspects of cyanuric acid have created a need for a deeper understanding of the mineralization of s-triazine compounds. This compound is an irritant as classified by GHS.
 
-Enzymes:
+<b>Enzymes</b> <li>AtzD (Cheng et al. 2005)</li> <li>TrzD (Martinez-Vaz et al. 2005)</li>
 
-(Literature):
-
-AtzD (Cheng et al. 2005)
-TrzD (Martinez-Vaz et al. 2005)
-
-Bacteria:
-
-(Characterized):
-(Cheng et al. 2005)
-Rhizobium leguminasorum bv. Viciae 3841
-Enterobacter cloacae strain 99
-Acidovorax avenae subsp. citrulli
-Pseudomonas huttiensis NRRLB-12228
-Rhodococcus corallinus strain 11
-
-(Not characterized yet):
-(Esquirol et al. 2018)
-Gordonia sp. KTR9
-Rhizobium leguminosarum strain Vaf10
-Rhizobium leguminosarum bv. trifolii WSM1325
-Rhizobium tropici CIAT 899
-Agrobacterium vitis S4
+<b>Bacteria</b> <br> Characterized (Cheng et al. 2005): <li><i>Rhizobium leguminasorum</i> bv. Viciae 3841</li> <li><i>Enterobacter cloacae</i> strain 99</li> <li><i>Acidovorax avenae</i> subsp. citrulli</li> <li><i>Pseudomonas huttiensis</i> NRRLB-12228</li> <li><i>Rhodococcus corallinus</i> strain 11</li> <br> Not characterized yet (Esquirol et al. 2018): <li><i>Gordonia</i> sp. KTR9</li> <li><i>Rhizobium leguminosarum</i> strain Vaf10</li> <li><i>Rhizobium leguminosarum</i> bv. trifolii WSM1325</li> <li><i>Rhizobium tropici</i> CIAT 899</li> <li><i>Agrobacterium vitis</i> S4</li>
+<b>Reaction</b>

@@ -1,13 +1,5 @@
 Cyanamide
 Cyanamide is a non-naturally occurring compound that is used as a fertilizer, as it transforms in soil to urea. It is also used as an herbicide, pesticide, fungicide and bactericide (Estermaier et al. 1992). Its use as bactericide lends to its use as a deodorant for liquid manure; however, it appears to have only a transitory effect on indigenous microbes (Shi et al. 2009). Additionally, it exhibits capability as a plant growth regulator, inhibiting catalase and affecting other biochemical aspects of plant maturation (Amberger 2013). Cyanamide begins decomposing quickly when applied to soil  (Estermaier et al. 1992). It has been used to treat alcoholism (sometimes referred to as carbamide/calcium carbamide) and has been found to be an interstellar molecule. Cyanamide also functions as an inhibitor of aldehyde dehydrogenase (DeMaster, Shirota & Nagasawa 1984). Cyanamide is considered an irritant, an acute toxin, a health hazard and a corrosive material according to GHS classification (Pubchem). Mouse lethal dose has been found to be 200 mg/kg of intraperitoneal injection (Ibid.).
 
-
-Enzymes
-Cyanamide hydratase, E.C. 4.2.1.69
-The enzyme, to date detected only in fungi, is highly substrate-specific (Maier-Greiner et al. 1991). Estermaier et al. doubt its role in soil degradation, given that the enzymes examined only are expressed when no other nitrogen sources are present (1992). It catalyzes the following reaction: 
-Cyanamide + 2H2O → urea (Maier-Greiner et al. 1991)
-
-Urease, E.C. 3.5.1.5
-Urease has been found to contain cyanamide-degrading properties (Estermaier et al. 1992). It degrades cyanamide according to the following reaction:
-Cyanamide + 2H2O → 2NH3 + CO2 (Ibid.)
-
+<b>Enzymes</b> <br> <u>Cyanamide hydratase, E.C. 4.2.1.69</u>: <br> The enzyme, to date detected only in fungi, is highly substrate-specific (Maier-Greiner et al. 1991). Estermaier et al. doubt its role in soil degradation, given that the enzymes examined only are expressed when no other nitrogen sources are present (1992). It catalyzes the following reaction:  <br> <br> Cyanamide + 2H<sub>2</sub>O &#8594; Urea (Maier-Greiner et al. 1991) <br> <br> <u>Urease, E.C. 3.5.1.5</u>: <br> Urease has been found to contain cyanamide-degrading properties (Estermaier et al. 1992). It degrades cyanamide according to the following reaction: <br> <br> Cyanamide + 2H<sub>2</sub>O &#8594; 2NH<sub>3</sub> + CO<sub>2</sub> (Ibid.)
+<b>Reactions</b>
