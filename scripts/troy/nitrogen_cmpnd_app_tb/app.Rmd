@@ -4,8 +4,8 @@ output:
   flexdashboard::flex_dashboard:
     theme: cerulean
     vertical_layout: fill
-    logo: www/leaflogo2.jpg
-    favicon: www/leaflogo2.jpg
+    logo: www/leaflogo1.jpg
+    favicon: www/leaflogo.jpg
     social: menu
     css: styles.css
 runtime: shiny
@@ -49,7 +49,7 @@ Urea and substituted urea compounds are now the major nitrogen-based fertilizers
 The Urea Fate & Degradation Database is a web app to explore pathways for the biodegradation urea-type compounds in soil. This site is maintained by [Dr. Larry Wackett’s lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota. We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradataion Database was designed in collaboration with Hamline University.
 <br>
 <br>
-Last updated: June 25th, 2020
+Last updated: July 2020
 
 Column 
 -----------------------------------------------------------------------
@@ -62,28 +62,30 @@ About
 Column {.sidebar}
 -----------------------------------------------------------------------
 
-<br>
-<br>
+***
+
 ```{r, out.width = "100%"}
 knitr::include_graphics("www/umlogo.png")
 ```
 <br>
-<br>
-```{r, out.width = "100%"}
-knitr::include_graphics("www/bti.gif")
-```
-<br>
-<br>
+
+***
+
 ```{r, out.width = "100%"}
 knitr::include_graphics("www/ione.png")
 ```
 <br>
-<br>
+
+***
+
 ```{r, out.width = "100%"}
-knitr::include_graphics("www/hamline.png")
+knitr::include_graphics("www/hamline1.png")
 ```
 <br>
-<br>
+
+***
+
+
 
 Inputs 
 -----------------------------------------------------------------------
@@ -139,6 +141,8 @@ Inputs
 
 **Web Resources**
 
+<u>Agricultural and fertilizer information:</u>
+
 * [International Fertilizer Association](https://www.fertilizer.org/statistics)
 
 * [Urea Fertilizer – University of Minnesota Extension](https://extension.umn.edu/nitrogen/fertilizer-urea)
@@ -147,12 +151,23 @@ Inputs
 
 * [USDA – Fertilizer Use in the United States](https://www.ers.usda.gov/data-products/fertilizer-use-and-price.aspx)
 
+<u>Pathway information:</u>
+
 * [EAWAG - Biocatalysis and Biodegradation Database](http://eawag-bbd.ethz.ch/predict/)
+
 * [MetaCyc - Metabolic Pathway Database](https://metacyc.org/)
+
 * [Uniprot - Universal Protein Resource](https://www.uniprot.org/)
-* [Pubchem - Chemistry Database](pubchem.ncbi.nlm.nih.gov)
+
+<u>Enzyme and gene information:</u>
+
 * [Expasy - Bioinformatics Resource Portal](https://enzyme.expasy.org/)
+
 * [KEGG - Kyoto Encyclopedia of Genes and Genomes](https://www.genome.jp/kegg/kegg2.html)
+
+<u>Compound information:</u>
+
+* [Pubchem - Chemistry Database](pubchem.ncbi.nlm.nih.gov)
 
 ***
 

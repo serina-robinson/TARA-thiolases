@@ -5,8 +5,8 @@ account: tabiernath
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2502678
-bundleId: 3344833
+bundleId: 3372102
 url: https://tabiernath.shinyapps.io/ondb/
-when: 1593714098.1821
+when: 1594305110.82607
 asMultiple: FALSE
 asStatic: FALSE
