@@ -94,16 +94,23 @@ cm_rf # 71%
 
 ## Optional challenge 5. Try building a custom tuning grid like in the sample_machine_learning.r script
 
-## Challenge 6. Try feature selection using random forest to reduce the number
+
+## Challenge 6. Try predicting for topt instead -> the topt predictions 
+# using the tool TOMER (https://www.biorxiv.org/content/10.1101/2020.05.06.081737v1)
+# Have been uploaded to your data folder as data/73_OleA_tomer_results.csv
+
+## Challenge 7. Try feature selection using random forest to reduce the number
 # of input variables in the model. Does it improve performance?
 
-## Super challenge 7. Try putting all the code inside a for loop and doing
+## Super challenge 8. Try putting all the code inside a for loop and doing
 # 100 independent training-test splits. Store the training and testing accuracy scores
 # for each iteration of the loop in a vector. Plot the distribution of these
 # scores as a histogram.
 
-## Challenge 8. Try predicting for topt instead -> Serina needs to run tomer 
-# on the 73 sequences and will get those topt predictions to you shortly
+## Super challenge 9. What other features could you try. For example...
+# could you add columns for the channel residues? positive patch residues?
+
+
 
 
 
