@@ -1,12 +1,12 @@
 # Install packages
-pacman::p_load("tidyverse", "caret", "rsample", "ranger", "e1071")
+pacman::p_load("tidyverse", "caret", "rsample", "ranger", "e1071", "tidyverse")
 
-# Set working directory
-setwd("~/Documents/University_of_Minnesota/Wackett_Lab/github/TARA-thiolases/")
+y# Set working directory
+setwd("~/Documents/github/TARA-thiolases/")
 
 # Read in the big dataset
 dat <- read_csv("data/full50_allstats.csv")
-colnames(dat)
+dim(dat)
 
 # Read in the protein properties
 prop <- read_csv("data/50_protein_props.csv")
@@ -21,11 +21,11 @@ rawdat <- dat %>%
                 -temperature_range, -newnams, -sqs, -acc) 
 
 table(rawdat$temp_status)
-# 50 rows and 89 columns
 
 # Only keep variables with nonzero variance
 nozdat <- caret::nearZeroVar(rawdat, saveMetrics = TRUE)
 which_rem <- rownames(nozdat)[nozdat[,"nzv"] == TRUE] # didn't remove any!
+which_rem
 
 # Check for duplicates(safety check)
 dat <- rawdat[!duplicated(rawdat),]
@@ -71,26 +71,39 @@ rf <- train(
   importance = "permutation")
 
 # Confusion matrix
-getTrainPerf(rf) # Training set accuracy is 64% for random forest
+getTrainPerf(rf) # Training set accuracy is 60% for random forest
 
-# Testing set
+# Testing set accuracy
 rf_pred <- predict(rf, newdata = form_test)
 rf_pred
 cm_rf <- confusionMatrix(rf_pred, as.factor(dat_test$temp_status))
-cm_rf
+cm_rf # 71% 
 
-# See how bad it does on the entire dataset
-x_dat <- dat %>%
-  select(-nams, -temp_status)
-rf <- train(
-  x = x_dat,
-  y = dat$temp_status,
-  method = "ranger",
-  trControl = trainControl(method = "repeatedcv", number = 10,
-                           repeats = 3,
-                           verboseIter = T, classProbs = T,
-                           savePredictions = "final"),
-  verbose = TRUE,
-  importance = "permutation")
-getTrainPerf(rf)
+## Challenge 1. Unfortunately right now we aren't getting very good performance...
+# See if you can improve this first of all by increasing the dataset size using the 73 OleAs.
+# If possible, try to get at least 30 in each category (NP and P)
+
+## Challenge 2. Try varying the proportions of training/test splits to be
+# 70%, 80%, and 90% (training set). Does it appear to dramatically change the outcome of the 
+# training and testing scores? What do you think is happening?
+
+## Challenge 3. Regardless of if accuracy improves, calculate variable importance. Which
+# variables are most important? What do they mean?
+
+## Challenge 4. Calculate and plot the area under the receiver operating characteristic curve
+
+## Optional challenge 5. Try building a custom tuning grid like in the sample_machine_learning.r script
+
+## Challenge 6. Try feature selection using random forest to reduce the number
+# of input variables in the model. Does it improve performance?
+
+## Super challenge 7. Try putting all the code inside a for loop and doing
+# 100 independent training-test splits. Store the training and testing accuracy scores
+# for each iteration of the loop in a vector. Plot the distribution of these
+# scores as a histogram.
+
+## Challenge 8. Try predicting for topt instead -> Serina needs to run tomer 
+# on the 73 sequences and will get those topt predictions to you shortly
+
+
 
