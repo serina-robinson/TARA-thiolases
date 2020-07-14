@@ -1,0 +1,5 @@
+# Description | Job id | Hit | Confidence (%) | Sequence identity (%) | Alignment coverage (%) | Hit info 1 | Hit info 2 | Hit info 3
+WP_018906567.1_ring-opening_amidohydrolase_[Variovorax_paradoxus] | 97f727740a30cba9 | c5t13A_ | 100.0 | 45 | 94 |2.19 | PDB header:hydrolase | Chain: A: PDB Molecule:cyanuric acid amidohydrolase;
+WP_007596559.1_ring-opening_amidohydrolase_[Bradyrhizobium_sp._WSM1253] | b7240c22164713b2 | c5t13A_ | 100.0 | 56 | 99 |2.19 | PDB header:hydrolase | Chain: A: PDB Molecule:cyanuric acid amidohydrolase;
+WP_009515690.1_MULTISPECIES:_ring-opening_amidohydrolase_[Hydrogenophaga] | 5c910a5ba6f72246 | c5t13A_ | 100.0 | 44 | 97 |2.19 | PDB header:hydrolase | Chain: A: PDB Molecule:cyanuric acid amidohydrolase;
+WP_056911810.1_ring-opening_amidohydrolase_[Pseudolabrys_sp._Root1462] | 51a9413907631dad | c5t13A_ | 100.0 | 51 | 99 |2.19 | PDB header:hydrolase | Chain: A: PDB Molecule:cyanuric acid amidohydrolase;

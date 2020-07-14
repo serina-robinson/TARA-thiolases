@@ -25,7 +25,7 @@ library("tidyverse")
 ## This is the chemical compound dataset
 tab1 <- read_excel("data/Compounds_complete.xlsx", sheet = 1)
 tab <- arrange(tab1, Compound)
-colnames(tab)[1:10] <- c("Compound", "Formula", "MW", "SMILES", "Synonyms", "CAS", "imgurl", "rxnurl", "CN_Ratio", "Cost")
+colnames(tab)[1:10] <- c("Compound", "Formula", "MW", "SMILES", "Synonyms", "CAS", "imgurl", "rxnurl", "CN_Ratio", "Cost/metric ton")
 ```
 
 Home
@@ -35,7 +35,7 @@ Column {.sidebar}
 ***
 ***
 ***
-**Welcome to the Urea Fate & Degradation Database**
+**Welcome to The Organonitrogen Degradation Database (ON-DB)**
 <br>
 <br>
 **Our Mission:**
@@ -43,10 +43,7 @@ Column {.sidebar}
 *Cataloguing microbial transformations of organonitrogen inputs in soils*
 <br>
 <br>
-Urea and substituted urea compounds are now the major nitrogen-based fertilizers applied in agricultural systems.  The global demand for urea is predicted to reach 1.87 x 10e11 kg by 2021 (International Fertilizer Association, 2017) and recent findings suggest substituted urea formulations can increase productivity and decrease environmental impacts. 
-<br>
-<br>
-The Urea Fate & Degradation Database is a web app to explore pathways for the biodegradation urea-type compounds in soil. This site is maintained by [Dr. Larry Wackett’s lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota. We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradataion Database was designed in collaboration with Hamline University.
+Organonitrogen compounds are a major soil input used for fertilizers, pesticides and other agricultural purposes. One such compound, urea, is predicted to reach 1.87 x 10e11 kg by 2021 (International Fertilizer Association, 2017), and recent findings suggest these compounds can increase productivity and decrease environmental impacts. The intent of the ON-DB is to aid in bioremediation efforts by providing information on nitrogen-rich compounds.  
 <br>
 <br>
 Last updated: July 2020
@@ -92,13 +89,13 @@ Inputs
 
 ***
 
-The Organonitrogen Degradation Database (O.D.D.) is a catalog of agriculturally applied nitrogen compounds. The scope of the database is to provide a thorough understanding of the pathways, reactions, bacteria and enzymes involved in organonitrogen degradation in soil. 
+The Organonitrogen Degradation Database (ON-DB) is a catalog of agriculturally applied nitrogen compounds. The scope of the database is to provide a thorough understanding of the pathways, reactions, bacteria, and enzymes involved in organonitrogen degradation in soil. 
 
-Organonitrogen compounds, applied directly to soil in bulk quantities, can be leached from the soil and transported to waterways and aquifers; they are known to cause ecosystem imbalance such as heightened pH and eutrophication. A better understanding of the microbial transformations of these compounds provides researchers the ability to remediate potential hazards. 
+Organonitrogen compounds, applied directly to the soil in bulk quantities either as fertilizers or as pesticides, can be leached from the soil and transported to waterways and aquifers. It is estimated that over 80% of nitrogen is lost to the environment (Sutton et al. 2013). This nitrogen is known to cause ecosystem imbalances such as heightened pH and eutrophication. A better understanding of the microbial transformations of organonitrogen compounds provides researchers the ability to remediate potential hazards. 
 
 To better understand the fate of these compounds, we have compiled information regarding their biodegradation. Selecting any compound listed in the database will provide information such as general overview, basic chemical information, common use, transformation products, enzymes and bacteria capable of degradation.
 
-The Organonitrogen Degradation Database, with a wealth of information, has room to be added too. The O.D.D. is a great resource for lecture groups to contribute to and utilize. Lecturers are able to utilize this database in their lesson plans to elicit several learning objectives including	
+The Organonitrogen Degradation Database, with a wealth of information, has room to be added, too. The ON-DB is a great resource for lecture groups to contribute to and utilize. Lecturers are able to utilize this database in their lesson plans for several learning objectives including:
 
 * Understanding microbial degradation
 * Bioremediation tactics
@@ -108,9 +105,12 @@ The Organonitrogen Degradation Database, with a wealth of information, has room 
 
 This site is maintained by Dr. Larry Wackett’s lab at the University of Minnesota. We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Organonitrogen Degradation Database was designed in collaboration with Hamline University.
 
+Disclaimer: Any opinions expressed within the Organonitrogen Degradation Database are not reflective of any affiliated outside organization and neither are the opinions of outside organizations reflective of this organization.        
 
 
 Last updated: July 2020
+
+
 
 ***
 
@@ -121,15 +121,12 @@ Column {.sidebar}
 ***
 ***
 ***
-**Welcome to the Urea Fate & Degradation Database**
+**Resources, links, and papers**
 <br>
 <br>
 ***
 ***
-Urea and substituted urea compounds are now the major nitrogen-based fertilizers applied in agricultural systems.  The global demand for urea is predicted to reach 1.87 x 10e11 kg by 2021 (International Fertilizer Association, 2017) and recent findings suggest substituted urea formulations can increase productivity and decrease environmental impacts. 
-<br>
-<br>
-The Urea Fate & Degradation Database is a web app to explore pathways for the biodegradation urea-type compounds in soil. This site is maintained by [Dr. Larry Wackett’s lab](https://cbs.umn.edu/wackett-lab/home) at the University of Minnesota. We gratefully acknowledge support from the UMN Institute on the Environment, BioTechnology Institute, and Grand Challenges Initiative. The Urea Fate & Degradataion Database was designed in collaboration with Hamline University.
+Located on the right and found below are the resources and citations relevant to the compounds listed in the ON-DB. These resources can serve as a point of further investigation. 
 <br>
 <br>
 Last updated: June 25th, 2020
@@ -168,6 +165,10 @@ Inputs
 <u>Compound information:</u>
 
 * [Pubchem - Chemistry Database](pubchem.ncbi.nlm.nih.gov)
+
+* [ChemSpider- Royal Society for Chemistry](http://www.chemspider.com/)
+
+* [NPIC - National Pesticide Information Center](http://npic.orst.edu/)
 
 ***
 

@@ -14,6 +14,7 @@ seq.df <- data.frame(nams = attr(seqs, "name")) %>%
 ##Calculating AA statistics for each sequence using AAstat() in the "seqinr" package
 aastat.df <- data.frame(sapply(seq.df$seqs, AAstat)) # check out the plot
 aastat.df[[1]]
+
 class(aastat.df)
 # view(aastat.df)
 # ?AAstat
