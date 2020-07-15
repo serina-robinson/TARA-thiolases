@@ -137,9 +137,9 @@ colnames(new.df)
 new.df_long <- new.df %>% 
   gather(key = stat, value = value, -nams, -len, -nams2)
 new.df_long_large <- new.df %>% 
-  gather(key = stat, value = value, RKrat, NQrat, ordered_res, disordered_res, Tiny, Small, Aliphatic, Nonpolar, Polar, Charged)
+  gather(key = stat, value = value, RKrat, Tiny, Small, Nonpolar, Polar)
 new.df_long_med <- new.df %>% 
-  gather(key = stat, value = value, RKrat, NQrat, ordered_res, disordered_res, Tiny, Small, Aliphatic, Nonpolar, Polar, Charged)
+  gather(key = stat, value = value, NQrat, ordered_res, disordered_res, Aliphatic, Charged)
 new.df_long_small <- new.df %>% 
   gather(key = stat, value = value, -nams, -len, -nams2, -RKrat, -NQrat, -ordered_res, -disordered_res, -Tiny, -Small, -Aliphatic, -Nonpolar, -Polar, -Charged)
 
