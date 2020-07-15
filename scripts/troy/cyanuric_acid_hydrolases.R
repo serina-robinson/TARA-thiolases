@@ -1,5 +1,5 @@
 # Install packages
-pacman::p_load("tidyverse", "Biostrings", "seqinr", "DECIPHER", "Biostrings", "ggseqlogo", "cowplot")
+pacman::p_load("tidyverse", "Biostrings", "seqinr", "DECIPHER", "Biostrings", "ggseqlogo", "cowplot", "gggenes", "ggtree")
 
 # Set working directory
 setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
@@ -192,3 +192,24 @@ ggplot(new.df_long, aes(stat, nams2)) +
   scale_fill_gradient(low = "white", high = "darkgreen")
 
 dev.off()
+
+
+
+# Tree stuff
+
+ml <- read.tree("data/CAH_project/10_CAH_tree_100_bootstrap.nwk") # maximum-likelihood method
+mlt <- ggtree(ml)
+view(mlt$data)
+mlt$data <- mlt$data %>% 
+  mutate(label2 = c("Pseudolabrys sp. Root1462 (WP_056911810.1)", "Azorhizobium caulinodans ORS 571 (4NQ3_A)", "Hydrogenophaga (WP_009515690.1)", "Variovorax paradoxus (WP_018906567.1)", "Enterobacter cloacae (5T13_A)", "Moorella thermoacetica ATCC 39073 (6DHJ_A)", "Bradyrhizobium sp. WSM1253 (WP_007596559.1)", "Pseudomonas sp. ADP (4BVQ_A)", "Frankia sp. Eul1b (5HY0_A)", "Rhodococcus erythropolis (5HWE_A)", NA_character_, NA_character_, NA_character_, NA_character_, NA_character_, NA_character_, NA_character_, NA_character_),
+         color = case_when(label2 == "Pseudolabrys sp. Root1462 (WP_056911810.1)" ~ "blue",
+                           TRUE ~ "black"),
+         label = round(as.numeric(label), 2))
+mlt_boot <- mlt + 
+  geom_tiplab(aes(label = label2), color = mlt$data$color[1:10]) +
+  xlim(0, 2) +
+  geom_nodelab(aes(label = label), hjust = 1.2, vjust = -0.25)
+pdf("data/CAH_project/CAH_tree.pdf")
+mlt_boot
+dev.off()
+
