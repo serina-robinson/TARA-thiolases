@@ -115,9 +115,9 @@ for(i in 1:length(seqs1)) {
 
 ## to do
 # remove his tags #
-##### long format
+# long format #
 # Pseudolabrys on top #
-##### make heatmap
+# make heatmap #
 # fix his tags and use new file #
 # blast frankia one #
 # xtalpred without his tags #
@@ -132,15 +132,60 @@ for(i in 2:35){
 class(new.df$Polar)
 new.df$nams2 <- c("Pseudolabrys", "Hydrogenophaga", "Bradyrhizobium", "Variovorax", "Azorhizobium", "Enterobacter", "Frankia", "Moorella 1", "Moorella 2", "Pseudomonas", "Rhodococcus")
 new.df$nams2
+colnames(new.df)
 # wide to long
 new.df_long <- new.df %>% 
   gather(key = stat, value = value, -nams, -len, -nams2)
+new.df_long_large <- new.df %>% 
+  gather(key = stat, value = value, RKrat, NQrat, ordered_res, disordered_res, Tiny, Small, Aliphatic, Nonpolar, Polar, Charged)
+new.df_long_med <- new.df %>% 
+  gather(key = stat, value = value, RKrat, NQrat, ordered_res, disordered_res, Tiny, Small, Aliphatic, Nonpolar, Polar, Charged)
+new.df_long_small <- new.df %>% 
+  gather(key = stat, value = value, -nams, -len, -nams2, -RKrat, -NQrat, -ordered_res, -disordered_res, -Tiny, -Small, -Aliphatic, -Nonpolar, -Polar, -Charged)
+
+# Large values
+pdf("output/CAH_heatmap_large.pdf", height = 4, width = 8)
+ggplot(new.df_long_large, aes(stat, nams2)) +
+  geom_tile(aes(fill = value)) + 
+ # geom_text(aes(label = round(value, 4))) + 
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 50, size = 8,
+                                   vjust = 1.05, hjust = 1.2)) +
+  scale_fill_gradient(low = "white", high = "darkgreen")
+
+dev.off()
 
 
+# Small values
+pdf("output/CAH_heatmap_small.pdf", height = 4, width = 8)
+ggplot(new.df_long_small, aes(stat, nams2)) +
+  geom_tile(aes(fill = value)) + 
+  # geom_text(aes(label = round(value, 4))) + 
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 50, size = 8,
+                                   vjust = 1.05, hjust = 1.2)) +
+  scale_fill_gradient(low = "white", high = "darkgreen")
+
+dev.off()
+
+# Med values
+pdf("output/CAH_heatmap_med.pdf", height = 4, width = 8)
+ggplot(new.df_long_med, aes(stat, nams2)) +
+  geom_tile(aes(fill = value)) + 
+  # geom_text(aes(label = round(value, 4))) + 
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 50, size = 8,
+                                   vjust = 1.05, hjust = 1.2)) +
+  scale_fill_gradient(low = "white", high = "darkgreen")
+
+dev.off()
+
+
+# All values
 pdf("output/CAH_heatmap.pdf", height = 4, width = 8)
 ggplot(new.df_long, aes(stat, nams2)) +
   geom_tile(aes(fill = value)) + 
- # geom_text(aes(label = round(value, 4))) + 
+  # geom_text(aes(label = round(value, 4))) + 
   theme_classic() +
   theme(axis.text.x = element_text(angle = 50, size = 8,
                                    vjust = 1.05, hjust = 1.2)) +
