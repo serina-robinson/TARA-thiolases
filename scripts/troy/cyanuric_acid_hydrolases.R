@@ -58,24 +58,7 @@ for(i in 1:length(genes)){
   new.df$Acidic[i] <- aastat.df[[i]][2][[1]][which(names(aastat.df[[i]][2][[1]])=="Acidic")]
 }
 
-## to do
-# remove his tags #
-##### long format
-# Pseudolabrys on top #
-##### make heatmap
-# fix his tags and use new file #
-# blast frankia one #
-# xtalpred without his tags #
-##### clean up table from xtalpred
-##### later: Ca binding loop below (moorella as ref)
 
-pdf("output/CAH_heatmap.pdf", height = 20, width = 10)
-ggplot(dat_long, aes(gene.id, genome_x)) +
-  geom_tile(aes(fill = gene.pos)) + 
-  geom_text(aes(label = round(gene.pos, 1))) + 
-  scale_fill_gradient(low = "dodgerblue", high = "red") +
-  theme_classic()
-dev.off()
 
 
 
@@ -127,3 +110,40 @@ for(i in 1:length(seqs1)) {
                                   ref = ref,
                                   aa_inds = c())
 }
+
+
+
+## to do
+# remove his tags #
+##### long format
+# Pseudolabrys on top #
+##### make heatmap
+# fix his tags and use new file #
+# blast frankia one #
+# xtalpred without his tags #
+# clean up table from xtalpred #
+##### later: Ca binding loop below (moorella as ref)
+
+
+# Heat map and such
+for(i in 2:35){
+  new.df[i] <- as.numeric(unlist(new.df[i]))
+}
+class(new.df$Polar)
+new.df$nams2 <- c("Pseudolabrys", "Hydrogenophaga", "Bradyrhizobium", "Variovorax", "Azorhizobium", "Enterobacter", "Frankia", "Moorella 1", "Moorella 2", "Pseudomonas", "Rhodococcus")
+new.df$nams2
+# wide to long
+new.df_long <- new.df %>% 
+  gather(key = stat, value = value, -nams, -len, -nams2)
+
+
+pdf("output/CAH_heatmap.pdf", height = 4, width = 8)
+ggplot(new.df_long, aes(stat, nams2)) +
+  geom_tile(aes(fill = value)) + 
+ # geom_text(aes(label = round(value, 4))) + 
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 50, size = 8,
+                                   vjust = 1.05, hjust = 1.2)) +
+  scale_fill_gradient(low = "white", high = "darkgreen")
+
+dev.off()
