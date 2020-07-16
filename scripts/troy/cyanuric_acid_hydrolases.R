@@ -76,9 +76,7 @@ alned <- DECIPHER::AlignSeqs(c(ref, query1, query2, query3, query4, query5, quer
 BrowseSeqs(alned, "output/alnedseq.html")
 
 
-## Make logo
-
-seqs1 <- readAAStringSet("data/cah_project/10_CAH_sequences_no_his_tag.fasta")
+## Make logo for Ca loop
 
 getresidues <- function(query, ref, aa_inds) {
   
@@ -103,16 +101,99 @@ getresidues <- function(query, ref, aa_inds) {
   olea_chans <- paste0(query_pos, collapse = "")
   return(olea_chans)
 }
+
+
+seqs1 <- readAAStringSet("data/cah_project/9_CAH_sequences_for_Ca_loop.fasta")
+view(seqs1)
+ref2 <- readAAStringSet("data/CAH_project/moorella_ref_for_Ca_loop.fasta")
+
+getresidues(ref = ref2, query = ref2, aa_inds = c(343:355))
+
 resultlist <- list()
+seqs1_df <- data.frame(seqs1)
 for(i in 1:length(seqs1)) {
   query <- seqs1[i]
-  resultlist[[i]] <- getresidues(query = query,
-                                  ref = ref,
-                                  aa_inds = c())
+  seqs1_df$loop[i] <- getresidues(query = query,
+                                  ref = ref2,
+                                  aa_inds = c(343:355))
 }
+view(seqs1_df)
+class(seqs1)
+p0 <- ggplot() + 
+    geom_logo(seqs1_df$loop, method = "p", col_scheme = 'chemistry') + 
+    theme_logo()
+pdf("data/CAH_project/CAH_Ca_loop_logo_together.pdf", height = 4)
+p0
+dev.off()
+p1 <- ggplot() + 
+  geom_logo(seqs1_df[1,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Pseudolabrys")
+p2 <- ggplot() + 
+  geom_logo(seqs1_df[2,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Hydrogenophaga")
 
+p3 <- ggplot() + 
+  geom_logo(seqs1_df[3,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Bradyrhizobium")
 
+p4 <- ggplot() + 
+  geom_logo(seqs1_df[4,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Variovorax")
 
+p5 <- ggplot() + 
+  geom_logo(seqs1_df[5,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Azorhizobium")
+
+p6 <- ggplot() + 
+  geom_logo(seqs1_df[6,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Enterobacter")
+
+p7 <- ggplot() + 
+  geom_logo(seqs1_df[7,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Frankia")
+
+p8 <- ggplot() + 
+  geom_logo(seqs1_df[8,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Moorella 1")
+
+p9 <- ggplot() + 
+  geom_logo(seqs1_df[9,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Moorella 2")
+
+p10 <- ggplot() + 
+  geom_logo(seqs1_df[10,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Pseudomonas")
+
+p11 <- ggplot() + 
+  geom_logo(seqs1_df[11,2], method = "p", col_scheme = 'chemistry') + 
+  theme_logo() +
+  theme(legend.position = 'none', axis.text.x = element_blank()) + 
+  annotate('text', x=6, y=1.3, label= "Rhodococcus")
+
+pdf("data/CAH_project/CAH_Ca_loop_logos.pdf", height = 15)
+plot_grid(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, ncol = 1)
+dev.off()
+p1
 ## to do
 # remove his tags #
 # long format #

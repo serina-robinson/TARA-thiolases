@@ -33,7 +33,7 @@ mlt$data$label
 # There is so much you can do! For example, let's display the bootstrap values
 mlt_boot <- mlt + 
   geom_tiplab() +
-  xlim(0, 4) +
+  xlim(0, 6) +
   geom_nodelab()
 mlt_boot
 # Compare to the bootstrapped tree to check it works as expected
