@@ -5,21 +5,29 @@ pacman::p_load("tidyverse", "caret", "rsample", "ranger", "e1071", "tidyverse")
 setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 
 # Read in the big dataset
-dat <- read_csv("data/full50_allstats.csv")
+# dat <- read_csv("data/full50_allstats.csv")
+dat <- read_csv("data/123_OleA_allstats.csv")
 dim(dat)
-dat$topt
+# dat$topt
 # Read in the protein properties
 prop <- read_csv("data/50_protein_props.csv")
 
 # Select desired columns
+# rawdat <- dat %>%
+#   dplyr::filter(!is.na(temperature_range)) %>%
+#   dplyr::mutate(temp_status = case_when(temperature_range == "Thermophilic" ~ "NP",
+#                                         temperature_range == "Mesophilic" ~ "NP",
+#                                         temperature_range == "Psychrophilic" ~ "P")) %>%
+#   dplyr::select(contains(colnames(prop)), 131:163, temp_status,
+#                 -temperature_range, -newnams, -sqs, -acc) 
 rawdat <- dat %>%
   dplyr::filter(!is.na(temperature_range)) %>%
   dplyr::mutate(temp_status = case_when(temperature_range == "Thermophilic" ~ "NP",
                                         temperature_range == "Mesophilic" ~ "NP",
                                         temperature_range == "Psychrophilic" ~ "P")) %>%
-  dplyr::select(contains(colnames(prop)), 131:163, temp_status,
-                -temperature_range, -newnams, -sqs, -acc) 
-
+  dplyr::select(contains(colnames(prop)), 11:43, temp_status,
+                -temperature_range, -sqs, -acc) 
+# colnames(dat)
 table(rawdat$temp_status)
 
 # Only keep variables with nonzero variance
@@ -34,7 +42,7 @@ dat <- rawdat[!duplicated(rawdat),]
 set.seed(1234)
 
 # Split into test and training data
-dat_split <- rsample::initial_split(rawdat, strata = "temp_status", prop = 0.8)
+dat_split <- rsample::initial_split(rawdat, strata = "temp_status", prop = 0.7)
 dat_train <- rsample::training(dat_split)
 dat_test  <- rsample::testing(dat_split)
 nrow(dat_test)
@@ -79,6 +87,16 @@ rf_pred
 cm_rf <- confusionMatrix(rf_pred, as.factor(dat_test$temp_status))
 cm_rf # 71% 
 
+rf$finalModel$prediction.error # out-of-bag error
+
+#Plot of variable importance
+rf_imp <- varImp(rf, scale = FALSE, 
+                 surrogates = FALSE, 
+                 competes = FALSE)
+rf_imp
+ggplot(rf_imp, top = 20) + 
+  xlab("") +
+  theme_classic()
 ## Challenge 1. Unfortunately right now we aren't getting very good performance...
 # See if you can improve this first of all by increasing the dataset size using the 73 OleAs.
 # If possible, try to get at least 30 in each category (NP and P)
@@ -86,10 +104,10 @@ cm_rf # 71%
 ## Challenge 2. Try varying the proportions of training/test splits to be
 # 70%, 80%, and 90% (training set). Does it appear to dramatically change the outcome of the 
 # training and testing scores? What do you think is happening?
-
+###### split/accuracy 70%/~80%, 80%/~70%, and 90%/~85%
 ## Challenge 3. Regardless of if accuracy improves, calculate variable importance. Which
 # variables are most important? What do they mean?
-
+####################I'm right here
 ## Challenge 4. Calculate and plot the area under the receiver operating characteristic curve
 
 ## Optional challenge 5. Try building a custom tuning grid like in the sample_machine_learning.r script

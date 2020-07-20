@@ -5,4 +5,4 @@ Allophanate (the conjugate base of allophanic acid; also known as urea-1-carboxy
 
 
 <b>Bacteria</b> <li> <i>Pseudomonas</i> sp. Strain ADP (Martinez et al. 2001) </li> <li> <i>Enterobacter cloacae</i> strain 99 (Shapir et al. 2006) </li> <li> <i>Oleomonas sagarensis</i> (Kanamori et al. 2005) </li>
-<b>Reaction</b>
+<b>Reaction</b> <br> Shapir, Sadowsky & Wackett 2005

@@ -4,4 +4,4 @@ The degradation of atrazine and melamine compounds results in a formation of the
 <b>Enzymes</b> <li>AtzD (Cheng et al. 2005)</li> <li>TrzD (Martinez-Vaz et al. 2005)</li>
 
 <b>Bacteria</b> <br> Characterized (Cheng et al. 2005): <li><i>Rhizobium leguminasorum</i> bv. Viciae 3841</li> <li><i>Enterobacter cloacae</i> strain 99</li> <li><i>Acidovorax avenae</i> subsp. citrulli</li> <li><i>Pseudomonas huttiensis</i> NRRLB-12228</li> <li><i>Rhodococcus corallinus</i> strain 11</li> <br> Not characterized yet (Esquirol et al. 2018): <li><i>Gordonia</i> sp. KTR9</li> <li><i>Rhizobium leguminosarum</i> strain Vaf10</li> <li><i>Rhizobium leguminosarum</i> bv. trifolii WSM1325</li> <li><i>Rhizobium tropici</i> CIAT 899</li> <li><i>Agrobacterium vitis</i> S4</li>
-<b>Reaction</b>
+<b>Reaction</b> <br> Cyanuric acid enzymes AtzD and TrzD by Cheng et al 2005, Cyanuric amidohydrolase by Martinez et al 2001.
