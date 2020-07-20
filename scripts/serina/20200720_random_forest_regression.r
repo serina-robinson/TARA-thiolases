@@ -130,7 +130,7 @@ ggplot(rf_df_resid, aes(x = rf_pred, y = resid)) +
 ## Challenge 1. Play around with the 'ggrepel' package to display points on the residual plot.
 # What is a residual plot/what are residuals? Which points have the highest residuals? 
 
-# Challenge 2. Look up what RMSE, MAE, and R-squared are
+# Challenge 2. Look up what RMSE, MAE, and R-squared mean
 
 # Challenge 3. Try different random seeds and/or training/test split proportions and see how 
 # these metrics and residual and observed v. predicted plots change.
