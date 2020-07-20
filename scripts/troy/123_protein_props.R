@@ -1,5 +1,5 @@
 # Install packages
-pacman::p_load("tidyverse", "Biostrings", "seqinr", "DECIPHER", "Biostrings", "ggseqlogo", "cowplot", "gggenes", "ggtree")
+pacman::p_load("tidyverse", "Biostrings", "seqinr", "DECIPHER", "Biostrings", "ggseqlogo", "cowplot", "gggenes", "ggtree", "ggplot2")
 
 # Set working directory
 setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
@@ -245,3 +245,33 @@ full73_topt_only[69,1] <- "Xanthomonas_translucens_pv._graminis"
 all_topt <- full_join(full50_topt_only, full73_topt_only)
 full123_allstats <- full_join(all_topt, allstatsfinal)
 write_csv(full123_allstats, "data/123_OleA_allstats.csv")
+colnames(allstats)
+allstats <- read_csv("data/123_OleA_allstats.csv")
+Plot2 <- ggplot(allstats) +
+  geom_point(aes(x = temperature_range, y = temperature, col = temperature_range)) +
+  theme_classic() +
+  theme(legend.title = element_blank()) + 
+  labs(x = "Depth Sampled (m)", y = expression(paste("Temperature (", degree ~ C, ")")),
+       title = "Temperature and Depth of OleA-Containing TARA Samples",
+       subtitle = "Full Dataset") #+
+Plot2
+summary(allstats$temperature)
+allstats2 <- allstats %>% 
+  mutate(temp_status = case_when(temperature >= 27 ~ "over27",
+                                 temperature < 27 ~ "sub27")) %>% 
+  group_by(temp_status) %>% 
+  add_count()
+allstats2$n
+
+write_csv(allstats2, "data/123_OleA_allstats2.csv")
+
+
+allstats <- read_csv("data/123_OleA_allstats.csv")
+allstats3 <- allstats %>% 
+  mutate(temp_status = case_when(temperature >= 30 ~ "over30",
+                                 temperature <= 15 ~ "sub15",
+                                 is.na(temperature) ~ NA_character_,
+                                 TRUE ~ "mid1530")) %>% 
+  group_by(temp_status) %>% 
+  add_count()
+write_csv(allstats3, "data/123_OleA_allstats3.csv")
