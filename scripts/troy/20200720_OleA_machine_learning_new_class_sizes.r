@@ -111,14 +111,14 @@ ggplot(rf_imp, top = 20) +
 ####################I'm right here
 
 ## to do 
-# look up papers
-# for complete dataset, align by 4ku5 and get channel residues
+#+ look up papers
+#+ for complete dataset, align by 4ku5 and get channel residues
 # figure out why pos patch isnt working
-### look at browseseqs with each individually
-# make a data frame instead of list for results of getresidues
+# look at browseseqs with each individually
+#+ make a data frame instead of list for results of getresidues
 # maybe separate string into individual characters
 # go through regression script
-# incorporate 12 A sphere
+#+ incorporate 12 A sphere
 
 
 
