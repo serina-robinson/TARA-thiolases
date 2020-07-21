@@ -32,8 +32,8 @@ write_csv(onehot_df, "data/12_angstrom_one_hot_aa_features_extracted.csv")
 
 # Now let's try it with encoding each variable based on its physicochemical properties
 
-source("src/convert_seq_15aap.R")x
-extract_feat_list <- lapply(1:length(extract_84_list), function(x) { convert_seq_15aap(extract_84_list[[x]]) })
+source("src/convert_seq_5aap.R")
+extract_feat_list <- lapply(1:length(extract_84_list), function(x) { convert_seq_5aap(extract_84_list[[x]]) })
 extract_feat_df <- data.frame(matrix(unlist(extract_feat_list), nrow = length(extract_feat_list), byrow=T), stringsAsFactors=FALSE)
 
 feat_df <- tibble(names(sqs)) %>%
@@ -41,16 +41,16 @@ feat_df <- tibble(names(sqs)) %>%
 colnames(feat_df)[1] <- "nams"
 head(feat_df)
 
-write_csv(feat_df, "data/12_angstrom_physical_aa_features_extracted.csv")
-
+write_csv(feat_df, "data/12_angstrom_5_physical_aa_features_extracted.csv")
 
 ## Challenges
 
-## Challenge 1. 
+# Read Atchley et al. 2005 PNAS (in lit/encoding_amino_acids). Inspect the file 5_aa_properties.csv
+# Describe the encoding occuring in convert_seq_5aap.R
 
-# Read the NRPSPredictor2 paper
+# How does convert_seq_5aap compare to convert_seq_15aap.R
 
-# Expand and calculate for all 80 sequences (or however many you have growth temp information for)
+# Rewrite code to calculate properties for all 80 sequences (or however many you have growth temp information for)
 
 # Compare one-hot to physicochemical properties to categorical amino acids
 

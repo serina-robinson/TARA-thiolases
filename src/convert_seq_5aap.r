@@ -1,15 +1,15 @@
-convert_seq_15aap <- function (x) 
+convert_seq_5aap <- function (x) 
 {
-  tmpfin <- read.csv("data/15_aa_centered_scaled.csv", stringsAsFactors = F) %>%
+  tmpfin <- read.csv("data/5_aa_properties.csv", stringsAsFactors = F) %>%
     column_to_rownames(var = "AA_ABREV")
-
+  
   aalist <- list()
   for(i in 1:nrow(tmpfin)) {
     aalist[[i]] <- as.numeric(dplyr::slice(tmpfin, i))
   }
   names(aalist) <- rownames(tmpfin)
   
-  gap <- rep(0, 15)
+  gap <- rep(0, 5)
   
   z <- length(unlist(strsplit(x, split = NULL)))
   ans <- vector()
@@ -83,7 +83,7 @@ convert_seq_15aap <- function (x)
     if (x[i] == "X") {
       ans <- c(ans, gap)
     }
-    if (!length(ans) == 15 * i) {
+    if (!length(ans) == 5 * i) {
       print(c("Error for position ", i, "in ", x))
       return("ERROR")
     }
