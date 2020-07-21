@@ -60,12 +60,24 @@ result_df <- data.frame(names(seqs))
 colnames(result_df) <- "nams"
 for(i in 1:length(seqs)) {
   query <- seqs[i]
-  result_df$pospatch[i] <- getresidues(query = query,
-                                  ref = ref_1ebl,
-                                  aa_inds = pospatch_1ebl)
+  result_df$channelA[i] <- getresidues(query = query,
+                                  ref = ref_4ku5,
+                                  aa_inds = channelA)
 }
 view(result_df)
 
-write_csv(result_df, "data/123_OleA_important_residues.csv")
-BrowseSeqs(AlignSeqs(c(ref_1ebl, seqs[1])), "output/alnedseq3.html")
-''
+# write_csv(result_df, "data/123_OleA_important_residues.csv")
+# BrowseSeqs(AlignSeqs(c(ref_1ebl, seqs[1])), "output/alnedseq3.html")
+
+# make a function to separate the sequences into their own column
+
+AAseq <- result_df[1,2]
+nchar(AAseq)
+sepresidues <- function(AAseq, ){
+
+}
+result_df2 <- data.frame(names(seqs))
+for(i in 1:nchar(AAseq)) {
+  residue[i] <- substr(AAseq, i, i)
+}
+cbind(result_df2, residue)

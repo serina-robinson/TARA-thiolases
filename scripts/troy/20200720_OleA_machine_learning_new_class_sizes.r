@@ -113,13 +113,13 @@ ggplot(rf_imp, top = 20) +
 ## to do 
 #+ look up papers
 #+ for complete dataset, align by 4ku5 and get channel residues
-# figure out why pos patch isnt working
-# look at browseseqs with each individually
+#+ figure out why pos patch isnt working
+#+ look at browseseqs with each individually
 #+ make a data frame instead of list for results of getresidues
-# maybe separate string into individual characters
+#- maybe separate string into individual characters
 # go through regression script
 #+ incorporate 12 A sphere
-
+# fix pos patch
 
 
 ## Challenge 4. Calculate and plot the area under the receiver operating characteristic curve
