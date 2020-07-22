@@ -10,6 +10,7 @@
 
 library(tidyverse)
 library(janitor)
+library(Biostrings)
 setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 
 
@@ -72,3 +73,19 @@ full50_6 <- read_csv("data/full50_5.csv") %>%
                                                           temperature_range == "Thermophilic" ~ "thermophile",
                                                           TRUE ~ "thermophile"))))
 write_csv(full50_6, "data/full50_6.csv")
+
+# make file of 123 OleA that has only ones with temp data
+pacman::p_load("sequinr")
+all123 <- read_csv("data/123_OleA_temps.csv")
+noNAs <- all123 %>% 
+  filter(!is.na(temperature))
+write_csv(noNAs, "data/84_OleA_temps_noNAs.csv")
+noNAs2 <- noNAs %>% 
+  select(nams, sequence)
+writeXStringSet(noNAs2$sequence, noNAs2$nams, "data/123_OleA_no_NA_temps.fasta")
+test <- AAStringSet(noNAs2$sequence)
+names(test) <- noNAs2$nams
+writeXStringSet(test, "data/123_OleA_no_NA_temps.fasta")
+fasta123 <- readAAStringSet("data/123_OleA.fasta")
+
+

@@ -1,6 +1,7 @@
 convert_seq_15aap <- function (x) 
 {
-  tmpfin <- read.csv("data/15_aa_centered_scaled.csv", stringsAsFactors = F) %>%
+  tmpfin <- read_csv("data/15_aa_centered_scaled.csv"#, stringsAsFactors = F
+                     ) %>%
     column_to_rownames(var = "AA_ABREV")
 
   aalist <- list()

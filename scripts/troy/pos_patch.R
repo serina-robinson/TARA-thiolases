@@ -11,7 +11,8 @@ ref_1ebl <- readAAStringSet("data/1EBL_A.fasta")
 ref_4ku5 <- readAAStringSet("data/4KU5.fasta")
 names(ref_1ebl) <- '1ebl'
 names(ref_4ku5) <- '4ku5'
-# BrowseSeqs(AlignSeqs(c(ref_1ebl, ref_4ku5)), "output/alnedseq2.html")
+BrowseSeqs(AlignSeqs(c(ref_1ebl, ref_4ku5), gapOpening = -10), "output/alnedseq2.html")
+?AlignSeqs
 # Make function to get residues from query sequence
 getresidues <- function(query, ref, aa_inds) {
   

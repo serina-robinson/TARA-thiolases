@@ -6,28 +6,50 @@ setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 
 # Read in the big dataset
 # dat <- read_csv("data/full50_allstats.csv")
-dat <- read_csv("data/123_OleA_allstats3.csv")
-dim(dat)
 # dat$topt
 # Read in the protein properties
 prop <- read_csv("data/50_protein_props.csv")
 
-# Select desired columns
+###### for full50 dataset with categorical amino acids
+# dat <- read_csv("data/full50_allstats.csv")
 # rawdat <- dat %>%
 #   dplyr::filter(!is.na(temperature_range)) %>%
 #   dplyr::mutate(temp_status = case_when(temperature_range == "Thermophilic" ~ "NP",
 #                                         temperature_range == "Mesophilic" ~ "NP",
 #                                         temperature_range == "Psychrophilic" ~ "P")) %>%
 #   dplyr::select(contains(colnames(prop)), 131:163, temp_status,
-#                 -temperature_range, -newnams, -sqs, -acc) 
+#                 -temperature_range, -newnams, -sqs, -acc)
+
+###### for 123 dataset with categorical amino acids
+# dat <- read_csv("data/123_OleA_allstats3.csv")
+# rawdat <- dat %>%
+#   dplyr::filter(!is.na(temperature_range)) %>%
+#   filter(temp_status != "mid1530") %>% 
+#   dplyr::select(contains(colnames(prop)), 11:43, temp_status,
+#                 -temperature_range, -sqs, -acc) 
+
+###### for 84 dataset with onehot coding
+# dat <- read_csv("data/12_angstrom_one_hot_aa_features_extracted.csv") %>%
+#   full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
+# rawdat <- dat %>%
+#   dplyr::filter(!is.na(temperature_range)) %>%
+#   dplyr::mutate(temp_status = case_when(temperature_range == "Thermophilic" ~ "NP",
+#                                         temperature_range == "Mesophilic" ~ "NP",
+#                                         temperature_range == "Psychrophilic" ~ "P")) %>%
+#   dplyr::select(1:628, temp_status)
+
+###### for 84 dataset with physiochemical properties
+dat <- read_csv("data/12_angstrom_5_physical_aa_features_extracted.csv") %>%
+  full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
 rawdat <- dat %>%
   dplyr::filter(!is.na(temperature_range)) %>%
-  filter(temp_status != "mid1530") %>% 
-  # dplyr::mutate(temp_status = case_when(temperature_range == "Thermophilic" ~ "NP",
-  #                                       temperature_range == "Mesophilic" ~ "NP",
-  #                                       temperature_range == "Psychrophilic" ~ "P")) %>%
-  dplyr::select(contains(colnames(prop)), 11:43, temp_status,
-                -temperature_range, -sqs, -acc) 
+  dplyr::mutate(temp_status = case_when(temperature > 25 ~ "NP",
+                                        temperature <= 25 ~ "P"
+                                        )) %>%
+  dplyr::select(1:421, temp_status)
+
+
+
 # colnames(dat)
 table(rawdat$temp_status)
 

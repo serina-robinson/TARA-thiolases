@@ -1,6 +1,7 @@
 convert_seq_5aap <- function (x) 
 {
-  tmpfin <- read.csv("data/5_aa_properties.csv", stringsAsFactors = F) %>%
+  tmpfin <- read_csv("data/residue_extraction/5_aa_properties.csv"#, stringsAsFactors = F
+                     ) %>%
     column_to_rownames(var = "AA_ABREV")
   
   aalist <- list()

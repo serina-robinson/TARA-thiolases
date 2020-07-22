@@ -1,4 +1,4 @@
-extract_12angstrom <- function(query_fil) {
+extract_8angstrom <- function(query_fil) {
 
   # Read in the reference sequence
   query <- readAAStringSet(query_fil)
@@ -11,18 +11,18 @@ extract_12angstrom <- function(query_fil) {
   query_aln <- alned[length(alned)]
   ref_aln <- alned["4KU5"]
   
-  # Read in the 12 angstrom residues
-  aa84_inds <- read_csv("data/residue_extraction/12_angstrom_radius.csv") %>%
+  # Read in the 8 angstrom residues
+  aa33_inds <- read_csv("data/residue_extraction/8_angstrom_radius.csv") %>%
     pull()
-  aa84_inds_adj <- aa84_inds # Depends on ref
+  aa33_inds_adj <- aa33_inds # Depends on ref
 
-  # Exract the 34 amino acid positions
+  # Exract the 33 amino acid positions
   poslist <- list()
   position = 1
  
   for(i in 1:width(ref_aln)) {
     if (substr(ref_aln, i, i) != "-") {
-      if (position %in% aa84_inds_adj) {
+      if (position %in% aa33_inds_adj) {
         poslist[[i]] <- i
       }
     position = position + 1
@@ -30,12 +30,12 @@ extract_12angstrom <- function(query_fil) {
   }
   
   # Get the new indices
-  new_84inds <- unlist(poslist)
-  new_84inds
+  new_33inds <- unlist(poslist)
+  new_33inds
   
-  # Get 84 aa code
-  query_pos <- as.character(unlist(lapply(1:length(new_84inds), function(x) {
-    substr(query_aln, new_84inds[x], new_84inds[x]) })))
+  # Get 33 aa code
+  query_pos <- as.character(unlist(lapply(1:length(new_33inds), function(x) {
+    substr(query_aln, new_33inds[x], new_33inds[x]) })))
   return(query_pos)
 }
 
