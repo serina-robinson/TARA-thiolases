@@ -19,7 +19,7 @@ extract_12angstrom <- function(query_fil) {
   # Exract the 34 amino acid positions
   poslist <- list()
   position = 1
-  
+ 
   for(i in 1:width(ref_aln)) {
     if (substr(ref_aln, i, i) != "-") {
       if (position %in% aa84_inds_adj) {
