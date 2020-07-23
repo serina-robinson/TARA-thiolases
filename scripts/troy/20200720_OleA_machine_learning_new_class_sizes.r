@@ -29,7 +29,7 @@ prop <- read_csv("data/50_protein_props.csv")
 #                 -temperature_range, -sqs, -acc) 
 
 ###### for 84 dataset with onehot coding
-# dat <- read_csv("data/12_angstrom_one_hot_aa_features_extracted.csv") %>%
+# dat <- read_csv("data/residue_extraction/12_angstrom_one_hot_aa_features_extracted.csv") %>%
 #   full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
 # rawdat <- dat %>%
 #   dplyr::filter(!is.na(temperature_range)) %>%
@@ -39,7 +39,7 @@ prop <- read_csv("data/50_protein_props.csv")
 #   dplyr::select(1:628, temp_status)
 
 ###### for 84 dataset with physiochemical properties
-dat <- read_csv("data/12_angstrom_5_physical_aa_features_extracted.csv") %>%
+dat <- read_csv("data/residue_extraction/12_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
   full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
 rawdat <- dat %>%
   dplyr::filter(!is.na(temperature_range)) %>%
