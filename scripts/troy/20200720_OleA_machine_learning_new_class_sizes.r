@@ -24,7 +24,9 @@ prop <- read_csv("data/50_protein_props.csv")
 # dat <- read_csv("data/123_OleA_allstats3.csv")
 # rawdat <- dat %>%
 #   dplyr::filter(!is.na(temperature_range)) %>%
-#   filter(temp_status != "mid1530") %>% 
+# dplyr::mutate(temp_status = case_when(temperature > 25 ~ "NP",
+#                                       temperature <= 25 ~ "P"
+# )) %>%
 #   dplyr::select(contains(colnames(prop)), 11:43, temp_status,
 #                 -temperature_range, -sqs, -acc) 
 
@@ -33,9 +35,9 @@ prop <- read_csv("data/50_protein_props.csv")
 #   full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
 # rawdat <- dat %>%
 #   dplyr::filter(!is.na(temperature_range)) %>%
-#   dplyr::mutate(temp_status = case_when(temperature_range == "Thermophilic" ~ "NP",
-#                                         temperature_range == "Mesophilic" ~ "NP",
-#                                         temperature_range == "Psychrophilic" ~ "P")) %>%
+# dplyr::mutate(temp_status = case_when(temperature > 25 ~ "NP",
+#                                       temperature <= 25 ~ "P"
+# )) %>%
 #   dplyr::select(1:628, temp_status)
 
 ###### for 84 dataset with physiochemical properties

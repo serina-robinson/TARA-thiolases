@@ -12,6 +12,27 @@ rawdat <- origdat %>%
   dplyr::filter(!is.na(temperature_range)) %>%
   dplyr::select(1:121, temperature)
 
+###### for 84 dataset with physiochemical properties for 8 angstrom residues
+origdat <- read_csv("data/residue_extraction/8_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
+  full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
+rawdat <- origdat %>%
+  dplyr::filter(!is.na(temperature_range)) %>%
+  dplyr::select(1:166, temperature)
+
+###### for 84 dataset with physiochemical properties for 10 angstrom residues
+origdat <- read_csv("data/residue_extraction/10_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
+  full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
+rawdat <- origdat %>%
+  dplyr::filter(!is.na(temperature_range)) %>%
+  dplyr::select(1:251, temperature)
+
+###### for 84 dataset with physiochemical properties for 12 angstrom residues
+origdat <- read_csv("data/residue_extraction/12_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
+  full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
+rawdat <- origdat %>%
+  dplyr::filter(!is.na(temperature_range)) %>%
+  dplyr::select(1:421, temperature)
+
 rf_list <- list()
 
 # Only keep variables with nonzero variance
@@ -27,7 +48,7 @@ dat <- rawdat[!duplicated(rawdat),]
 set.seed(1234)
 
 # Split into test and training data
-for(i in 1:5){
+for(i in 1:1){
 dat_split <- rsample::initial_split(rawdat, strata = "temperature", prop = 0.8)
 dat_train <- rsample::training(dat_split)
 dat_test  <- rsample::testing(dat_split)
@@ -63,11 +84,11 @@ rf <- train(
   importance = "permutation")
 
 rf_list[[i]] <- getTrainPerf(rf)
+rf_list[[i]]$oob_error <- rf$finalModel$prediction.error # not positive what this is for
+rf_list[[i]]$test_r2 <- rf$finalModel$r.squared # same with this 
 rf_pred <- predict(rf, form_test)
 rf_list[[i]]$test_rmse <- Metrics::rmse(rf_pred, y_test)
-# any way to get r2 for test?
 }
-
 # Calculate performance
 getTrainPerf(rf) # RMSE is 11.16
 
