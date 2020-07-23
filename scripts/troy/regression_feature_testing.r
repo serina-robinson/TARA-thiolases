@@ -6,25 +6,25 @@ setwd("C:/Users/tabie/OneDrive/Documents/GitHub/TARA-thiolases/")
 
 # Read in the dataset
 ###### for 84 dataset with physiochemical properties for channels
-origdat <- read_csv("data/residue_extraction/channelAB_84_OleA_physical_aa_features_extracted.csv") %>%
-  full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
-rawdat <- origdat %>%
-  dplyr::filter(!is.na(temperature_range)) %>%
-  dplyr::select(1:121, temperature)
+# origdat <- read_csv("data/residue_extraction/channelAB_84_OleA_physical_aa_features_extracted.csv") %>%
+#   full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
+# rawdat <- origdat %>%
+#   dplyr::filter(!is.na(temperature_range)) %>%
+#   dplyr::select(1:121, temperature)
 
 ###### for 84 dataset with physiochemical properties for 8 angstrom residues
-origdat <- read_csv("data/residue_extraction/8_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
-  full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
-rawdat <- origdat %>%
-  dplyr::filter(!is.na(temperature_range)) %>%
-  dplyr::select(1:166, temperature)
+# origdat <- read_csv("data/residue_extraction/8_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
+#   full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
+# rawdat <- origdat %>%
+#   dplyr::filter(!is.na(temperature_range)) %>%
+#   dplyr::select(1:166, temperature)
 
 ###### for 84 dataset with physiochemical properties for 10 angstrom residues
-origdat <- read_csv("data/residue_extraction/10_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
-  full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
-rawdat <- origdat %>%
-  dplyr::filter(!is.na(temperature_range)) %>%
-  dplyr::select(1:251, temperature)
+# origdat <- read_csv("data/residue_extraction/10_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
+#   full_join(read_csv("data/84_OleA_temps_noNAs.csv"))
+# rawdat <- origdat %>%
+#   dplyr::filter(!is.na(temperature_range)) %>%
+#   dplyr::select(1:251, temperature)
 
 ###### for 84 dataset with physiochemical properties for 12 angstrom residues
 origdat <- read_csv("data/residue_extraction/12_angstrom_84_OleA_physical_aa_features_extracted.csv") %>%
@@ -48,7 +48,7 @@ dat <- rawdat[!duplicated(rawdat),]
 set.seed(1234)
 
 # Split into test and training data
-for(i in 1:1){
+for(i in 1:2){
 dat_split <- rsample::initial_split(rawdat, strata = "temperature", prop = 0.8)
 dat_train <- rsample::training(dat_split)
 dat_test  <- rsample::testing(dat_split)
@@ -84,11 +84,37 @@ rf <- train(
   importance = "permutation")
 
 rf_list[[i]] <- getTrainPerf(rf)
-rf_list[[i]]$oob_error <- rf$finalModel$prediction.error # not positive what this is for
-rf_list[[i]]$test_r2 <- rf$finalModel$r.squared # same with this 
 rf_pred <- predict(rf, form_test)
 rf_list[[i]]$test_rmse <- Metrics::rmse(rf_pred, y_test)
+rf_list[[i]]$oob_error <- sqrt(rf$finalModel$prediction.error)
+rf_df <- data.frame(cbind(rf_pred, y_test))
+my.formula <- y ~ x
+summ <- summary(lm(rf_df$y_test ~ rf_pred))
+rf_list[[i]]$TestingRsquared <- summ$r.squared 
 }
+# normalize names
+final_df <- do.call(rbind.data.frame, rf_list) %>% 
+  select(c(1, 2, 5, 7, 6))
+write_csv(final_df, "data/dataname.csv")
+# is it possible to save this list? 
+# if not, probably better to just go with the first couple stats 
+
+# to do
+# finish script
+# make new scripts for 8 tests
+# make them clean
+# fill excel sheet
+# save files
+# meta analysis of master spreadsheet (group_by feature_seet and tt_split, mean, stdev)
+# compare with each other (lowest RMSE)
+# best model compare to onehot
+# make plots for best condition
+# look at variable importance doe best condition
+# map residues
+# make slides 
+
+
+
 # Calculate performance
 getTrainPerf(rf) # RMSE is 11.16
 
