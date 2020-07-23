@@ -21,7 +21,7 @@ dat_stats <- dat %>%
             te_r2_sd = sd(testing_r2),)
 
 dat_stats
-write_csv(dat_stats)
+write_csv(dat_stats, "output/residue_extraction/regression_summary_stats.csv")
 
 
 
