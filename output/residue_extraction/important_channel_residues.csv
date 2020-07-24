@@ -1,85 +1,25 @@
-ang12.resi
-108
-109
-110
-111
-112
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-167
-168
-169
-170
-171
-172
-173
-199
-200
-202
-203
-204
-205
-206
-208
-224
-228
-229
-230
-236
-239
-240
-241
-246
-248
-253
-257
-260
-261
-283
-284
-285
-286
-287
-288
-291
-292
-295
-309
-310
-313
-314
-315
-316
-317
-318
-319
-320
-321
-322
-323
-324
-325
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
+4ku5_residue,position_number,important_factors,top_ten
+111,1,,
+112,2,"codon diversity, polarity, charge","codon diversity, polarity"
+117,3,,
+171,4,,
+172,5,"size, codon diversity",
+173,6,,
+176,7,"size, charge, polarity, codon diversity","size, charge"
+203,8,"charge, size, secondary structure, polarity, codon diversity","charge, size, secondary structure"
+242,9,polarity,
+243,10,"polarity, codon diversity",
+246,11,,
+253,12,,
+258,13,secondary structure,
+261,14,,
+284,15,"codon diversity, secondary structure, polarity, charge",codon diversity
+291,16,"charge, codon diversity, secondary structure, size",
+292,17,"size, charge, polarity",size
+295,18,,
+316,19,"codon diversity, polarity, secondary structure",codon diversity
+343,20,,
+345,21,,
+349,22,,
+351,23,,
+353,24,,

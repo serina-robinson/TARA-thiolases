@@ -84,6 +84,8 @@ final_df <- do.call(rbind.data.frame, rf_list) %>%
 # Get most important variables
 rf_imp <- varImp(rf)
 
+pdf("output/residue_extraction/var_imp_channelAB_10_loop_0.8_split.pdf")
 ggplot(rf_imp, top = 32) + 
   xlab("") +
   theme_classic()
+dev.off()
