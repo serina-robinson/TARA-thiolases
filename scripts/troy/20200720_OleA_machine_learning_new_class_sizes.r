@@ -97,21 +97,22 @@ rf <- train(
   y = y_train,
   method = "ranger",
   trControl = trainControl(method = "repeatedcv", number = 10,
-                           repeats = 3,
+                    #       repeats = 3,
                            verboseIter = T, classProbs = T,
                            savePredictions = "final"),
   verbose = TRUE,
   importance = "permutation")
 
 # Confusion matrix
-getTrainPerf(rf) # Training set accuracy is 60% for random forest
+getTrainPerf(rf)[1] # Training set accuracy is 60% for random forest
 
 # Testing set accuracy
 rf_pred <- predict(rf, newdata = form_test)
 rf_pred
 cm_rf <- confusionMatrix(rf_pred, as.factor(dat_test$temp_status))
 cm_rf # 71% 
-
+cm_rf$overall[1] # testing accuracy
+str(cm_rf)
 rf$finalModel$prediction.error # out-of-bag error
 
 #Plot of variable importance

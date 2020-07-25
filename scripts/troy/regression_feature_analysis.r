@@ -22,7 +22,8 @@ dat_stats <- dat %>%
 
 dat_stats
 write_csv(dat_stats, "output/residue_extraction/regression_summary_stats.csv")
-
+channels <- sort(c(176, 173, 172, 242, 243, 112, 111, 171, 117, 316, 203, 246, 253, 258, 261, 284, 291, 292, 295, 343, 345, 349, 351, 353))
+view(data.frame(channels))
 
 
 
