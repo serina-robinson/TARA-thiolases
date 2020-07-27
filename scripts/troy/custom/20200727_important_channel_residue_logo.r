@@ -36,9 +36,9 @@ for(i in 1:length(oleas)) {
 view(result_df)
 
 # Make logo of all sequences together
-pdf("output/channel_logo_togetherB.pdf")
+pdf("output/residue_extraction/channel_logo_impres_together.pdf")
 p <- ggplot() + 
-  geom_logo(resultdatB[,i], method = "p", col_scheme = 'chemistry') + 
+  geom_logo(result_df[,2], method = "p", col_scheme = 'chemistry') + 
   theme_logo()
 p
 dev.off()
