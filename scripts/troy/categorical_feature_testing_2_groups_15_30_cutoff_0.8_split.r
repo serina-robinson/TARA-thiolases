@@ -85,15 +85,16 @@ final_df <- do.call(rbind.data.frame, rf_list)
 colnames(final_df) <- c("training_accuracy", "oob_error", "testing_accuracy")
 
 # Write to file
-write_csv(final_df, "output/residue_extraction/channelAB_categorical_10_loops_2_groups_15_30_cutoff_0.8_split.csv")
+# write_csv(final_df, "output/residue_extraction/channelAB_categorical_10_loops_2_groups_15_30_cutoff_0.8_split.csv")
 
 #Plot of variable importance
 rf_imp <- varImp(rf, scale = FALSE, 
                  surrogates = FALSE, 
                  competes = FALSE)
 rf_imp
-ggplot(rf_imp, top = 20) + 
+pdf("output/residue_extraction/categorical_var_imp_channelAB_10_loop_2_groups_15_30_0.8_split.pdf")
+ggplot(rf_imp, top = 30) + 
   xlab("") +
   theme_classic()
-
+dev.off()
 

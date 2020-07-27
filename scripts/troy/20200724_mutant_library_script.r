@@ -22,13 +22,25 @@ xan$mutation
 
 # look at overlap between residues important in model and residues in mutant library
 
-# read goblirsch paper
+###### read goblirsch paper
 
 # make seq logo of positions that are both important and 
 # in mutant library for 84 seqs
 # and contingency table
 
-# identify if any of the mutants in the library are woth testing
+# look in pymol at any weird ones
+
+# make slides
+## intro: why machine learning
+## global properties didn't work so well
+## table for regression: channels worked best
+## obs vs predicted temp plot too
+## channels for categorical too
+## maybe use mutant library for experiments
+## show which we are interested in with sequence logo
+## future: purify and look at thermostability/activity/any ideas?
+
+# identify if any of the mutants in the library are worth testing
 # or do we need to make new ones to test
 
 # which ones do we want to test and why
