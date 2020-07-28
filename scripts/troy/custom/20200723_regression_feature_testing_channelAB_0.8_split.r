@@ -79,4 +79,17 @@ for(i in 1:10){
 final_df <- do.call(rbind.data.frame, rf_list) %>% 
   select(c(1:2, 5:7))
 # Write to file
-write_csv(final_df, "output/residue_extraction/channelAB_regression_10_loops_0.8_split.csv")
+# write_csv(final_df, "output/residue_extraction/channelAB_regression_10_loops_0.8_split.csv")
+
+# Plot observed vs. predicted
+
+ggplot(rf_df, aes(x = y_test, y = rf_pred)) +
+  geom_point(alpha = .3) + 
+  geom_smooth(se = FALSE, col = "red", method = "lm",
+              lty = 2, lwd = 1, alpha = .5) +
+  theme_classic() +
+  xlab("Observed temperature") +
+  ylab("Predicted temperature") +
+  ggpmisc::stat_poly_eq(formula = my.formula,
+                        aes(label = paste(..rr.label.., sep = "~~~")),
+                        parse = TRUE)
