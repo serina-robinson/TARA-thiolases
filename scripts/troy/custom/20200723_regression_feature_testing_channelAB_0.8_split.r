@@ -82,8 +82,10 @@ final_df <- do.call(rbind.data.frame, rf_list) %>%
 # write_csv(final_df, "output/residue_extraction/channelAB_regression_10_loops_0.8_split.csv")
 
 # Plot observed vs. predicted
-
-ggplot(rf_df, aes(x = y_test, y = rf_pred)) +
+rf_df2 <- colbind(dat_train$temperature, rf$pred$pred)
+rf$pred$pred
+dat_train$temperature
+ggplot(rf_df2, aes(x = dat_train$temperature, y = rf$pred$pred)) +
   geom_point(alpha = .3) + 
   geom_smooth(se = FALSE, col = "red", method = "lm",
               lty = 2, lwd = 1, alpha = .5) +
