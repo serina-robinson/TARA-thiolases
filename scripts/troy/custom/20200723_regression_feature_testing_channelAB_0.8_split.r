@@ -82,10 +82,13 @@ final_df <- do.call(rbind.data.frame, rf_list) %>%
 # write_csv(final_df, "output/residue_extraction/channelAB_regression_10_loops_0.8_split.csv")
 
 # Plot observed vs. predicted
-rf_df2 <- colbind(dat_train$temperature, rf$pred$pred)
-rf$pred$pred
-dat_train$temperature
-ggplot(rf_df2, aes(x = dat_train$temperature, y = rf$pred$pred)) +
+train_plot <- data.frame(pred = rf$pred$pred,
+                         obs = rf$pred$obs)
+my.formula <- y ~ x
+summ <- summary(lm(train_plot$obs ~ train_plot$pred))
+
+pdf("output/residue_extraction/exmample_regression_plot2.pdf")
+ggplot(data = train_plot, aes(x = obs, y = pred)) +
   geom_point(alpha = .3) + 
   geom_smooth(se = FALSE, col = "red", method = "lm",
               lty = 2, lwd = 1, alpha = .5) +
@@ -95,3 +98,4 @@ ggplot(rf_df2, aes(x = dat_train$temperature, y = rf$pred$pred)) +
   ggpmisc::stat_poly_eq(formula = my.formula,
                         aes(label = paste(..rr.label.., sep = "~~~")),
                         parse = TRUE)
+dev.off()
