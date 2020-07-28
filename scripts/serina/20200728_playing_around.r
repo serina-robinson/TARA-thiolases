@@ -33,8 +33,8 @@ x_train <- dat_train[,!colnames(dat_train) %in% c("nams", "temperature")]
 x_test <- dat_test[,!colnames(dat_test) %in% c("nams", "temperature")]
 
 # Dependent variable
-y_train <- dat_train$temperature
-y_test <- dat_test$temperature
+y_train <- log(dat_train$temperature)
+y_test <- log(dat_test$temperature)
 
 # Complete dataset for training and testing
 form_train <- data.frame(cbind(x_train, y_train), stringsAsFactors = F, row.names = dat_train$nams)
