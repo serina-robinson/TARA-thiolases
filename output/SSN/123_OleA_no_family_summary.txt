@@ -1,0 +1,12 @@
+Job Number	46823
+Time Started -- Finished	8/3 12:30 PM -- 8/3 12:35 PM
+Database Version	UniProt: 2020-03 / InterPro: 80
+Input Option	FASTA (Option C), no FASTA header reading
+Job Name	123_OleA_no_family
+Uploaded FASTA File	123_OleA.fasta
+Number of Sequences in Uploaded File	123
+Exclude Fragments	No
+Total Number of Sequences in Dataset	123
+Total Number of Edges	7,347
+Number of Unique Sequences	123
+Convergence Ratio?	0.979

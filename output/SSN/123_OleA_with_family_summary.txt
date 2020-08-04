@@ -1,0 +1,18 @@
+Job Number	46820
+Time Started -- Finished	8/3 12:10 PM -- 8/3 12:55 PM
+Database Version	UniProt: 2020-03 / InterPro: 80
+Input Option	FASTA (Option C), no FASTA header reading
+Job Name	123_OleA_with_family
+Uploaded FASTA File	123_OleA.fasta
+Added Pfam / InterPro Family	PF08545
+Number of IDs in Pfam / InterPro Family	60,494
+UniRef Version	50
+Number of Cluster IDs in UniRef50 Family	2,822
+Number of Sequences in Uploaded File	123
+Number of Input Sequences Matched in Family	0
+Number of Input Sequences not in Family	123
+Exclude Fragments	No
+Total Number of Sequences in Dataset	2,945
+Total Number of Edges	2,277,344
+Number of Unique Sequences	2,935
+Convergence Ratio?	0.525

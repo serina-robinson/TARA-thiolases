@@ -77,7 +77,7 @@ merged_OleB1 <- merged_OleB %>%
   mutate(ole_b_patric = merged_OleB$patric_id)
 
   
-pfa <- read_csv("data/BLAST_pufa_genome_group.csv") %>% 
+pfa <- read_csv("data/blast_output/BLAST_pufa_genome_group.csv") %>% 
   janitor::clean_names() %>% 
  # filter() %>% 
   group_by(genome) %>% 

@@ -87,7 +87,7 @@ train_plot <- data.frame(pred = rf$pred$pred,
 my.formula <- y ~ x
 summ <- summary(lm(train_plot$obs ~ train_plot$pred))
 
-pdf("output/residue_extraction/exmample_regression_plot2.pdf")
+pdf("output/residue_extraction/example_prediction_plot2.pdf", height = 4)
 ggplot(data = train_plot, aes(x = obs, y = pred)) +
   geom_point(alpha = .3) + 
   geom_smooth(se = FALSE, col = "red", method = "lm",
