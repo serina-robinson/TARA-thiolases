@@ -1,0 +1,25 @@
+4ku5_residue,position_number,regression_important_factors,regression_top_ten,categorical_important_factors,categorical_top_ten,in_mutant_library,important_residue
+111,1,,,,,TRUE,FALSE
+112,2,"codon diversity, polarity, charge","codon diversity, polarity","polarity, size, codon diversity, secondary structure",polarity,TRUE,TRUE
+117,3,,,,,TRUE,FALSE
+171,4,,,,,TRUE,FALSE
+172,5,"size, codon diversity",,codon diversity,codon diversity,TRUE,TRUE
+173,6,,,,,TRUE,FALSE
+176,7,"size, charge, polarity, codon diversity","size, charge",,,TRUE,TRUE
+203,8,"charge, size, secondary structure, polarity, codon diversity","charge, size, secondary structure","codon diversity, charge, secondary structure, polarity","codon diversity, charge",TRUE,TRUE
+242,9,polarity,,codon diversity,,FALSE,FALSE
+243,10,"polarity, codon diversity",,"charge, polarity, codon diversity",,FALSE,FALSE
+246,11,,,,,TRUE,FALSE
+253,12,,,,,FALSE,FALSE
+258,13,secondary structure,,"codon diversity, charge, secondary structure, size",,TRUE,TRUE
+261,14,,,secondary structure,,TRUE,FALSE
+284,15,"codon diversity, secondary structure, polarity, charge",codon diversity,"codon diversity, polarity, secondary structure, charge, size","codon diversity, polarity, secondary structure, charge",TRUE,TRUE
+291,16,"charge, codon diversity, secondary structure, size",,codon diversity,,TRUE,TRUE
+292,17,"size, charge, polarity",size,"size, polarity",size,TRUE,TRUE
+295,18,,,,,FALSE,FALSE
+316,19,"codon diversity, polarity, secondary structure",codon diversity,"polarity, size, secondary structure",,FALSE,TRUE
+343,20,,,,,FALSE,FALSE
+345,21,,,,,TRUE,FALSE
+349,22,,,,,FALSE,FALSE
+351,23,,,,,FALSE,FALSE
+353,24,,,,,FALSE,FALSE

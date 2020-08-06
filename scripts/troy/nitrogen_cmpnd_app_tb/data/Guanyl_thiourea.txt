@@ -4,4 +4,4 @@ Guanyl thiourea (1-amidino-2-thiourea, GTU) is a nitrification inhibitor. A nitr
 <b>Enzymes</b> <br> in Literature: <br> <li>in vivo (liver)- monooxygenase can catalyze S-oxygenation of thiourea resulting in formamidine sulfenic acid and formamidine sulfinic acid. (Sahu et al. 2011)</li> <li>in vivo (humans)- Peroxidase oxidizes thiourea when it is in the presence of iodine. This will result in the formation of formamidine disulfide which breaks down into cyanamide. (Sahu et al. 2011)</li> <br> Pathway Prediction System: <br> <li>Thioacetamide S-oxygenase  1.14</li> <li>Ethionamide monooxygenase  1.14.13.</li>
 
 <b>Bacteria</b> <li>Pseudomonas sp. NCIMB (Wang et al. 2017)</li>
-<b>Reactions</b>
+<b>Reactions</b> <br> The Guanyl thiourea enzymes Thioacetamide S-oxygenase and Ethionamide monooxygenase are from the Biocatalysis and Biodegradation Database and reaction is from Amberger and Germann-Bauer 1990.

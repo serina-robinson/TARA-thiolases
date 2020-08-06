@@ -4,4 +4,4 @@ A co-product in the production of urea-type fertilizers, biuret (carbamoylurea),
 <b>Enzymes</b> <li>AtzE (Esquirol et al. 2018)</li> <li>Biuret Hydrolase (Esquirol et al. 2018)</li>
 
 <b>Bacteria</b> <br> Characterized: <br> <li><i>Rhizobium leguminasorum</i> bv. Viciae3841 (Esquirol et al. 2018)</li> <li><i>Herbaspirillum</i> sp. BH-1 (Robinson et al. 2018)</li> <li><i>Pseudomonas</i> sp. BH-2 (Robinson et al. 2018)</li> <br> Not characterized yet (Esquirol et al. 2018): <li><i>Gordonia</i> sp. KTR9</li> <li><i>Rhizobium leguminosarum</i> bv. trifolii WSM1325</li> <li><i>Rhizobium tropici</i> CIAT 899</li> <li><i>Agrobacterium vitis</i> S4</li> <li><i>Ralstonia pickettii</i> strain D</li> <li><i>Agrobacterium radiobacter</i> strain J14a</li> <li><i>Pseudomonas</i> sp. strain ADP</li>
-<b>Reaction</b>
+<b>Reaction</b> <br> Biuret enzymes AtzE and Biuret Hydrolase by Esquirol et al 2018.
