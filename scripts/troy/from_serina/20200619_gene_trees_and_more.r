@@ -116,8 +116,8 @@ comboled <- oled %>%
   slice(1)
 comboled
 full50[43, "genus"] <- "Psychrobacter"
-full50[39, "genus"] <- "Deltaproteobacteria2"
-full50[40, "genus"] <- "Deltaproteobacteria1"
+full50[39, "genus"] <- "Deltaproteobacteria 2"
+full50[40, "genus"] <- "Deltaproteobacteria 1"
 full50_1 <- full50 %>% 
   filter(!is.na(genus))
 
@@ -128,8 +128,8 @@ mlt <- ggtree(ml)
 mlt$data <- mlt$data %>% 
   mutate(genus = word(label, sep = "_", 2))
 
-mlt$data$genus[grep("peg.1837", mlt$data$label)] <- "Deltaproteobacteria1"
-mlt$data$genus[grep("peg.848", mlt$data$label)] <- "Deltaproteobacteria2"
+mlt$data$genus[grep("peg.1837", mlt$data$label)] <- "Deltaproteobacteria 1"
+mlt$data$genus[grep("peg.848", mlt$data$label)] <- "Deltaproteobacteria 2"
 
 
 mlt_dat <- mlt$data %>% 
@@ -187,13 +187,14 @@ tree_df <- data.frame(label = mlt$data$label) %>%
   dplyr::filter(!is.na(genus))
 # duplicated(tree_df) # are any duplicated??
 
-tree_df$genus[grep("Deltaproteobacteria", tree_df$genus)][1] <- "Deltaproteobacteria1"
-tree_df$genus[grep("Deltaproteobacteria", tree_df$genus)][2] <- "Deltaproteobacteria2"
+tree_df$genus[grep("Deltaproteobacteria", tree_df$genus)][1] <- "Deltaproteobacteria 1"
+tree_df$genus[grep("Deltaproteobacteria", tree_df$genus)][2] <- "Deltaproteobacteria 2"
 plotdat_df <- plotdat %>%
   dplyr::mutate(genus = stringr::word(molecule, sep = " ", 1))
 
-plotdat_df$genus[grep("B9_G4", plotdat_df$molecule)] <- "Deltaproteobacteria1"
-plotdat_df$genus[grep("B30_G6", plotdat_df$molecule)] <- "Deltaproteobacteria2"
+plotdat_df$genus[grep("B9_G4", plotdat_df$molecule)] <- "Deltaproteobacteria 1"
+plotdat_df$genus[grep("B30_G6", plotdat_df$molecule)] <- "Deltaproteobacteria 2"
+# plotdat_df$genus[grep("Psychrobacter", plotdat_df$molecule)] <- "Kocuria"
 # Join them by = "genus"
 # What sort of gymnastics is happening here?
 plotdat_fixed <- plotdat_df %>%
@@ -206,6 +207,7 @@ plotdat_fixed <- plotdat_df %>%
   dplyr::mutate(difference = start - first(start)) %>% # what the heck am I doing here???
   dplyr::filter(abs(difference) < 12000) # what about here
 
+mlt_dat1[10, "genus"] <- "Kocuria"
 
 mltr2 <- mlt + 
   geom_tiplab(aes(label = mlt_dat1$genus), color = mlt_dat1$temp_color[1:20]) + 
@@ -228,6 +230,7 @@ pdf("output/tree6.pdf", width = 11, height = 6)
 mltr3 
 dev.off()
 
+view(mltr3$data)
 
 
 ###to do
@@ -255,8 +258,8 @@ plotdat2 <- plotdat %>%
   dplyr::filter(abs(difference) < 10000)
 plotdat2
 
-write_csv(mlt_dat1, "data/mlt_dat1.csv")
-write_csv(plotdat_fixed, "data/plotdat_fixed.csv")
+# write_csv(mlt_dat1, "data/mlt_dat1.csv")
+# write_csv(plotdat_fixed, "data/plotdat_fixed.csv")
 # Bonus challenge; is there a way to select the oleA rather than just the first 'start' entry?
 
 # Challenge 3. 
